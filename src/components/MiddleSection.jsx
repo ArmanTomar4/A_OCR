@@ -383,7 +383,7 @@ const MiddleSection = () => {
                 <svg style={{
                     position: 'absolute',
                     top: '-570px',
-                    left: '44%',
+                    left: '43%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "10",
                     opacity: hoveredBox === 'box1' ? 0.3 : 1,
@@ -431,8 +431,8 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '30%',
-                                left: '50%',
+                                top: '-460px',
+                                left: '139%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
                                 pointerEvents: 'none',
@@ -491,9 +491,7 @@ const MiddleSection = () => {
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box2' ? 1 : 0.7,
                     transition: 'opacity 0.3s ease-in-out',
-                    fill: 'rgba(0, 0, 0, 0.10)',
-                    backdropFilter: 'blur(10.460746765136719px)',
-                    borderRadius: '10px'
+
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
                     <foreignObject x="-20.1344" y="-20.0387" width="645.428" height="390.187">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
@@ -552,8 +550,8 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '50%',
-                                left: '50%',
+                                top: '-370px',
+                                left: '135%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
                                 pointerEvents: 'none',
@@ -680,8 +678,8 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '50%',
-                                left: '50%',
+                                top: '-245px',
+                                left: '135%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
                                 pointerEvents: 'none',
@@ -735,7 +733,7 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
+                    top: '-245px',
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box4' ? 0.3 : 1,
@@ -752,8 +750,8 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
+                    top: '-320px',
+                    left: '25%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box4' ? 0.3 : 1,
                     filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
@@ -776,8 +774,8 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
+                    top: '-320px',
+                    left: '75%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box4' ? 0.3 : 1,
                     filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
@@ -801,7 +799,7 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
+                    top: '-205px',
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box4' ? 0.3 : 1,
@@ -826,8 +824,8 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
+                    top: '-280px',
+                    left: '75%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box4' ? 0.3 : 1,
                     filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
@@ -854,8 +852,8 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
+                    top: '-280px',
+                    left: '25%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: hoveredBox === 'box4' ? 0.3 : 1,
                     filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
@@ -883,7 +881,7 @@ const MiddleSection = () => {
                 {/* lines */}
                 <svg style={{
                     position: 'absolute',
-                    top: '50%',
+                    top: '-284px',
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "-2",

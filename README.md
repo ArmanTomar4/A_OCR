@@ -13,20 +13,19 @@ aocr/
 │   └── hero.png           # Hero section image
 ├── src/
 │   ├── components/        # React components
-│   │   ├── intelligence-layer/  # AI features components
-│   │   │   ├── HeaderCard.jsx
-│   │   │   ├── UniversalDocumentIngestion.jsx
-│   │   │   ├── MultiLanguageOCR.jsx
-│   │   │   ├── HandwrittenTextRecognition.jsx
-│   │   │   ├── SmartDocumentClassification.jsx
-│   │   │   ├── AdvancedTableProcessing.jsx
-│   │   │   ├── ContextAwareAI.jsx
-│   │   │   ├── NaturalLanguageQueries.jsx
-│   │   │   ├── AIPoweredAutomation.jsx
-│   │   │   └── index.js
 │   │   ├── Hero.jsx      
 │   │   ├── Opening.jsx    
-│   │   ├── IntelligenceLayer.jsx  
+│   │   ├── IntelligenceLayer.jsx ├── intelligence-layer/  # AI features components
+│   │   │   │   ├── HeaderCard.jsx
+│   │   │   │   ├── UniversalDocumentIngestion.jsx
+│   │   │   │   ├── MultiLanguageOCR.jsx
+│   │   │   │   ├── HandwrittenTextRecognition.jsx
+│   │   │   │   ├── SmartDocumentClassification.jsx
+│   │   │   │   ├── AdvancedTableProcessing.jsx
+│   │   │   │   ├── ContextAwareAI.jsx
+│   │   │   │   ├── NaturalLanguageQueries.jsx
+│   │   │   │   ├── AIPoweredAutomation.jsx
+│   │   │   │   └── index.js 
 │   │   ├── SolutionsByIndustry.jsx 
 │   │   ├── Pipeline.jsx   # big svg animation part
 │   │   ├── WhyChooseAOCR.jsx  ├──percentage.jsx
