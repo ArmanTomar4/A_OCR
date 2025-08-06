@@ -774,3 +774,33 @@ body {
     padding: 40px 20px;
   }
 }
+
+/* Enhanced GSAP scroll-synced text animation */
+.gsap-word {
+  will-change: transform, opacity;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Performance optimization for smooth animations */
+.text-section {
+  will-change: transform;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .gsap-word {
+    /* Slightly reduced animation intensity on mobile */
+    transform-origin: center;
+  }
+}
+
+/* Optional: Add subtle glow effect during animation */
+.gsap-word.animating {
+  filter: drop-shadow(0 0 2px rgba(65, 105, 225, 0.1));
+}
+
+/* Ensure highlight text maintains its color during animation */
+.gsap-word.highlight-text {
+  color: #4169e1;
+}
