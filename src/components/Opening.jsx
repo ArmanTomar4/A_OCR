@@ -1,5 +1,8 @@
 import React, { useRef, useState, useCallback } from 'react';
 import ThreeLinePattern from '@abhijeet42cy6/vector-lines';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 // Helper: distance from point to center of box
 function distanceToBoxCenter(mouse, box) {
@@ -129,6 +132,58 @@ export default function Opening() {
     cursor: 'pointer',
   };
 
+  // Animation for main text
+  const textSectionRef = useRef(null);
+
+  React.useEffect(() => {
+    const words = gsap.utils.toArray('.gsap-word');
+    if (!words.length) return;
+    
+    // Mobile detection for responsive animation
+    const isMobile = window.innerWidth <= 768;
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: textSectionRef.current,
+        start: 'top 70%', // Start earlier
+        end: 'top 30%', // End much sooner - tight control
+        scrub: 0.5, // More responsive
+        markers: false, // Set to true for debugging
+        invalidateOnRefresh: true,
+      }
+    });
+    
+    // Animate words with much tighter timing
+    tl.fromTo(words,
+      { 
+        opacity: 0, 
+        y: 20, // Reduced movement
+        rotation: 1, // Subtle rotation
+        scale: 0.98 // Subtle scale
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotation: 0,
+        scale: 1,
+        stagger: isMobile ? 0.02 : 0.03, // Much faster stagger
+        duration: 0.4, // Shorter duration
+        ease: 'power2.out',
+        onStart: () => {
+          words.forEach(word => word.classList.add('animating'));
+        },
+        onComplete: () => {
+          words.forEach(word => word.classList.remove('animating'));
+        }
+      }
+    );
+    
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+    };
+  }, []);
+
   // Render top rows
   let gridIdxTop = 0;
   const rowsTop = [];
@@ -235,12 +290,28 @@ export default function Opening() {
         {rowsTop}
       </div>
 
-      <div className="text-section">
+      <div className="text-section" ref={textSectionRef}>
         <h1 className="main-text">
-          the foundation of AI automation—<br />
-          transforming <span className="highlight-text">unstructured documents<br />
-          into machine-actionable data</span> across<br />
-          your enterprise.
+          <div className="reveal-line">
+            <span className="gsap-word">the</span>{' '}
+            <span className="gsap-word">foundation</span>{' '}
+            <span className="gsap-word">of</span>{' '}
+            <span className="gsap-word">AI</span>{' '}
+            <span className="gsap-word">automation—</span>
+          </div>
+          <div className="reveal-line">
+            <span className="gsap-word">transforming</span>{' '}
+            <span className="gsap-word highlight-text">unstructured</span>{' '}
+            <span className="gsap-word highlight-text">documents</span>{' '}
+            <span className="gsap-word highlight-text">into</span>{' '}
+            <span className="gsap-word highlight-text">machine-actionable</span>{' '}
+            <span className="gsap-word highlight-text">data</span>{' '}
+            <span className="gsap-word">across</span>
+          </div>
+          <div className="reveal-line">
+            <span className="gsap-word">your</span>{' '}
+            <span className="gsap-word">enterprise.</span>
+          </div>
         </h1>
       </div>
 
