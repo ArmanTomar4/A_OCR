@@ -6,8 +6,10 @@ import Opening from './components/Opening.jsx'
 import IntelligenceLayer from './components/IntelligenceLayer.jsx'
 import SolutionsByIndustry from './components/SolutionsByIndustry.jsx'
 import WhyChooseAOCR from './components/WhyChooseAOCR.jsx'
+import RequestAccess from './components/RequestAccess.jsx'
 import Footer from './components/Footer.jsx'
 import Pipeline from './components/Pipeline.jsx'
+import AnimatedFAQDiagram from './components/FAQ.jsx'
 
 /**
  * Main App Component
@@ -16,14 +18,16 @@ import Pipeline from './components/Pipeline.jsx'
 function App() {
   return (
     <>
-    <Navbar />
-    <Hero />
-    <Opening />
-    <IntelligenceLayer />
-    <SolutionsByIndustry />
-    <Pipeline />
-    <WhyChooseAOCR />
-    <Footer />
+      <Navbar />
+      <Hero />
+      <Opening />
+      <IntelligenceLayer />
+      <SolutionsByIndustry />
+      <Pipeline />
+      <WhyChooseAOCR />
+      <AnimatedFAQDiagram />
+      <RequestAccess />
+      <Footer />
     </>
   )
 }

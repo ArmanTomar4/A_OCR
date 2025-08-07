@@ -44,16 +44,68 @@ const MiddleSection = () => {
         })
     }
 
-    // Box animation variants
-    const boxVariants = {
+    // Enhanced box animation variants with movement
+    const getBoxVariants = (boxId) => ({
         initial: {
             scale: 0.95,
+            y: 0,
             transition: { duration: 0.3, ease: "easeInOut" }
         },
         hover: {
             scale: 1.05,
+            y: 0,
+            transition: { duration: 0.3, ease: "easeInOut" }
+        },
+        moveUp: {
+            scale: 0.95,
+            y: -20,
+            transition: { duration: 0.3, ease: "easeInOut" }
+        },
+        moveDown: {
+            scale: 0.95,
+            y: 20,
             transition: { duration: 0.3, ease: "easeInOut" }
         }
+    })
+
+    // Function to determine animation state for each box
+    const getBoxAnimationState = (boxId, hoveredBox) => {
+        if (hoveredBox === boxId) return "hover"
+        if (!hoveredBox) return "initial"
+
+        switch (hoveredBox) {
+            case 'box1': // top-box hovered - others move down
+                return boxId !== 'box1' ? "moveDown" : "hover"
+
+            case 'box2': // second-box hovered - top moves up, others move down
+                if (boxId === 'box1') return "moveUp"
+                return boxId !== 'box2' ? "moveDown" : "hover"
+
+            case 'box3': // third-box hovered - top two move up, fourth moves down
+                if (boxId === 'box1' || boxId === 'box2') return "moveUp"
+                if (boxId === 'box4') return "moveDown"
+                return "hover"
+
+            case 'box4': // fourth-box hovered - others move up
+                return boxId !== 'box4' ? "moveUp" : "hover"
+
+            default:
+                return "initial"
+        }
+    }
+
+    // Z-index management based on hover state
+    const getZIndex = (boxId, hoveredBox) => {
+        const baseZIndex = {
+            'box1': 10,
+            'box2': 9,
+            'box3': 8,
+            'box4': 7
+        }
+
+        // Give hovered box highest z-index
+        if (hoveredBox === boxId) return 15
+        return baseZIndex[boxId]
     }
 
     return (
@@ -75,14 +127,14 @@ const MiddleSection = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    zIndex: '10',
+                    zIndex: getZIndex('box1', hoveredBox),
                     position: 'relative',
                     opacity: hoveredBox && hoveredBox !== 'box1' ? 0.4 : 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }}
-                variants={boxVariants}
+                variants={getBoxVariants('box1')}
                 initial="initial"
-                animate={hoveredBox === 'box1' ? "hover" : "initial"}
+                animate={getBoxAnimationState('box1', hoveredBox)}
                 onMouseEnter={() => handleMouseEnter('box1')}
                 onMouseLeave={handleMouseLeave}
             >
@@ -95,7 +147,7 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-575px',
+                                top: '-590px', // Changed from '-575px' (moved up by 15px)
                                 left: '134.5%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
@@ -168,11 +220,11 @@ const MiddleSection = () => {
                 {/* Existing SVG elements */}
                 <svg style={{
                     position: 'absolute',
-                    top: '-540px',
+                    top: '-555px', // Changed from '-540px' (moved up by 15px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     zIndex: '10',
-                    opacity: hoveredBox === 'box1' ? 1 : 0.7,
+                    opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
                     <foreignObject x="-37.3095" y="-37.0394" width="679.778" height="424.298">
@@ -192,11 +244,11 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-459px',
+                    top: '-474px', // Changed from '-459px' (moved up by 15px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     zIndex: '10',
-                    opacity: hoveredBox === 'box1' ? 1 : 0.7,
+                    opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="203" viewBox="0 0 605 203" fill="none">
                     <foreignObject x="-37.1674" y="-37.473" width="679.494" height="277.927">
@@ -221,12 +273,11 @@ const MiddleSection = () => {
                 {/* Small boxes */}
                 <svg style={{
                     position: 'absolute',
-                    top: '-546px',
+                    top: '-561px', // Changed from '-546px' (moved up by 15px)
                     left: '33%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "11",
-                    opacity: hoveredBox === 'box1' ? 0.3 : 1,
-                    filter: hoveredBox === 'box1' ? 'brightness(0.5)' : 'none',
+                    opacity: 1,
                     transition: 'all 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="172" height="128" viewBox="0 0 172 128" fill="none">
                     <foreignObject x="-37.0023" y="12.0504" width="245.613" height="153.692">
@@ -261,12 +312,11 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-610px',
+                    top: '-625px', // Changed from '-610px' (moved up by 15px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "11",
-                    opacity: hoveredBox === 'box1' ? 0.3 : 1,
-                    filter: hoveredBox === 'box1' ? 'brightness(0.5)' : 'none',
+                    opacity: 1,
                     transition: 'all 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="172" height="128" viewBox="0 0 172 128" fill="none">
                     <foreignObject x="-37.0023" y="12.0504" width="245.613" height="153.692">
@@ -301,12 +351,11 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-550px',
+                    top: '-565px', // Changed from '-550px' (moved up by 15px)
                     left: '67%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "11",
-                    opacity: hoveredBox === 'box1' ? 0.3 : 1,
-                    filter: hoveredBox === 'box1' ? 'brightness(0.5)' : 'none',
+                    opacity: 1,
                     transition: 'all 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="172" height="128" viewBox="0 0 172 128" fill="none">
                     <foreignObject x="-37.0023" y="12.0504" width="245.613" height="153.692">
@@ -341,12 +390,11 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-490px',
+                    top: '-505px', // Changed from '-490px' (moved up by 15px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "11",
-                    opacity: hoveredBox === 'box1' ? 0.3 : 1,
-                    filter: hoveredBox === 'box1' ? 'brightness(0.5)' : 'none',
+                    opacity: 1,
                     transition: 'all 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="172" height="128" viewBox="0 0 172 128" fill="none">
                     <foreignObject x="-37.0023" y="12.0504" width="245.613" height="153.692">
@@ -382,11 +430,11 @@ const MiddleSection = () => {
                 {/* lines */}
                 <svg style={{
                     position: 'absolute',
-                    top: '-570px',
+                    top: '-585px', // Changed from '-570px' (moved up by 15px)
                     left: '43%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "10",
-                    opacity: hoveredBox === 'box1' ? 0.3 : 1,
+                    opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="715" height="310" viewBox="0 0 715 310" fill="none">
                     <path d="M588.981 155.084L678.667 103.303L608.005 62.5061M608.005 62.5061L714.51 1.01562M608.005 62.5061L547.314 27.4662L463.975 75.5821M241.684 153.515L132.892 90.7038L89.3691 115.832M359.89 296.304L337.4 309.289L45.8459 140.96L89.3691 115.832M89.3691 115.832L1.0874 64.8624" stroke="url(#paint0_linear_525_1670)" strokeWidth="1.04607" />
@@ -398,7 +446,7 @@ const MiddleSection = () => {
                         </linearGradient>
                     </defs>
                 </svg>
-                <img style={{ position: 'absolute', top: '-550px', left: '100%', transform: 'translate(-50%, -50%) scale(0.77)' }} src="./[ 01 ].svg" alt="" />
+                <img style={{ position: 'absolute', top: '-565px', left: '100%', transform: 'translate(-50%, -50%) scale(0.77)' }} src="./[ 01 ].svg" alt="" />
 
             </motion.div>
 
@@ -411,14 +459,14 @@ const MiddleSection = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    zIndex: "9",
+                    zIndex: getZIndex('box2', hoveredBox),
                     position: 'relative',
                     opacity: hoveredBox && hoveredBox !== 'box2' ? 0.4 : 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }}
-                variants={boxVariants}
+                variants={getBoxVariants('box2')}
                 initial="initial"
-                animate={hoveredBox === 'box2' ? "hover" : "initial"}
+                animate={getBoxAnimationState('box2', hoveredBox)}
                 onMouseEnter={() => handleMouseEnter('box2')}
                 onMouseLeave={handleMouseLeave}
             >
@@ -489,7 +537,7 @@ const MiddleSection = () => {
                     top: '-460px',
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box2' ? 1 : 0.7,
+                    opacity: 1,
                     transition: 'opacity 0.3s ease-in-out',
 
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
@@ -530,14 +578,14 @@ const MiddleSection = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    zIndex: "8",
+                    zIndex: getZIndex('box3', hoveredBox),
                     position: 'relative',
                     opacity: hoveredBox && hoveredBox !== 'box3' ? 0.4 : 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }}
-                variants={boxVariants}
+                variants={getBoxVariants('box3')}
                 initial="initial"
-                animate={hoveredBox === 'box3' ? "hover" : "initial"}
+                animate={getBoxAnimationState('box3', hoveredBox)}
                 onMouseEnter={() => handleMouseEnter('box3')}
                 onMouseLeave={handleMouseLeave}
             >
@@ -550,7 +598,7 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-370px',
+                                top: '-390px',
                                 left: '135%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
@@ -605,10 +653,10 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-370px',
+                    top: '-390px',
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box3' ? 1 : 0.7,
+                    opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
                     <foreignObject x="-20.1344" y="-20.0387" width="645.428" height="390.187">
@@ -627,7 +675,7 @@ const MiddleSection = () => {
                     </defs>
                 </svg>
 
-                <svg style={{ position: 'absolute', top: '-288px', left: '50%', transform: 'translate(-50%, -50%) scale(0.81)' }} xmlns="http://www.w3.org/2000/svg" width="668" height="266" viewBox="0 0 668 266" fill="none">
+                <svg style={{ position: 'absolute', top: '-308px', left: '50%', transform: 'translate(-50%, -50%) scale(0.81)' }} xmlns="http://www.w3.org/2000/svg" width="668" height="266" viewBox="0 0 668 266" fill="none">
                     <g filter="url(#filter0_d_571_3391)">
                         <path d="M636.089 58.792L333.969 233.276L32.5044 59.1713V58.792V32.809L333.969 206.914L636.089 32.4297V58.792Z" fill="black" />
                         <path d="M333.969 206.724V206.914M333.969 233.276L636.089 58.7919V32.4297L333.969 206.914M333.969 233.276V206.914M333.969 233.276L32.5044 59.1713V58.7919V32.809L333.969 206.914" stroke="#202020" strokeWidth="1.04607" />
@@ -658,14 +706,14 @@ const MiddleSection = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    zIndex: "7",
+                    zIndex: getZIndex('box4', hoveredBox),
                     position: 'relative',
                     opacity: hoveredBox && hoveredBox !== 'box4' ? 0.4 : 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }}
-                variants={boxVariants}
+                variants={getBoxVariants('box4')}
                 initial="initial"
-                animate={hoveredBox === 'box4' ? "hover" : "initial"}
+                animate={getBoxAnimationState('box4', hoveredBox)}
                 onMouseEnter={() => handleMouseEnter('box4')}
                 onMouseLeave={handleMouseLeave}
             >
@@ -678,8 +726,8 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-245px',
-                                left: '135%',
+                                top: '-358px', // Changed from '-245px' (moved down by 17px)
+                                left: '133%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
                                 pointerEvents: 'none',
@@ -733,12 +781,11 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-245px',
+                    top: '-228px', // Changed from '-245px' (moved down by 17px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
-                    filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
-                    transition: 'all 0.3s ease-in-out'
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="270" height="156" viewBox="0 0 270 156" fill="none"> <foreignObject x="-37.3964" y="-37.5512" width="344.465" height="231.243"><div xmlns="http://www.w3.org/1999/xhtml" style={{ backdropFilter: 'blur(18.91px)', clipPath: 'url(#bgblur_0_571_3378_clip_path)', height: '100%', width: '100%' }}></div>
                     </foreignObject>
                     <path data-figma-bg-blur-radius="37.8129" d="M134.69 155.577L268.734 77.9856L134.982 0.5625L0.938477 78.1543L134.69 155.577Z" fill="#141414" fillOpacity="0.2" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
@@ -750,12 +797,11 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-320px',
+                    top: '-303px', // Changed from '-320px' (moved down by 17px)
                     left: '25%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
-                    filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
-                    transition: 'all 0.3s ease-in-out'
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="270" height="156" viewBox="0 0 270 156" fill="none">
                     <foreignObject x="-37.3964" y="-37.5512" width="344.465" height="231.243">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
@@ -774,12 +820,11 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-320px',
+                    top: '-303px', // Changed from '-320px' (moved down by 17px)
                     left: '75%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
-                    filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
-                    transition: 'all 0.3s ease-in-out'
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="270" height="156" viewBox="0 0 270 156" fill="none">
                     <foreignObject x="-37.3964" y="-37.5512" width="344.465" height="231.243">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
@@ -799,12 +844,11 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-205px',
+                    top: '-188px', // Changed from '-205px' (moved down by 17px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
-                    filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
-                    transition: 'all 0.3s ease-in-out'
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="269" height="101" viewBox="0 0 269 101" fill="none">
                     <foreignObject x="-37.1361" y="-37.1957" width="343.944" height="175.954">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
@@ -824,12 +868,11 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-280px',
+                    top: '-263px', // Changed from '-280px' (moved down by 17px)
                     left: '75%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
-                    filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
-                    transition: 'all 0.3s ease-in-out'
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="270" height="101" viewBox="0 0 270 101" fill="none">
                     <foreignObject x="-36.869" y="-37.7191" width="343.944" height="175.954">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
@@ -852,12 +895,11 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-280px',
+                    top: '-263px', // Changed from '-280px' (moved down by 17px)
                     left: '25%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
-                    filter: hoveredBox === 'box4' ? 'brightness(0.5)' : 'none',
-                    transition: 'all 0.3s ease-in-out'
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="269" height="101" viewBox="0 0 269 101" fill="none">
                     <foreignObject x="-37.5468" y="-37.1957" width="343.944" height="175.954">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
@@ -881,11 +923,11 @@ const MiddleSection = () => {
                 {/* lines */}
                 <svg style={{
                     position: 'absolute',
-                    top: '-284px',
+                    top: '-267px', // Changed from '-284px' (moved down by 17px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "-2",
-                    opacity: hoveredBox === 'box4' ? 0.3 : 1,
+                    opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="858" height="308" viewBox="0 0 858 308" fill="none">
                     <path d="M339.354 259.076L257.237 306.487L100.849 216.196L0.948975 273.873M652.13 163.361L774.521 234.023L857.051 186.375M186.104 63.4609L78.3585 1.25391L0.948975 45.9463" stroke="url(#paint0_linear_525_1630)" strokeWidth="1.04607" />

@@ -2,6 +2,8 @@ import React, { useRef, useState, useCallback } from 'react';
 import ThreeLinePattern from '@abhijeet42cy6/vector-lines';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 // Helper: distance from point to center of box
@@ -138,10 +140,10 @@ export default function Opening() {
   React.useEffect(() => {
     const words = gsap.utils.toArray('.gsap-word');
     if (!words.length) return;
-    
+
     // Mobile detection for responsive animation
     const isMobile = window.innerWidth <= 768;
-    
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: textSectionRef.current,
@@ -152,11 +154,11 @@ export default function Opening() {
         invalidateOnRefresh: true,
       }
     });
-    
+
     // Animate words with much tighter timing
     tl.fromTo(words,
-      { 
-        opacity: 0, 
+      {
+        opacity: 0,
         y: 20, // Reduced movement
         rotation: 1, // Subtle rotation
         scale: 0.98 // Subtle scale
@@ -177,7 +179,7 @@ export default function Opening() {
         }
       }
     );
-    
+
     return () => {
       if (tl.scrollTrigger) tl.scrollTrigger.kill();
       tl.kill();

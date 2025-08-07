@@ -9,10 +9,16 @@ export default defineConfig({
     open: true
   },
   optimizeDeps: {
+    include: ['gsap', 'gsap/ScrollTrigger'],
     esbuildOptions: {
       loader: {
         '.js': 'jsx'
       }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
     }
   }
 }) 
