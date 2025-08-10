@@ -85,6 +85,8 @@ font-weight: 400;
 
 .industry-item:hover {
   border-bottom-color: #0e3ba5;
+  padding-left: 5px;
+
 }
 
 .industry-item.active {

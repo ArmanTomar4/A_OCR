@@ -18,7 +18,7 @@ const MiddleSection = () => {
         visible: {
             pathLength: 1,
             opacity: 1,
-            transition: { duration: 0.8, ease: "easeInOut" }
+            transition: { duration: 0.5, ease: "easeInOut" }
         }
     }
 
@@ -27,7 +27,7 @@ const MiddleSection = () => {
         visible: {
             scale: 1,
             opacity: 1,
-            transition: { delay: 0.8, duration: 0.3, ease: "backOut" }
+            transition: { delay: 0.5, duration: 0.3, ease: "backOut" }
         }
     }
 
@@ -37,7 +37,7 @@ const MiddleSection = () => {
             x: 0,
             opacity: 1,
             transition: {
-                delay: 1.2 + (i * 0.1),
+                delay: 0.8 + (i * 0.1),
                 duration: 0.5,
                 ease: "easeOut"
             }
@@ -150,7 +150,7 @@ const MiddleSection = () => {
                                 top: '-590px', // Changed from '-575px' (moved up by 15px)
                                 left: '134.5%',
                                 transform: 'translate(-50%, -50%)',
-                                zIndex: '12',
+                                zIndex: '-12',
                                 pointerEvents: 'none',
                             }}
                             width="500"
@@ -446,8 +446,13 @@ const MiddleSection = () => {
                         </linearGradient>
                     </defs>
                 </svg>
-                <img style={{ position: 'absolute', top: '-565px', left: '100%', transform: 'translate(-50%, -50%) scale(0.77)' }} src="./[ 01 ].svg" alt="" />
-
+                <img style={{ position: 'absolute', top: '-555px', right: '-22px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 01 ].svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-534px', left: "37%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./GMAIL.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-599px', left: "54%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./PAPER.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-536px', left: "70%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./DRIVE.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-485px', left: "56%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./sharepoint.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-418px', left: "55%", transform: 'translate(-50%, -50%) scale(1.1)' }} src="./INGEST.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-662px', left: "86%", transform: 'translate(-50%, -50%) scale(0.99)' }} src="./INGEST.svg" alt="" />
             </motion.div>
 
             {/* Box 2 - PROCESS */}
@@ -482,7 +487,7 @@ const MiddleSection = () => {
                                 top: '-460px',
                                 left: '139%',
                                 transform: 'translate(-50%, -50%)',
-                                zIndex: '12',
+                                zIndex: '-102',
                                 pointerEvents: 'none',
                             }}
                             width="500"
@@ -566,7 +571,9 @@ const MiddleSection = () => {
                     <path d="M159.969 29.9196L68.9607 82.4634L48.5622 70.6863L139.571 18.1426L159.969 29.9196Z" stroke="#FBFEFC" strokeWidth="0.567193" />
                 </svg>
 
-                <img style={{ position: 'absolute', top: '30%', left: '100%', transform: 'translate(-50%, -50%) scale(0.77)' }} src="./[ 02 ].svg" alt="" />
+                <img style={{ position: 'absolute', top: '-450px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 02 ].svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-351px', left: "56.3%", transform: 'translate(-50%, -50%) scale(0.98)' }} src="./UNDERSTAND.svg" alt="" />
+
             </motion.div>
 
             {/* Box 3 - TRANSFORM */}
@@ -694,7 +701,11 @@ const MiddleSection = () => {
                     </defs>
                 </svg>
 
-                <img style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) scale(0.77)' }} src="./[ 03 ].svg" alt="" />
+                <img style={{ zIndex: '120', position: 'absolute', top: '-382px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 03 ].svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-256px', left: "56.3%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./TAKE ACTION.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-360px', left: "90.3%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./a_OCR.svg" alt="" />
+                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-327px', left: '20.3%', transform: 'translate(-50%, -50%) scale(0.98)' }} src="./Optical Character Recognition.svg" alt="" />
+
             </motion.div>
 
             {/* Box 4 - DELIVER */}
@@ -726,7 +737,7 @@ const MiddleSection = () => {
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-358px', // Changed from '-245px' (moved down by 17px)
+                                top: '-383px', // Changed from '-358px' (moved up by 25px)
                                 left: '133%',
                                 transform: 'translate(-50%, -50%)',
                                 zIndex: '12',
@@ -781,7 +792,7 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-228px', // Changed from '-245px' (moved down by 17px)
+                    top: '-253px', // Changed from '-228px' (moved up by 25px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: 1,
@@ -797,7 +808,7 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-303px', // Changed from '-320px' (moved down by 17px)
+                    top: '-328px', // Changed from '-303px' (moved up by 25px)
                     left: '25%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: 1,
@@ -820,8 +831,31 @@ const MiddleSection = () => {
                 </svg>
                 <svg style={{
                     position: 'absolute',
-                    top: '-303px', // Changed from '-320px' (moved down by 17px)
+                    top: '-328px', // Changed from '-303px' (moved up by 25px)
                     left: '75%',
+                    transform: 'translate(-50%, -50%) scale(0.81)',
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
+                }} xmlns="http://www.w3.org/2000/svg" width="270" height="156" viewBox="0 0 270 156" fill="none">
+                    <foreignObject x="-37.3964" y="-37.5512" width="344.465" height="231.243">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
+                            backdropFilter: 'blur(18.91px)',
+                            clipPath: 'url(#bgblur_0_571_3378_clip_path)',
+                            height: '100%',
+                            width: '100%'
+                        }}></div>
+                    </foreignObject>
+                    <path data-figma-bg-blur-radius="37.8129" d="M134.69 155.577L268.734 77.9856L134.982 0.5625L0.938477 78.1543L134.69 155.577Z" fill="#141414" fillOpacity="0.2" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
+                    <defs>
+                        <clipPath id="bgblur_0_571_3378_clip_path" transform="translate(37.3964 37.5512)">
+                            <path d="M134.69 155.577L268.734 77.9856L134.982 0.5625L0.938477 78.1543L134.69 155.577Z" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <svg style={{
+                    position: 'absolute',
+                    top: '-408px', // Changed from '-303px' (moved up by 25px)
+                    left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
@@ -844,7 +878,30 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-188px', // Changed from '-205px' (moved down by 17px)
+                    top: '-213px', // Changed from '-188px' (moved up by 25px)
+                    left: '50%',
+                    transform: 'translate(-50%, -50%) scale(0.81)',
+                    opacity: 1,
+                    transition: 'opacity 0.3s ease-in-out'
+                }} xmlns="http://www.w3.org/2000/svg" width="269" height="101" viewBox="0 0 269 101" fill="none">
+                    <foreignObject x="-37.1361" y="-37.1957" width="343.944" height="175.954">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
+                            backdropFilter: 'blur(18.91px)',
+                            clipPath: 'url(#bgblur_0_571_3377_clip_path)',
+                            height: '100%',
+                            width: '100%'
+                        }}></div>
+                    </foreignObject><g data-figma-bg-blur-radius="37.8129">
+                        <path d="M268.734 23.2273L134.69 100.641L0.938477 23.3956V12.7666V1.2386L134.69 78.4844L268.734 1.07031V23.2273Z" fill="#141414" fillOpacity="0.2" />
+                        <path d="M134.69 78.4002V78.4844M134.69 100.641L268.734 23.2273V1.07031L134.69 78.4844M134.69 100.641V78.4844M134.69 100.641L0.938477 23.3956V12.7666V1.2386L134.69 78.4844" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
+                    </g>
+                    <defs>
+                        <clipPath id="bgblur_0_571_3377_clip_path" transform="translate(37.1361 37.1957)"><path d="M268.734 23.2273L134.69 100.641L0.938477 23.3956V12.7666V1.2386L134.69 78.4844L268.734 1.07031V23.2273Z" />
+                        </clipPath></defs>
+                </svg>
+                <svg style={{
+                    position: 'absolute',
+                    top: '-368px', // Changed from '-188px' (moved up by 25px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: 1,
@@ -868,7 +925,7 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-263px', // Changed from '-280px' (moved down by 17px)
+                    top: '-288px', // Changed from '-263px' (moved up by 25px)
                     left: '75%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: 1,
@@ -895,7 +952,7 @@ const MiddleSection = () => {
 
                 <svg style={{
                     position: 'absolute',
-                    top: '-263px', // Changed from '-280px' (moved down by 17px)
+                    top: '-288px', // Changed from '-263px' (moved up by 25px)
                     left: '25%',
                     transform: 'translate(-50%, -50%) scale(0.81)',
                     opacity: 1,
@@ -923,7 +980,7 @@ const MiddleSection = () => {
                 {/* lines */}
                 <svg style={{
                     position: 'absolute',
-                    top: '-267px', // Changed from '-284px' (moved down by 17px)
+                    top: '-292px', // Changed from '-267px' (moved up by 25px)
                     left: '50%',
                     transform: 'translate(-50%, -50%) scale(0.77)',
                     zIndex: "-2",
@@ -940,10 +997,14 @@ const MiddleSection = () => {
                     </defs>
                 </svg>
 
-                <img style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) scale(0.77)' }} src="./[ 04 ].svg" alt="" />
+                <img style={{ position: 'absolute', top: '-304px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 04 ].svg" alt="" />
+                <img style={{ zIndex: '120', position: 'absolute', top: '-190px', left: '53%', transform: 'translate(-50%, -50%) scale(1)' }} src="./XML.svg" alt="" />
+                <img style={{ zIndex: '120', position: 'absolute', top: '-266px', left: '78%', transform: 'translate(-50%, -50%) scale(1)' }} src="./XLS.svg" alt="" />
+                <img style={{ zIndex: '120', position: 'absolute', top: '-265px', left: '28%', transform: 'translate(-50%, -50%) scale(1)' }} src="./CSV.svg" alt="" />
+                <img style={{ zIndex: '120', position: 'absolute', top: '-180px', left: '31%', transform: 'translate(-50%, -50%) scale(1)' }} src="./EXPORT.svg" alt="" />
             </motion.div>
         </div>
     )
 }
 
-export default MiddleSection
+export default MiddleSection;   

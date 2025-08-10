@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import MiddleSection from './MiddleSection'
 
 const Pipeline = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     const styles = {
         pipelineContainer: {
             backgroundColor: '#ffffff',
@@ -38,9 +48,10 @@ const Pipeline = () => {
         },
         leftSection: {
             width: '25%',
-            height: '83%',
+            minHeight: '100%',
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'unset',
             padding: '0',
             alignItems: 'flex-start'
         },
@@ -60,13 +71,13 @@ const Pipeline = () => {
             flexDirection: 'column',
             padding: '20px',
             justifyContent: 'flex-end',
-            paddingBottom: '157px'
+            paddingBottom: '104px'
         },
         fadedTiltImage: {
             width: '25%',
-            height: '70%',
-
+            height: screenWidth >= 1366 ? '80%' : '64%',
         },
+
         descriptionText: {
             color: '#000',
             fontSize: '1.125rem',

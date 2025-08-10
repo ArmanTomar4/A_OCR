@@ -24,61 +24,38 @@ const Footer = () => {
 
         .quote-text {
           font-size: 32px;
-          font-weight: 300;
+          font-weight: 600;
           color: #e0e0e0;
           line-height: 1.4;
           margin-bottom: 20px;
           position: relative;
         }
 
-        .quote-marks {
-          font-size: 120px;
-          color: #e0e0e0;
-          font-weight: 200;
-          line-height: 0.8;
-          position: relative;
-        }
 
-        .quote-marks::before {
-          content: '"';
-          position: absolute;
-          top: -20px;
-          left: -40px;
-        }
-
-        .quote-marks::after {
-          content: '"';
-          position: absolute;
-          bottom: -20px;
-          right: -40px;
-        }
 
         .quote-attribution {
-          font-size: 14px;
+          font-size: 10px;
           color: #999;
           letter-spacing: 1px;
           text-transform: uppercase;
         }
 
         .apparatus-section {
+        position: absolute;
+        bottom: 0;
           text-align: center;
+          width: 100%;
+          height: 100px;
+          display: flex;
+          justify-content: center;
         }
 
-        .apparatus-text {
-          font-size: 120px;
-          font-weight: 700;
-          background: linear-gradient(
-            to bottom,
-            #e0e0e0 0%,
-            #666 50%,
-            #333 100%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          letter-spacing: -2px;
-          line-height: 0.9;
+        .apparatus-logo {
+          width: 100%;
+          height: auto;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+          padding-left: 20px;
+          padding-right: 20px;
         }
 
         @media (max-width: 768px) {
@@ -86,8 +63,8 @@ const Footer = () => {
             font-size: 24px;
           }
           
-          .apparatus-text {
-            font-size: 80px;
+          .apparatus-logo {
+            width: 300px;
           }
           
           .quote-marks {
@@ -100,8 +77,8 @@ const Footer = () => {
             font-size: 20px;
           }
           
-          .apparatus-text {
-            font-size: 60px;
+          .apparatus-logo {
+            width: 250px;
           }
           
           .quote-marks {
@@ -113,7 +90,6 @@ const Footer = () => {
       <div className="footer-container">
         <div className="quote-section">
           <div className="quote-text">
-            <span className="quote-marks"></span>
             The goal is to turn data into information, and information into insight
           </div>
           <div className="quote-attribution">
@@ -122,7 +98,7 @@ const Footer = () => {
         </div>
         
         <div className="apparatus-section">
-          <div className="apparatus-text">APPARATUS</div>
+          <img src="/Union.svg" alt="APPARATUS" className="apparatus-logo" />
         </div>
       </div>
     </>

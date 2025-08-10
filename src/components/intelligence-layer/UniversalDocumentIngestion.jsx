@@ -56,42 +56,33 @@ const UNIVERSAL_DOCUMENT_INGESTION_STYLES = `
   }
 
   .universal-document-ingestion-svg path {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
 
-  .universal-document-ingestion-card:hover .universal-document-ingestion-svg {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-    transform: scale(1.1);
-  }
+ 
 
   .universal-document-ingestion-card:hover .universal-document-ingestion-svg path:nth-child(1) {
-    transform: translateY(15px) scale(1.05);
+    transform: translateY(5px) ;
     stroke-width: 2.5;
     stroke: #fff;
     stroke-opacity: 1;
-    animation: pulse 2s infinite;
   }
 
   .universal-document-ingestion-card:hover .universal-document-ingestion-svg path:nth-child(2) {
-    transform: translateY(5px) scale(1.05);
+    transform: translateY(0px) ;
     stroke-width: 2.5;
     stroke: #fff;
     stroke-opacity: 1;
-    animation: pulse 2s infinite 0.3s;
   }
 
   .universal-document-ingestion-card:hover .universal-document-ingestion-svg path:nth-child(3) {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-5px) ;
     stroke-width: 2.5;
     stroke: #fff;
     stroke-opacity: 1;
-    animation: pulse 2s infinite 0.6s;
   }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-  }
+
 
   .universal-document-ingestion-title {
     font-size: 11px;
@@ -112,10 +103,10 @@ const UNIVERSAL_DOCUMENT_INGESTION_STYLES = `
   .universal-document-ingestion-description {
     font-size: 9px;
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.60);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-weight: 400;
+    font-weight: 200;
     transition: color 0.3s ease;
   }
 
@@ -132,16 +123,16 @@ export default function UniversalDocumentIngestion() {
       <div className="universal-document-ingestion-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="300" height="240" viewBox="0 0 300 240" fill="none" className="universal-document-ingestion-svg">
           {/* Bottom layer */}
-          <path d="M298 169L150 106L2 169L150 232L298 169Z" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="3"/>
+          <path d="M298 169L150 106L2 169L150 232L298 169Z" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="3" />
           {/* Middle layer */}
-          <path d="M298 118L150 55L2 118L150 181L298 118Z" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="3"/>
+          <path d="M298 118L150 55L2 118L150 181L298 118Z" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="3" />
           {/* Top layer */}
-          <path d="M298 67L150 4L2 67L150 130L298 67Z" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="3"/>
+          <path d="M298 67L150 4L2 67L150 130L298 67Z" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="3" />
         </svg>
       </div>
       <h3 className="universal-document-ingestion-title">UNIVERSAL DOCUMENT INGESTION</h3>
       <p className="universal-document-ingestion-description">
-        ACCEPTS PDFS, TRADES, WORD, EXCEL, XML, EDI AND MORE WITH AUTOMATED EMAIL & FTP CONNECTORS FOR SEAMLESS BULK PROCESSING.
+        ACCEPTS <span style={{ color: '#FFF' }}>PDFS, TRADES, WORD, EXCEL, XML, EDI</span> AND MORE WITH AUTOMATED EMAIL & FTP CONNECTORS FOR SEAMLESS BULK PROCESSING.
       </p>
     </div>
   );

@@ -9,11 +9,7 @@ const HEADER_CARD_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .intelligence-header-card:hover {
-    background-color: #0a2d7a;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(14, 59, 165, 0.3);
-  }
+
 
   .intelligence-header-label {
     font-size: 10px;
@@ -32,7 +28,7 @@ const HEADER_CARD_STYLES = `
     font-size: 32px;
     font-weight: 300;
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 194px;
     color: #fff;
     transition: all 0.3s ease;
   }
@@ -42,16 +38,14 @@ const HEADER_CARD_STYLES = `
   }
 
   .intelligence-header-description {
-    font-size: 12px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.60);
     font-weight: 400;
     transition: color 0.3s ease;
   }
 
-  .intelligence-header-card:hover .intelligence-header-description {
-    color: #fff;
-  }
+
 `;
 
 export default function HeaderCard() {
@@ -61,7 +55,7 @@ export default function HeaderCard() {
       <div className="intelligence-header-label">[WHAT WE DO]</div>
       <h1 className="intelligence-header-title">Intelligence Layer for Documents</h1>
       <p className="intelligence-header-description">
-        AI-powered OCR that doesn't just read text—it understands <strong>layouts, context, and entities</strong>. Transform any document into <strong>structured, analytics-ready data</strong> with unprecedented accuracy and intelligence.
+        AI-powered OCR that doesn't just read text—it understands <span style={{ color: '#FFF' }}>layouts, context, and entities</span>. Transform any document into <span  style={{ color: '#FFF' }}>structured, analytics-ready data</span> with unprecedented accuracy and intelligence.
       </p>
     </div>
   );

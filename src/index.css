@@ -47,6 +47,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 body {
@@ -57,6 +59,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling for all scrollable elements */
+html, body {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Smooth scrolling for all scrollable containers */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Ensure smooth scrolling works for all anchor links */
+a[href^="#"] {
+  scroll-behavior: smooth;
 }
 
 code {
@@ -68,21 +88,29 @@ code {
   min-height: 100vh;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with smooth appearance */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 } 
 
