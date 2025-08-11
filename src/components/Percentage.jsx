@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import RollingCounter from './RollingCounter';
 
 const Percentage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,7 +9,14 @@ const Percentage = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible(entry.isIntersecting);
+          // Force a re-render by toggling isVisible to false first
+          if (entry.isIntersecting) {
+            setIsVisible(false);
+            // Use setTimeout to ensure the false state is processed
+            setTimeout(() => setIsVisible(true), 50);
+          } else {
+            setIsVisible(false);
+          }
         });
       },
       { threshold: 0.3 }
@@ -346,7 +354,9 @@ padding-left: 80px;        }
               <div className="percentage-row">
                 <div className="bar-box bar-blue"></div>
                 <div className="percentage-bg-black"></div>
-                <div className="percentage-text" style={{ marginBottom: '18px' }}>99%</div>
+                <div className="percentage-text" style={{ marginBottom: '18px' }}>
+                  <RollingCounter endValue={99} isVisible={isVisible} />
+                </div>
               </div>
               <div className="percentage-row">
                 <div className="bar-box bar-gray" style={{ marginRight: '65px' }}></div>
