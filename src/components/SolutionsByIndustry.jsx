@@ -13,7 +13,7 @@ body {
 
 .solutions-container {
   min-height: 100vh;
-  background-color: #fffff;
+  background-color: #FFF;
   padding: 48px 64px;
 }
 
@@ -84,7 +84,6 @@ font-weight: 400;
 }
 
 .industry-item:hover {
-  border-bottom-color: #0e3ba5;
   padding-left: 5px;
 
 }
@@ -96,7 +95,7 @@ font-weight: 400;
 .industry-name {
   font-size: 16px;
   font-weight: 300;
-  color: #333;
+  color: rgba(0, 0, 0, 0.4);
 }
   .industry-item.active .industry-name {
     color: #000;

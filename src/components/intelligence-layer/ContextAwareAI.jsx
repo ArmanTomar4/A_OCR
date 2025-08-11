@@ -103,10 +103,7 @@ const CONTEXT_AWARE_AI_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .context-aware-ai-card:hover .context-aware-ai-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
+
 
   .context-aware-ai-description {
     font-size: 9px;

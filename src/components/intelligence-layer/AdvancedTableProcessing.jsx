@@ -87,10 +87,7 @@ const ADVANCED_TABLE_PROCESSING_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .advanced-table-processing-card:hover .advanced-table-processing-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
+
 
   .advanced-table-processing-description {
     font-size: 9px;

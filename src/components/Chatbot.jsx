@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const Chatbot = () => {
     const [inputValue, setInputValue] = useState('');
+    const [isVisible, setIsVisible] = useState(false);
     const [messages, setMessages] = useState([
         {
             id: 1,
@@ -22,6 +23,43 @@ const Chatbot = () => {
         scrollToBottom();
     }, [messages]);
 
+    // Listen for questions from FAQ component
+    useEffect(() => {
+        const handleQuestionClicked = (event) => {
+            console.log('Chatbot: Event received!', event.detail);
+            const question = event.detail;
+            setIsVisible(true);
+            console.log('Chatbot: Setting visible to true');
+            
+            // Add the question as a user message
+            const newMessage = {
+                id: messages.length + 1,
+                text: question,
+                type: 'user'
+            };
+            setMessages(prev => [...prev, newMessage]);
+            
+            // Scroll to chatbot after a short delay to ensure it's rendered
+            setTimeout(() => {
+                const chatbotElement = document.querySelector('.chatbot-container');
+                if (chatbotElement) {
+                    chatbotElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'center'
+                    });
+                }
+            }, 300);
+        };
+
+        console.log('Chatbot: Adding event listener');
+        window.addEventListener('questionClicked', handleQuestionClicked);
+        
+        return () => {
+            window.removeEventListener('questionClicked', handleQuestionClicked);
+        };
+    }, [messages.length]);
+
     const suggestedQuestions = [
         "WHAT FILE TYPES DOES AOCR SUPPORT?"
     ];
@@ -32,16 +70,17 @@ const Chatbot = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '100vh',
+            minHeight: '70vh',
             backgroundColor: '#000',
+            zIndex: 1000,
+            padding: '55px'
         },
         box: {
-            backgroundColor: '#f5f5dc',
+            backgroundColor: '#FFF',
             border: '1px solid #000',
             borderRadius: '0',
             width: '100%',
-            maxWidth: '61.8125rem',
-            height: '23.25rem',
+            height: '22.25rem',
             display: 'flex',
             flexDirection: 'column',
             padding: '24px',
@@ -162,7 +201,8 @@ const Chatbot = () => {
 
     return (
         <>
-            <div style={styles.container}>
+            {isVisible && (
+                <div className="chatbot-container" style={styles.container}>
                 <div style={styles.box}>
                     {/* Suggested Questions Section */}
                     <div style={styles.suggestedQuestions}>
@@ -230,7 +270,8 @@ const Chatbot = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+                </div>
+            )}
 
             <style jsx>{`
                 .chatbot-messages::-webkit-scrollbar {

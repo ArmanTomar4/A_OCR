@@ -101,10 +101,6 @@ const AI_POWERED_AUTOMATION_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .ai-powered-automation-card:hover .ai-powered-automation-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
 
   .ai-powered-automation-description {
     font-size: 9px;

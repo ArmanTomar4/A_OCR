@@ -87,10 +87,6 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .smart-document-classification-card:hover .smart-document-classification-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
 
   .smart-document-classification-description {
     font-size: 9px;

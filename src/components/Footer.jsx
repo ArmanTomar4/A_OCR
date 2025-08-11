@@ -90,8 +90,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="quote-section">
           <div className="quote-text">
-            The goal is to turn data into information, and information into insight
-          </div>
+            " The goal is to turn data into information, and information into insight "</div>
           <div className="quote-attribution">
             CARLY FIORINA, FORMER CEO OF HP
           </div>

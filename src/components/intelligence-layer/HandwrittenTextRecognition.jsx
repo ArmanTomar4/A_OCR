@@ -62,9 +62,7 @@ const SMART_DOC_CLASSIFICATION_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .smart-doc-classification-card:hover .smart-doc-classification-title {
-    transform: translateX(5px);
-  }
+
 
   .smart-doc-classification-description {
     font-size: 9px;

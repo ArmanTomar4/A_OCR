@@ -94,10 +94,7 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .natural-language-queries-card:hover .natural-language-queries-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
+
 
   .natural-language-queries-description {
     font-size: 9px;

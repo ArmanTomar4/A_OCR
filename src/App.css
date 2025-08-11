@@ -70,7 +70,7 @@ body {
 }
 
 .nav-over-opening {
-  background: rgba(245, 235, 224, 0.9);;
+  background: rgba(255, 255, 255, 0.9);;
   border: 1px solid rgba(0, 0, 0, 0.345);
 
 }
@@ -421,16 +421,13 @@ body {
 }
 
 .hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
+ position: fixed;
   width: 100%;
   height: 100%;
   background-image: url('/hero.png');
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: -1;
 }
 
 .hero-content {
@@ -670,7 +667,7 @@ body {
 .opening-container {
   width: 100%;
   min-height: 100vh;
-  background-color: #f5ebe0;
+  background-color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -736,16 +733,16 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;           /* Stack text and arrow vertically */
   align-items: center;
   gap: 8px;                        /* Smaller gap to match Figma */
-  font-size: 14px;                 /* Figma spec: 14px */
+  font-size: 10px;                 /* Figma spec: 14px */
   font-family: "Alliance No.2";  /* Updated to use Alliance No.2 */
-  font-weight: 600;                /* Figma spec: 600 (semi-bold) */
+  font-weight: 200;                /* Figma spec: 600 (semi-bold) */
   letter-spacing: -0.044px;        /* Figma spec: -0.044px */
   text-transform: uppercase;
   color: #000000;                  /* Figma spec: #000000 */

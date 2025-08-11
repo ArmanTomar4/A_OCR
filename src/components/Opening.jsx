@@ -329,7 +329,6 @@ export default function Opening() {
 
       <div className="scroll-indicator">
         <span>SCROLL DOWN</span>
-        <img src="/scroll_down_arrow.svg" alt="Scroll down arrow" className="scroll-arrow" />
       </div>
     </div>
   );

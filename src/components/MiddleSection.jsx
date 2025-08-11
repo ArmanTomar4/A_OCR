@@ -141,31 +141,47 @@ const MiddleSection = () => {
                 {/* Animation for Box 1 */}
                 <AnimatePresence>
                     {hoveredBox === 'box1' && (
-                        <motion.svg
-                            initial="hidden"
-                            animate="visible"
-                            exit="hidden"
-                            style={{
-                                position: 'absolute',
-                                top: '-590px', // Changed from '-575px' (moved up by 15px)
-                                left: '134.5%',
-                                transform: 'translate(-50%, -50%)',
-                                zIndex: '-12',
-                                pointerEvents: 'none',
-                            }}
-                            width="500"
-                            height="200"
-                            viewBox="0 0 500 200"
-                        >
-                            <g style={{ transform: 'rotate(-30deg)', transformOrigin: '150px 75px' }}>
-                                <motion.path
-                                    d="M30 75 H110 L141 15"
-                                    fill="none"
-                                    stroke="#000000"
-                                    strokeWidth="1.5"
-                                    variants={lineVariants}
-                                />
-                            </g>
+                  <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  style={{
+                      position: 'absolute',
+                      top: '-590px', // Changed from '-575px' (moved up by 15px)
+                      left: '134.5%',
+                      transform: 'translate(-50%, -50%)',
+                      zIndex: '-12',
+                      pointerEvents: 'none',
+                  }}
+                  width="500"
+                  height="200"
+                  viewBox="0 0 500 200"
+              >
+                  <defs>
+                      <linearGradient
+                          id="lineGradient"
+                          x1="500"
+                          y1="0"
+                          x2="0"
+                          y2="200"
+                          gradientUnits="userSpaceOnUse"
+                      >
+                          <stop stopColor="#000000" />
+                          <stop offset="1" stopColor="#666666" stopOpacity="0" />
+                      </linearGradient>
+                  </defs>
+              
+                  <g style={{ transform: 'rotate(-30deg)', transformOrigin: '150px 75px' }}>
+                      <motion.path
+                          d="M30 75 H110 L141 15"
+                          fill="none"
+                          stroke="url(#lineGradient)"
+                          strokeWidth="1.5"
+                          strokeOpacity="0.5"
+                          variants={lineVariants}
+                      />
+                  </g>
 
                             <motion.circle
                                 cx="112"

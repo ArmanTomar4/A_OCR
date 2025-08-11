@@ -89,11 +89,6 @@ const MULTI_LANGUAGE_OCR_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .multi-language-ocr-card:hover .multi-language-ocr-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
-
   .multi-language-ocr-description {
     font-size: 9px;
     line-height: 1.4;

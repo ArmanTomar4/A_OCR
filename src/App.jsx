@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
@@ -9,13 +9,17 @@ import WhyChooseAOCR from './components/WhyChooseAOCR.jsx'
 import RequestAccess from './components/RequestAccess.jsx'
 import Footer from './components/Footer.jsx'
 import Pipeline from './components/Pipeline.jsx'
-import AnimatedFAQDiagram from './components/FAQ.jsx'
+import AnimatedFAQDiagram from './components/FAQ_backup.jsx'
+import Chatbot from './components/Chatbot.jsx'
 
 /**
  * Main App Component
  * Clean blank screen ready for development
  */
 function App() {
+  const [hasError, setHasError] = useState(false);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     // Ensure smooth scrolling works across all browsers
     if ('scrollBehavior' in document.documentElement.style) {
@@ -58,20 +62,69 @@ function App() {
     }
   }, []);
 
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <Opening />
-      <IntelligenceLayer />
-      <SolutionsByIndustry />
-      <Pipeline />
-      <WhyChooseAOCR />
-      <AnimatedFAQDiagram />
-      <RequestAccess />
-      <Footer />
-    </>
-  )
+  // Error boundary for the entire app
+  if (hasError) {
+    return (
+      <div style={{
+        padding: '40px',
+        textAlign: 'center',
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        <h1>Something went wrong</h1>
+        <p>We're sorry, but there was an error loading the application.</p>
+        <button
+          onClick={() => window.location.reload()}
+          style={{
+            padding: '10px 20px',
+            fontSize: '16px',
+            cursor: 'pointer',
+            background: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px'
+          }}
+        >
+          Reload Page
+        </button>
+        {error && (
+          <details style={{ marginTop: '20px', textAlign: 'left' }}>
+            <summary>Error Details</summary>
+            <pre style={{
+              background: '#f8f9fa',
+              padding: '10px',
+              borderRadius: '4px',
+              overflow: 'auto'
+            }}>
+              {error.toString()}
+            </pre>
+          </details>
+        )}
+      </div>
+    );
+  }
+
+  try {
+    return (
+      <>
+        <Navbar />
+        <Hero />
+        <Opening />
+        <IntelligenceLayer />
+        <SolutionsByIndustry />
+        <Pipeline />
+        <WhyChooseAOCR />
+        <AnimatedFAQDiagram />
+        <Chatbot />
+        <RequestAccess />
+        <Footer />
+      </>
+    )
+  } catch (error) {
+    console.error('App error:', error);
+    setError(error);
+    setHasError(true);
+    return null;
+  }
 }
 
 export default App 

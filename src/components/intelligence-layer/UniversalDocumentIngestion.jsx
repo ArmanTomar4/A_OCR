@@ -95,11 +95,6 @@ const UNIVERSAL_DOCUMENT_INGESTION_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .universal-document-ingestion-card:hover .universal-document-ingestion-title {
-    transform: translateX(5px);
-    color: #fff;
-  }
-
   .universal-document-ingestion-description {
     font-size: 9px;
     line-height: 1.4;
