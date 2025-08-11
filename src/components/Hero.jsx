@@ -1,6 +1,71 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 function Hero() {
+  const prefixRef = useRef(null)  // a_ as one unit
+  const letterRefs = {
+    O: useRef(null),
+    C: useRef(null),
+    R: useRef(null)
+  }
+
+  useEffect(() => {
+    const allElements = [prefixRef.current, ...Object.values(letterRefs).map(ref => ref.current)]
+    
+    // Initial setup - all invisible
+    gsap.set(allElements, { 
+      opacity: 0,
+      filter: "brightness(1)",
+      textShadow: "0 0 0 rgba(255,255,255,0)"
+    })
+
+    // Main timeline
+    const mainTimeline = gsap.timeline()
+
+    // Quick initial blinks for each element
+    const blinkElement = (target, intensity, numBlinks) => {
+      const sequence = gsap.timeline()
+      for (let i = 0; i < numBlinks; i++) {
+        sequence
+          .to(target, {
+            opacity: 0,
+            duration: 0.03,
+            ease: "steps(1)"
+          })
+          .to(target, {
+            opacity: 1,
+            filter: `brightness(${intensity})`,
+            duration: 0.03,
+            ease: "steps(1)"
+          })
+      }
+      return sequence
+    }
+
+    // All elements start hidden
+    gsap.set(allElements, { opacity: 0 })
+
+    // Create parallel animations for OCR
+    mainTimeline.add(() => {
+      // O, C, R blink first
+      blinkElement(letterRefs.O.current, 1.7, 4)
+      blinkElement(letterRefs.C.current, 1.5, 5)
+      blinkElement(letterRefs.R.current, 1.3, 4)
+    })
+
+    // Add a_ with delay and more blinks
+    mainTimeline.add(() => {
+      blinkElement(prefixRef.current, 2, 7) // More blinks for a_
+    }, "+=0.12") // 0.2s delay
+
+    // Set final state
+    mainTimeline.to(allElements, {
+      opacity: 1,
+      filter: "brightness(1)",
+      duration: 0.1
+    }, "+=0.1")
+  }, [])
+
   return (
     <div className="landing-container">
       {/* Background layers */}
@@ -12,7 +77,12 @@ function Hero() {
       <div className="hero-section">
         <div className="hero-background"></div>
         <div className="hero-content">
-          <h1 className="hero-logo">a_OCR</h1>
+          <h1 className="hero-logo">
+            <span ref={prefixRef} className="prefix">a_</span>
+            <span ref={letterRefs.C}>O</span>
+            <span ref={letterRefs.O}>C</span>
+            <span ref={letterRefs.R}>R</span>
+          </h1>
           <p className="hero-tagline">Any Data to Intelligence</p>
           <div className="hero-button-wrapper">
             <button className="hero-button">

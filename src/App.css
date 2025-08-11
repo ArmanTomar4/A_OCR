@@ -444,6 +444,19 @@ body {
   font-weight: 300;
   line-height: normal;
   letter-spacing: -0.00275rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 0.1em;
+}
+
+.hero-logo span {
+  display: inline-block;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+  transform-origin: center;
+  will-change: opacity, transform, filter;
 }
 
 .hero-tagline {
