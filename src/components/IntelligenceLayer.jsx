@@ -16,7 +16,7 @@ const INTELLIGENCE_LAYER_STYLES = `
     min-height: 100vh;
     background-color: #000;
     color: #fff;
-    padding: 48px 64px;
+    padding:100px 95px 48px 95px;
   }
 
   .intelligence-features-grid {

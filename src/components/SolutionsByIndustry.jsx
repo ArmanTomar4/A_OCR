@@ -14,15 +14,13 @@ body {
 .solutions-container {
   min-height: 100vh;
   background-color: #FFF;
-  padding: 48px 64px;
+  padding: 90px 95px 48px 95px;
 }
 
 .solutions-header {
-margin-top: 100px;
-
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   display: flex;
-  gap: 64px;
+  gap: 90px;
   align-items: flex-start;
 }
 
@@ -31,10 +29,10 @@ margin-top: 100px;
 }
 
 .solutions-label {
-  font-size: 9px;
-  letter-spacing: 2px;
+  font-size: 12px;
   color: #666;
-  margin-bottom: 16px;
+  font-family: "Source Code Pro";
+  margin-bottom: 10px;
 }
 
 .solutions-title {
@@ -48,8 +46,8 @@ letter-spacing: var(--Typography-Letter-spacing-8, -0.01rem);
 
 .solutions-description {
   margin: 50px 0 0 25px;
-  font-size: 1rem;
-  line-height: 1.625rem;
+  font-size: 15.5px;
+  line-height: 1.4;
   color: #444;
   max-width: 100&;
   flex: 1;
@@ -64,7 +62,7 @@ font-weight: 400;
 
 .solutions-content {
   display: flex;
-  gap: 48px;
+  gap: 90px;
   margin-top: 48px;
 }
 
@@ -121,6 +119,7 @@ color: #000;
   display: flex;
   flex-direction: column;
   max-width: 100%;
+  margin-left: 18px;
 }
 
 .panel-header {
@@ -133,14 +132,13 @@ color: #000;
 .document-types-grid {
   display: grid;
 gap: 5px;
-    margin-bottom: 20px;
 }
 
 .document-type-item {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 32px;
-  padding-bottom: 24px;
+  padding-bottom: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -151,7 +149,7 @@ gap: 5px;
 .document-type-name {
   font-size: 13px;
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 1px;
   text-decoration-thickness: 1px;
   opacity: 0.9;
 }
@@ -385,7 +383,7 @@ export default function SolutionsByIndustry() {
     <div className="solutions-container">
       <div className="solutions-header">
         <div className="solutions-left">
-          <div className="solutions-label">[ APPLICATIONS ]</div>
+          <div className="solutions-label">[APPLICATIONS]</div>
           <h1 className="solutions-title">
             Solutions by<br />Industry
           </h1>

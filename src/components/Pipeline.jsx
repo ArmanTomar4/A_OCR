@@ -15,26 +15,26 @@ const Pipeline = () => {
     const styles = {
         pipelineContainer: {
             backgroundColor: '#ffffff',
-            height: '926px',
+            height: '120vh',
             width: '100vw',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            
         },
         heading: {
             margin: '50px 0 0 0',
             position: 'absolute',
             top: '0',
-            left: '70px',
+            left: '97px',
             color: '#000',
             /* font-family: "Alliance No.2"; */
-            fontSize: '1.5rem',
+            fontSize: '2.2rem',
             fontStyle: 'normal',
             fontWeight: '400',
             lineHeight: 'normal',
-            letterSpacing: '-0.00275rem',
             borderBottom: '1px solid #000',
             paddingBottom: '10px',
             width: '90%',
@@ -43,8 +43,7 @@ const Pipeline = () => {
             display: 'flex',
             width: '100%',
             height: '100%',
-            padding: '70px'
-
+            padding: '90px 85px 48px 85px'
         },
         leftSection: {
             width: '25%',
@@ -76,6 +75,9 @@ const Pipeline = () => {
         fadedTiltImage: {
             width: '25%',
             height: screenWidth >= 1366 ? '80%' : '64%',
+            position: 'absolute',
+            left: '8px',
+            top: '25px',
         },
 
         descriptionText: {
@@ -109,15 +111,11 @@ const Pipeline = () => {
                         alt="Faded tilted lines background"
                         style={styles.fadedTiltImage}
                     />
-                    <div>
-                        <p style={styles.descriptionText}>Multi-stage processing combines computer vision, contextual AI, and validation workflows to deliver production-ready structured data from any document source.</p>
-                    </div>
+                   
                 </div>
                 <MiddleSection />
                 <div className='right-section' style={styles.rightSection}>
-                    <p style={styles.copyrightText}>COPYRIGHT 2021</p>
-                    <p style={styles.copyrightText}>A_PARATUS</p>
-                    <p style={styles.copyrightText}>/ALL RIGHTS RESERVED</p>
+                    
 
                 </div>
             </div>

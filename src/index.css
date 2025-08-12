@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 @font-face {
   font-family: 'Alliance No.2';
   src: url('/Alliance No.2 Regular.otf') format('opentype');
-  font-weight: 400;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Degarism Studio';
+  src: url('/Degarism Studio - Alliance No.2 Light.otf') format('opentype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -10,6 +20,22 @@
   font-family: 'Alliance No.2';
   src: url('/Alliance No.2 Regular.otf') format('opentype');
   font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('/Alliance No.2 Regular.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('/Alliance No.2 Regular.otf') format('opentype');
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -112,5 +138,56 @@ code {
 * {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
+} 
+
+/* Source Code Pro font utility class */
+.source-code-pro {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Source Code Pro font utility classes for different weights */
+.source-code-pro-light {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.source-code-pro-regular {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.source-code-pro-medium {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.source-code-pro-semibold {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.source-code-pro-bold {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.source-code-pro-black {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
 } 
 

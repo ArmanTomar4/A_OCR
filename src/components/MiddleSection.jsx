@@ -44,26 +44,22 @@ const MiddleSection = () => {
         })
     }
 
-    // Enhanced box animation variants with movement
+    // Box animation variants with movement only (no scaling)
     const getBoxVariants = (boxId) => ({
         initial: {
-            scale: 0.95,
             y: 0,
             transition: { duration: 0.3, ease: "easeInOut" }
         },
         hover: {
-            scale: 1.05,
             y: 0,
             transition: { duration: 0.3, ease: "easeInOut" }
         },
         moveUp: {
-            scale: 0.95,
-            y: -20,
+            y: -60,
             transition: { duration: 0.3, ease: "easeInOut" }
         },
         moveDown: {
-            scale: 0.95,
-            y: 20,
+            y: 60,
             transition: { duration: 0.3, ease: "easeInOut" }
         }
     })
@@ -94,7 +90,7 @@ const MiddleSection = () => {
         }
     }
 
-    // Z-index management based on hover state
+    // Z-index management - keep constant, no changes on hover
     const getZIndex = (boxId, hoveredBox) => {
         const baseZIndex = {
             'box1': 10,
@@ -103,8 +99,7 @@ const MiddleSection = () => {
             'box4': 7
         }
 
-        // Give hovered box highest z-index
-        if (hoveredBox === boxId) return 15
+        // Return base z-index without changes on hover
         return baseZIndex[boxId]
     }
 
@@ -117,6 +112,7 @@ const MiddleSection = () => {
             justifyContent: 'flex-end',
             alignItems: 'center',
             padding: '20px',
+            marginTop: '165px',
         }}>
             {/* Box 1 - INGEST */}
             <motion.div
@@ -194,7 +190,7 @@ const MiddleSection = () => {
                             <motion.circle
                                 cx="112"
                                 cy="23"
-                                r="15"
+                                r="20"
                                 fill="none"
                                 stroke="#000000"
                                 strokeWidth="1"
@@ -210,7 +206,7 @@ const MiddleSection = () => {
                             />
 
                             <motion.g>
-                                <motion.text x="135" y="20" fill="#000000" fontSize="14" fontWeight="500" custom={0} variants={textVariants}>
+                                <motion.text x="135" y="20" fill="#000000" fontSize="8" fontWeight="200" custom={0} variants={textVariants}>
                                     01 - INGEST
                                 </motion.text>
                                 <motion.text x="135" y="45" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>

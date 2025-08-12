@@ -184,7 +184,7 @@ const AnimatedFAQDiagram = () => {
         setNavigationHistory(prev => {
             // Remove any items after current index (for proper forward navigation)
             const newHistory = prev.slice(0, currentNavIndex + 1);
-            
+
             // Check if the last item is the same type and content to avoid duplicates
             const lastItem = newHistory[newHistory.length - 1];
             if (lastItem && lastItem.type === item.type && lastItem.label === item.label) {
@@ -192,12 +192,12 @@ const AnimatedFAQDiagram = () => {
                 newHistory[newHistory.length - 1] = item;
                 return newHistory;
             }
-            
+
             // Add new item if it's different
             newHistory.push(item);
             return newHistory;
         });
-        
+
         // Only increment index if we're actually adding a new item
         setCurrentNavIndex(prev => {
             const currentItem = navigationHistory[prev];
@@ -309,12 +309,12 @@ const AnimatedFAQDiagram = () => {
     // Handle question clicks - send to your external Chatbot.jsx
     const handleQuestionClick = useCallback((question) => {
         console.log('FAQ: Question clicked:', question);
-        
+
         // Dispatch custom event to trigger chatbot
         console.log('FAQ: Dispatching questionClicked event');
         window.dispatchEvent(new CustomEvent('questionClicked', { detail: question }));
         console.log('FAQ: Event dispatched');
-        
+
         // Only add to navigation history if we're not already in an answer state
         const currentState = navigationHistory[currentNavIndex];
         if (currentState.type !== 'answer') {
@@ -338,12 +338,12 @@ const AnimatedFAQDiagram = () => {
     }, [addToNavigationHistory, navigationHistory, currentNavIndex]);
 
     const boxes = [
-        { id: 'data-structuring-left', label: 'DATA STRUCTURING', position: { x: 178, y: 180 } },
-        { id: 'security-compliance-left', label: 'SECURITY & COMPLIANCE', position: { x: 148, y: 240 } },
-        { id: 'llm-integration-left', label: 'LLM INTEGRATION', position: { x: 188, y: 300 } },
-        { id: 'data-structuring-right', label: 'DATA STRUCTURING', position: { x: 584, y: 180 } },
-        { id: 'security-compliance-right', label: 'SECURITY & COMPLIANCE', position: { x: 584, y: 240 } },
-        { id: 'llm-integration-right', label: 'LLM INTEGRATION', position: { x: 584, y: 300 } }
+        { id: 'data-structuring-left', label: 'DATA STRUCTURING', position: { x: 198, y: 140 } },
+        { id: 'security-compliance-left', label: 'SECURITY & COMPLIANCE', position: { x: 168, y: 185 } },
+        { id: 'llm-integration-left', label: 'LLM INTEGRATION', position: { x: 208, y: 230 } },
+        { id: 'data-structuring-right', label: 'DATA STRUCTURING', position: { x: 564, y: 140 } },
+        { id: 'security-compliance-right', label: 'SECURITY & COMPLIANCE', position: { x: 564, y: 185 } },
+        { id: 'llm-integration-right', label: 'LLM INTEGRATION', position: { x: 564, y: 230 } }
     ];
 
 
@@ -351,25 +351,25 @@ const AnimatedFAQDiagram = () => {
     const connections = [
         {
             svg: `<path d="M0.146446 4.35355C-0.0488129 4.15829 -0.0488129 3.84171 0.146446 3.64645L3.32843 0.464466C3.52369 0.269204 3.84027 0.269204 4.03554 0.464466C4.2308 0.659728 4.2308 0.976311 4.03554 1.17157L1.20711 4L4.03554 6.82843C4.2308 7.02369 4.2308 7.34027 4.03554 7.53553C3.84027 7.7308 3.52369 7.7308 3.32843 7.53553L0.146446 4.35355ZM110.5 75V75.5C85.7324 75.5 70.4615 57.5358 55.3076 39.8251C40.0889 22.0386 24.9837 4.5 0.5 4.5V4V3.5C25.5163 3.5 40.9111 21.4614 56.0674 39.1749C71.2885 56.9642 86.2676 74.5 110.5 74.5V75Z" fill="white"/>`,
-            position: { x: 235, y: 202 },
+            position: { x: 200, y: 202 },
             viewBox: "0 0 111 76",
             id: 'line-1'
         },
         {
             svg: `<path d="M0.646446 4.35355C0.451187 4.15829 0.451187 3.84171 0.646446 3.64645L3.82843 0.464466C4.02369 0.269204 4.34027 0.269204 4.53554 0.464466C4.7308 0.659728 4.7308 0.976311 4.53554 1.17157L1.70711 4L4.53554 6.82843C4.7308 7.02369 4.7308 7.34027 4.53554 7.53553C4.34027 7.7308 4.02369 7.7308 3.82843 7.53553L0.646446 4.35355ZM111 4V4.5H1V4V3.5H111V4Z" fill="white"/>`,
-            position: { x: 235, y: 240 },
+            position: { x: 200, y: 240 },
             viewBox: "0 0 111 8",
             id: 'line-2'
         },
         {
             svg: `<path d="M0.146446 71.6464C-0.0488129 71.8417 -0.0488129 72.1583 0.146446 72.3536L3.32843 75.5355C3.52369 75.7308 3.84027 75.7308 4.03554 75.5355C4.2308 75.3403 4.2308 75.0237 4.03554 74.8284L1.20711 72L4.03554 69.1716C4.2308 68.9763 4.2308 68.6597 4.03554 68.4645C3.84027 68.2692 3.52369 68.2692 3.32843 68.4645L0.146446 71.6464ZM110.5 1V0.5C85.7324 0.5 70.4615 18.4642 55.3076 36.1749C40.0889 53.9614 24.9837 71.5 0.5 71.5V72V72.5C25.5163 72.5 40.9111 54.5386 56.0674 36.8251C71.2885 19.0358 86.2676 1.5 110.5 1.5V1Z" fill="white"/>`,
-            position: { x: 235, y: 278 },
+            position: { x: 200, y: 278 },
             viewBox: "0 0 111 76",
             id: 'line-3'
         },
         {
             svg: `<path d="M110.854 4.35355C111.049 4.15829 111.049 3.84171 110.854 3.64645L107.672 0.464466C107.476 0.269204 107.16 0.269204 106.964 0.464466C106.769 0.659728 106.769 0.976311 106.964 1.17157L109.793 4L106.964 6.82843C106.769 7.02369 106.769 7.34027 106.964 7.53553C107.16 7.7308 107.476 7.7308 107.672 7.53553L110.854 4.35355ZM0.5 75V75.5C25.2676 75.5 40.5385 57.5358 55.6924 39.8251C70.9111 22.0386 86.0163 4.5 110.5 4.5V4V3.5C85.4837 3.5 70.0889 21.4614 54.9326 39.1749C39.7115 56.9642 24.7324 74.5 0.5 74.5V75Z" fill="white"/>`,
-            position: { x: 459, y: 202 },
+            position: { x: 460, y: 202 },
             viewBox: "0 0 111 76",
             id: 'line-4'
         },
@@ -566,7 +566,7 @@ const AnimatedFAQDiagram = () => {
                 leftConnectors: [],
                 rightConnectors: []
             });
-            
+
             // Navigate back in history only if we're not at the beginning
             if (currentNavIndex > 0) {
                 navigateBack();
@@ -876,16 +876,16 @@ const AnimatedFAQDiagram = () => {
                                                     <motion.div
                                                         style={{
                                                             position: 'absolute',
-                                                            left: index === 0 ? '238px' :
-                                                                index === 1 ? '238px' :
-                                                                    index === 2 ? '238px' :
-                                                                        index === 3 ? '238px' :
-                                                                            index === 4 ? '238px' : '250px',
-                                                            top: index === 0 ? '147px' :
-                                                                index === 1 ? '207px' :
-                                                                    index === 2 ? '267px' :
-                                                                        index === 3 ? '270px' :
-                                                                            index === 4 ? '270px' : '124px',
+                                                            left: index === 0 ? '237px' :
+                                                                index === 1 ? '237px' :
+                                                                    index === 2 ? '237px' :
+                                                                        index === 3 ? '237px' :
+                                                                            index === 4 ? '237px' : '250px',
+                                                            top: index === 0 ? '77px' :
+                                                                index === 1 ? '137px' :
+                                                                    index === 2 ? '197px' :
+                                                                        index === 3 ? '199px' :
+                                                                            index === 4 ? '200px' : '377px',
                                                             zIndex: 5
                                                         }}
                                                         initial={{ scale: 0, opacity: 0 }}
@@ -918,9 +918,9 @@ const AnimatedFAQDiagram = () => {
                                                         className="question-box left-question"
                                                         style={{
                                                             position: 'absolute',
-                                                            left: `${16}px`,
-                                                            top: `${120 + (index * 60)}px`,
-                                                            width: '250px',
+                                                            left: `${-85.5}px`,
+                                                            top: `${50 + (index * 60)}px`,
+                                                            width: '350px',
                                                             padding: '12px 16px',
                                                             borderRadius: '0',
                                                             backgroundColor: '#000',
@@ -974,11 +974,11 @@ const AnimatedFAQDiagram = () => {
                                                                     index === 2 ? '238px' :
                                                                         index === 3 ? '239px' :
                                                                             index === 4 ? '238px' : '238px',
-                                                            top: index === 0 ? '144px' :
-                                                                index === 1 ? '204px' :
-                                                                    index === 2 ? '265px' :
-                                                                        index === 3 ? '268px' :
-                                                                            index === 4 ? '268px' : '124px',
+                                                            top: index === 0 ? '74px' :
+                                                                index === 1 ? '134px' :
+                                                                    index === 2 ? '195px' :
+                                                                        index === 3 ? '197px' :
+                                                                            index === 4 ? '198px' : '124px',
                                                             zIndex: 5
                                                         }}
                                                         initial={{ scale: 0, opacity: 0 }}
@@ -1011,9 +1011,9 @@ const AnimatedFAQDiagram = () => {
                                                         className="question-box right-question"
                                                         style={{
                                                             position: 'absolute',
-                                                            right: `${15.5}px`,
-                                                            top: `${120 + (index * 60)}px`,
-                                                            width: '250px',
+                                                            right: `${-85.5}px`,
+                                                            top: `${50 + (index * 60)}px`,
+                                                            width: '350px',
                                                             padding: '12px 16px',
                                                             borderRadius: '0',
                                                             backgroundColor: '#000',
@@ -1058,24 +1058,14 @@ const AnimatedFAQDiagram = () => {
                 </div>
 
                 <style>{`
-                    .faq-navigation {
-                        position: absolute;
-                        top: 50px;
-                        left: 50px;
-                        z-index: 1000;
-                    }
 
                     .nav-breadcrumb {
                         display: flex;
                         align-items: center;
-                        gap: 12px;
-                        background: rgba(0, 0, 0, 0.8);
-                        padding: 8px 16px;
-                        backdrop-filter: blur(10px);
                     }
 
                     .nav-back-btn, .nav-forward-btn {
-                        background: rgba(255, 255, 255, 0.1);
+                        background: transparent;
                         border: 1px solid rgba(255, 255, 255, 0.2);
                         border-radius: 4px;
                         padding: 6px;
@@ -1085,22 +1075,21 @@ const AnimatedFAQDiagram = () => {
                         justify-content: center;
                         transition: all 0.2s ease;
                     }
-
+.nav-forward-btn {
+    margin-right: 16px;
+}
                     .nav-back-btn:hover, .nav-forward-btn:hover {
-                        background: rgba(255, 255, 255, 0.2);
                         border-color: rgba(255, 255, 255, 0.4);
                     }
 
                     .nav-back-btn:disabled, .nav-forward-btn:disabled {
                         opacity: 0.3;
                         cursor: not-allowed;
-                        background: rgba(255, 255, 255, 0.05);
-                        border-color: rgba(255, 255, 255, 0.1);
+                        border-color: rgba(255, 255, 255, 0.6);
                     }
 
                     .nav-back-btn:disabled:hover, .nav-forward-btn:disabled:hover {
-                        background: rgba(255, 255, 255, 0.05);
-                        border-color: rgba(255, 255, 255, 0.1);
+                        border-color: rgba(255, 255, 255, 0.6);
                     }
 
                     .breadcrumb-path {
@@ -1160,15 +1149,13 @@ const AnimatedFAQDiagram = () => {
                     }
 
                     .animated-faq-container {
-                        min-height: 80vh;
+                        min-height: 67vh;
                         background: #000000;
                         color: white;
                         font-family: "Alliance No.2", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         overflow: hidden;
                         position: relative;
+                          padding: 45px 95px 48px 95px;
                     }
 
                     .content-wrapper {
@@ -1181,7 +1168,7 @@ const AnimatedFAQDiagram = () => {
                     .diagram-container {
                         position: relative;
                         width: 100%;
-                        height: 400px;
+                        height: 300px;
                         display: flex;
                         align-items: center;
                         justify-content: center;

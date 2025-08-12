@@ -3,13 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 const Chatbot = () => {
     const [inputValue, setInputValue] = useState('');
     const [isVisible, setIsVisible] = useState(false);
-    const [messages, setMessages] = useState([
-        {
-            id: 1,
-            text: "LOREM IPSUM DOLOR SIT AMET CONSECTETUR. AC QUIS PELLENTESQUE NISI CONVALLIS NUNC. SIT CONSECTETUR VESTIBULUM EU SEM AMET ET. LACINIA ID AMET CRAS ARCU MI LECTUS TELLUS NEQUE. NISI EGET EGET EU AT TRISTIQUE ARCU URNA LACUS. SCELERISQUE ORNARE IN ELEMENTUM ID. VIVERRA ID AC NULLAM RHONCUS VITAE. NON EU TINCIDUNT FACILISIS IN NIBH LOREM NEC. ERAT PHASELLUS MALESUADA ET VITAE. QUIS AENEAN SED MORBI EST VITAE.",
-            type: 'bot'
-        }
-    ]);
+    const [messages, setMessages] = useState([]);
 
     const messagesContainerRef = useRef(null);
 
@@ -73,37 +67,17 @@ const Chatbot = () => {
             minHeight: '70vh',
             backgroundColor: '#000',
             zIndex: 1000,
-            padding: '55px'
+            padding: '0px 95px 48px 95px'
         },
         box: {
             backgroundColor: '#FFF',
-            border: '1px solid #000',
             borderRadius: '0',
             width: '100%',
-            height: '22.25rem',
+            height: '18.25rem',
             display: 'flex',
             flexDirection: 'column',
             padding: '24px',
             gap: '24px'
-        },
-        suggestedQuestions: {
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
-            marginBottom: '16px'
-        },
-        suggestedQuestion: {
-            background: 'none',
-            border: 'none',
-            color: '#000',
-            fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-            fontSize: '14px',
-            fontWeight: '500',
-            textTransform: 'uppercase',
-            textAlign: 'left',
-            cursor: 'pointer',
-            padding: '8px 0',
-            transition: 'color 0.2s ease'
         },
         messagesSection: {
             flex: 1,
@@ -204,25 +178,6 @@ const Chatbot = () => {
             {isVisible && (
                 <div className="chatbot-container" style={styles.container}>
                 <div style={styles.box}>
-                    {/* Suggested Questions Section */}
-                    <div style={styles.suggestedQuestions}>
-                        {suggestedQuestions.map((question, index) => (
-                            <button
-                                key={index}
-                                style={styles.suggestedQuestion}
-                                onClick={() => handleSuggestedQuestion(question)}
-                                onMouseEnter={(e) => {
-                                    e.target.style.color = '#4169e1';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.color = '#000';
-                                }}
-                            >
-                                {question}
-                            </button>
-                        ))}
-                    </div>
-
                     {/* Messages Section */}
                     <div style={styles.messagesSection} className="chatbot-messages" ref={messagesContainerRef}>
                         {messages.map((message) => (

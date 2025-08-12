@@ -295,14 +295,14 @@ export default function Opening() {
       <div className="text-section" ref={textSectionRef}>
         <h1 className="main-text">
           <div className="reveal-line">
-            <span className="gsap-word">the</span>{' '}
-            <span className="gsap-word">foundation</span>{' '}
-            <span className="gsap-word">of</span>{' '}
-            <span className="gsap-word">AI</span>{' '}
-            <span className="gsap-word">automation—</span>
+            <span className="gsap-word opening-text-grey">the</span>{' '}
+            <span className="gsap-word opening-text-grey">foundation</span>{' '}
+            <span className="gsap-word opening-text-grey">of</span>{' '}
+            <span className="gsap-word opening-text-grey">AI</span>{' '}
+            <span className="gsap-word opening-text-grey">automation—</span>
           </div>
           <div className="reveal-line">
-            <span className="gsap-word">transforming</span>{' '}
+            <span className="gsap-word opening-text-grey">transforming</span>{' '}
             <span className="gsap-word highlight-text">unstructured</span>{' '}
             <span className="gsap-word highlight-text">documents</span>{' '}
             <span className="gsap-word highlight-text">into</span>{' '}

@@ -18,7 +18,7 @@ body {
 .stats-page-container {
   min-height: 100vh;
   background-color: #000;
-  padding: 24px 65px;
+  padding: 90px 95px 48px 95px;
   display: flex;
   flex-direction: column;
 }

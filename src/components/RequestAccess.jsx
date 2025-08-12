@@ -8,7 +8,7 @@ const RequestAccess = () => {
             backgroundColor: '#000',
             position: 'relative',
             width: '100%',
-            padding: '0 40px',
+            padding: '90px 95px 48px 95px',
             justifyContent: 'center',
             alignItems: 'center'
         },
@@ -45,7 +45,7 @@ const RequestAccess = () => {
         },
         subHeading: {
             fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-            fontSize: '33px',
+            fontSize: '32px',
             fontWeight: '400',
             color: 'grey',
             margin: '0 0 24px 0',
