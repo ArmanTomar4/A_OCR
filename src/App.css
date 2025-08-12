@@ -439,7 +439,23 @@ body {
   font-weight: 200;
   line-height: normal;
   letter-spacing: -0.00275rem;
+<<<<<<< HEAD
   font-family: "Degarism Studio";
+=======
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 0.1em;
+}
+
+.hero-logo span {
+  display: inline-block;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+  transform-origin: center;
+  will-change: opacity, transform, filter;
+>>>>>>> 6525e2531528950fa9a939b9ca685e0b681581f6
 }
 
 .hero-tagline {
