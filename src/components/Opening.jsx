@@ -13,6 +13,24 @@ function distanceToBoxCenter(mouse, box) {
   return Math.sqrt((mouse.x - cx) ** 2 + (mouse.y - cy) ** 2);
 }
 
+// Helper: calculate grid distance between two pattern positions
+// Revert to simpler adjacent pattern logic
+const isAdjacent = (idx1, idx2, gridData) => {
+  if (idx1 < 0 || idx2 < 0 || idx1 >= gridData.length || idx2 >= gridData.length) {
+    return false;
+  }
+  const pos1 = gridData[idx1];
+  const pos2 = gridData[idx2];
+  
+  // Check if patterns are neighbors (horizontally or vertically)
+  const colDiff = Math.abs(pos1.col - pos2.col);
+  const rowDiff = Math.abs(pos1.row - pos2.row);
+  
+  return (colDiff <= 1 && rowDiff === 0) || (colDiff === 0 && rowDiff <= 1);
+};
+
+
+
 export default function Opening() {
   // Do NOT change line angles or lengths - exact from vector_lines
   const lines = {
@@ -130,7 +148,7 @@ export default function Opening() {
     backgroundSize: '27px 26px',
     backgroundPosition: 'center',
     opacity: 0.15, // default
-    transition: 'opacity 0.2s, filter 0.2s',
+    transition: 'opacity 0.3s ease-out, filter 0.3s ease-out',
     cursor: 'pointer',
   };
 
@@ -199,14 +217,13 @@ export default function Opening() {
       } else {
         let opacity = 0.15;
         let lineColor = '#000';
-        if (hoverIdxTop === gridIdxTop) {
-          opacity = 1;
-          lineColor = '#111';
-        } else if (
-          hoverIdxTop === gridIdxTop - 1 ||
-          hoverIdxTop === gridIdxTop + 1
-        ) {
-          opacity = 0.5;
+        if (hoverIdxTop !== null) {
+          if (gridIdxTop === hoverIdxTop) {
+            opacity = 1;
+            lineColor = '#111';
+          } else if (isAdjacent(gridIdxTop, hoverIdxTop, gridTop)) {
+            opacity = 0.5;
+          }
         }
         cols.push(
           <ThreeLinePattern
@@ -246,14 +263,13 @@ export default function Opening() {
       } else {
         let opacity = 0.15;
         let lineColor = '#000';
-        if (hoverIdxBottom === gridIdxBottom) {
-          opacity = 1;
-          lineColor = '#111';
-        } else if (
-          hoverIdxBottom === gridIdxBottom - 1 ||
-          hoverIdxBottom === gridIdxBottom + 1
-        ) {
-          opacity = 0.5;
+        if (hoverIdxBottom !== null) {
+          if (gridIdxBottom === hoverIdxBottom) {
+            opacity = 1;
+            lineColor = '#111';
+          } else if (isAdjacent(gridIdxBottom, hoverIdxBottom, gridBottom)) {
+            opacity = 0.5;
+          }
         }
         cols.push(
           <ThreeLinePattern
