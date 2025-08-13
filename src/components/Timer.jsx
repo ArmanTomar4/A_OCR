@@ -89,6 +89,7 @@ const LightningSpeedTimer = () => {
           position: relative;
           overflow: hidden;
           padding: 40px;
+          font-family: 'Source Code Pro';
         }
 
         .divider {
@@ -159,15 +160,15 @@ const LightningSpeedTimer = () => {
         .accuracy-highlight {
           display: flex;
           flex-direction: column;
-          gap: 8px;
           padding: 20px;
+          gap: 10px;
           border-radius: 4px;
         }
 
         .accuracy-label {
           font-size: 11px;
-          letter-spacing: 3px;
-          color: #666;
+          color: #999;
+          margin-top: 20px;
           text-transform: uppercase;
         }
 
@@ -175,9 +176,6 @@ const LightningSpeedTimer = () => {
           font-size: 55px;
           font-weight: 300;
           color: #fff;
-          letter-spacing: -3px;
-          line-height: 1;
-          padding: 8px 16px;
           display: inline-block;
           position: relative;
           z-index: 1;
@@ -195,27 +193,28 @@ const LightningSpeedTimer = () => {
           top: 100%;
           width: 200px;
           height: 80px;
-         
           z-index: 0;
           pointer-events: none;
         }
 
         .accuracy-description {
-          font-size: 10px;
-          line-height: 1.8;
-          color: #999;
+          font-size: 12px;
+          line-height: normal;
+          color: #FFF;
+          font-weight: 400;
           text-transform: uppercase;
-          letter-spacing: 1px;
           max-width: 280px;
         }
 
         .features-list {
           display: flex;
           flex-direction: column;
+          padding-left:20px;
         }
 
         .feature-item1 {
           display: flex;
+          gap: 5px;
           align-items: flex-start;
           font-size: 9px;
           line-height: 1.6;

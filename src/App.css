@@ -122,28 +122,31 @@ body {
 }
 
 .nav-over-intelligence .nav-item:hover {
-  color: #fff;
+  color: #4169e1;
 }
 
 .nav-over-intelligence .nav-item::before {
-  color: #fff;
+  color: #666;
+}
+
+.nav-over-intelligence .nav-indicator {
+  background-color: #ffffff;
+}
+
+.nav-over-intelligence .nav-button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+.nav-over-intelligence .nav-button .button-arrow path {
+  fill: #000;
 }
 
 .nav-over-intelligence .nav-divider {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.nav-over-intelligence .nav-button {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.nav-over-intelligence .nav-button:hover {
-  background: #fff;
-  color: #000;
-  border: 1px solid #fff;
-}
 
 .nav-over-intelligence .nav-button:hover .button-arrow path {
   fill: #000;
@@ -175,7 +178,7 @@ body {
 }
 
 .nav-over-solutions .nav-button .button-arrow path {
-  fill: #000;
+  fill: #FFF;
 }
 
 .nav-over-solutions .nav-divider {
@@ -188,15 +191,9 @@ body {
   border: 1px solid #000;
 }
 
-.nav-over-solutions .nav-button:hover {
-  background: #fff;
-  color: #000;
-  border: 1px solid #000;
-}
 
-.nav-over-solutions .nav-button:hover .button-arrow path {
-  fill: #000;
-}
+
+
 
 .nav-over-pipeline {
   background: rgba(255, 255, 255, 0.95) !important;
@@ -273,9 +270,9 @@ body {
 }
 
 .nav-over-stats .nav-button {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
 }
 
 .nav-over-stats .nav-button:hover {
@@ -362,10 +359,6 @@ body {
   position: relative;
 }
 
-.nav-item.active {
-  /* Keep the color unchanged - it will be controlled by the section-specific classes */
-}
-
 .nav-indicator {
   position: absolute;
   left: -15px;
@@ -439,9 +432,7 @@ body {
   font-weight: 200;
   line-height: normal;
   letter-spacing: -0.00275rem;
-<<<<<<< HEAD
   font-family: "Degarism Studio";
-=======
   position: relative;
   display: flex;
   justify-content: center;
@@ -455,7 +446,6 @@ body {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
   transform-origin: center;
   will-change: opacity, transform, filter;
->>>>>>> 6525e2531528950fa9a939b9ca685e0b681581f6
 }
 
 .hero-tagline {

@@ -3,9 +3,9 @@ import {
   HeaderCard,
   UniversalDocumentIngestion,
   MultiLanguageOCR,
-  HandwrittenTextRecognition,
   SmartDocumentClassification,
   AdvancedTableProcessing,
+  HandwrittenTextRecognition,
   ContextAwareAI,
   NaturalLanguageQueries,
   AIPoweredAutomation
@@ -56,16 +56,17 @@ export default function IntelligenceLayer() {
       <div className="intelligence-features-grid">
         {/* Header Card - First position in grid */}
         <HeaderCard />
-        
         {/* Feature Cards */}
         <UniversalDocumentIngestion />
+        <AdvancedTableProcessing />
         <MultiLanguageOCR />
         <HandwrittenTextRecognition />
         <SmartDocumentClassification />
-        <AdvancedTableProcessing />
         <ContextAwareAI />
         <NaturalLanguageQueries />
         <AIPoweredAutomation />
+        
+
       </div>
     </div>
   );

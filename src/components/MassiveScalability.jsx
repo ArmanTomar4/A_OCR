@@ -240,13 +240,11 @@ const MassiveScalability = () => {
           flex-direction: column;
           gap: 8px;
           padding: 20px;
-          border-radius: 4px;
         }
 
         .scalability-container .scalability-label {
           font-size: 11px;
-          letter-spacing: 3px;
-          color: #666;
+          color: #999;
           text-transform: uppercase;
         }
 
@@ -256,33 +254,35 @@ const MassiveScalability = () => {
           color: #fff;
           letter-spacing: -3px;
           line-height: 1;
-          padding: 8px 16px;
           display: inline-block;
           position: relative;
           z-index: 1;
         }
 
         .scalability-container .description {
-          font-size: 10px;
-          line-height: 1.8;
-          color: #999;
+          font-size: 12px;
+          line-height: normal;
+          color: #fff;
+          margin-top: 30px;
+          font-weight: 400;
           text-transform: uppercase;
-          letter-spacing: 1px;
           max-width: 280px;
         }
 
         .scalability-container .features-list {
           display: flex;
           flex-direction: column;
+          padding-left:20px
         }
 
         .scalability-container .feature-item {
           display: flex;
           align-items: flex-start;
-          font-size: 9px;
+          gap: 5px;
+          font-size: 10px;
           color: #999;
+          font-weight: 400;
           text-transform: uppercase;
-          letter-spacing: 1px;
         }
 
         .scalability-container .checkmark {

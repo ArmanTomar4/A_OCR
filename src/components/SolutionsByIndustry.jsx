@@ -1,4 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+// Custom hook for typewriter effect with intersection observer
+const useTypewriter = (text, speed = 50, delay = 1000, dependency = null, shouldStart = false) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+
+  // Reset animation when dependency changes
+  useEffect(() => {
+    setDisplayText('');
+    setCurrentIndex(0);
+    setIsTyping(false);
+  }, [dependency]);
+
+  useEffect(() => {
+    if (!text || !shouldStart) return;
+
+    const timer = setTimeout(() => {
+      setIsTyping(true);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [text, delay, dependency, shouldStart]);
+
+  useEffect(() => {
+    if (!isTyping || currentIndex >= text.length) return;
+
+    const timer = setTimeout(() => {
+      setDisplayText(text.slice(0, currentIndex + 1));
+      setCurrentIndex(currentIndex + 1);
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [isTyping, currentIndex, text, speed]);
+
+  return displayText;
+};
 
 const styles = `
 * {
@@ -201,13 +238,24 @@ gap: 5px;
 }
 
 .benefits-text {
-  font-size: 10px;
-  line-height: 1.8;
+  font-size: 12px;
   color: rgba(0, 113, 63, 0.87);
+  font-family: "Source Code Pro";
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  flex: 1;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.typewriter-cursor {
+  animation: blink 1s infinite;
+  color: #00713F;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 @media (max-width: 1200px) {
@@ -366,6 +414,12 @@ const industryData = {
 
 export default function SolutionsByIndustry() {
   const [activeIndustry, setActiveIndustry] = useState('Financial Technology');
+  const [isBenefitsVisible, setIsBenefitsVisible] = useState(false);
+  const benefitsRef = useRef(null);
+
+  // Typewriter effect for benefits text - restart when industry changes and only when visible
+  const benefitsText = "REDUCE MANUAL DATA ENTRY BY 90%, ACCELERATE CUSTOMER ONBOARDING BY 75%, ENSURE REGULATORY COMPLIANCE, AND MINIMIZE HUMAN ERROR IN FINANCIAL CALCULATIONS.";
+  const typewriterText = useTypewriter(benefitsText, 30, 500, activeIndustry, isBenefitsVisible);
 
   useEffect(() => {
     const styleSheet = document.createElement("style");
@@ -374,6 +428,33 @@ export default function SolutionsByIndustry() {
 
     return () => {
       document.head.removeChild(styleSheet);
+    };
+  }, []);
+
+  // Intersection Observer to detect when benefits section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsBenefitsVisible(true);
+        } else {
+          setIsBenefitsVisible(false);
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Start slightly before the element comes into view
+      }
+    );
+
+    if (benefitsRef.current) {
+      observer.observe(benefitsRef.current);
+    }
+
+    return () => {
+      if (benefitsRef.current) {
+        observer.unobserve(benefitsRef.current);
+      }
     };
   }, []);
 
@@ -421,7 +502,7 @@ export default function SolutionsByIndustry() {
             ))}
           </div>
 
-          <div className="benefits-section">
+          <div className="benefits-section" ref={benefitsRef}>
             <div className="benefits-label">
               <div className="benefits-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="21" viewBox="0 0 15 21" fill="none">
@@ -431,9 +512,8 @@ export default function SolutionsByIndustry() {
               <span className="benefits-arrow-span">KEY BENEFITS</span>
             </div>
             <div className="benefits-text">
-              REDUCE MANUAL DATA ENTRY BY 90%, ACCELERATE CUSTOMER ONBOARDING BY 75%,
-              ENSURE REGULATORY COMPLIANCE, AND MINIMIZE HUMAN ERROR IN FINANCIAL
-              CALCULATIONS.
+              {typewriterText}
+              <span className="typewriter-cursor">|</span>
             </div>
           </div>
         </div>

@@ -13,6 +13,7 @@ const AI_POWERED_AUTOMATION_STYLES = `
     position: relative;
     transition: all 0.3s ease;
     overflow: hidden;
+    font-weight: 200;
   }
 
   .ai-powered-automation-card:hover {
@@ -44,51 +45,6 @@ const AI_POWERED_AUTOMATION_STYLES = `
     margin: 32px 0 16px 0;
   }
 
-  .ai-powered-automation-svg {
-    width: 40%;
-    height: 50%;
-    object-fit: cover;
-    stroke: #fff;
-    stroke-width: 1.5;
-    fill: none;
-    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
-    transition: all 0.5s ease;
-  }
-
-  .ai-powered-automation-svg path {
-    transition: all 0.5s ease;
-  }
-
-  .ai-powered-automation-card:hover .ai-powered-automation-svg {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-    transform: scale(1.1);
-  }
-
-  .ai-powered-automation-card:hover .ai-powered-automation-svg path:nth-child(1) {
-    stroke: #fff;
-    stroke-opacity: 1;
-    stroke-width: 2;
-    animation: automate 2s infinite;
-  }
-
-  .ai-powered-automation-card:hover .ai-powered-automation-svg path:nth-child(2) {
-    stroke: #fff;
-    stroke-opacity: 1;
-    stroke-width: 2;
-    animation: automate 2s infinite 0.3s;
-  }
-
-  .ai-powered-automation-card:hover .ai-powered-automation-svg path:nth-child(3) {
-    stroke: #fff;
-    stroke-opacity: 1;
-    stroke-width: 2;
-    animation: automate 2s infinite 0.6s;
-  }
-
-  @keyframes automate {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
-  }
 
   .ai-powered-automation-title {
     font-size: 11px;
@@ -115,6 +71,16 @@ const AI_POWERED_AUTOMATION_STYLES = `
   .ai-powered-automation-card:hover .ai-powered-automation-description {
     color: rgba(255, 255, 255, 0.9);
   }
+    .ai-powered-automation-card:hover .ai-powered-automation-svg .inner-rect {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.ai-powered-automation-card:hover .ai-powered-automation-svg .main-circle {
+  fill: white;
+  transition: fill 0.3s ease;
+
+}
 `;
 
 export default function AIPoweredAutomation() {
@@ -123,15 +89,22 @@ export default function AIPoweredAutomation() {
       <style>{AI_POWERED_AUTOMATION_STYLES}</style>
       <div className="ai-powered-automation-number">[08]</div>
       <div className="ai-powered-automation-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" className="ai-powered-automation-svg">
-          <path d="M20 20H80V40H20V20Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
-          <path d="M20 50H80V70H20V50Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
-          <path d="M20 80H80V100H20V80Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
-        </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="132" height="126" viewBox="0 0 132 126" fill="none" className="ai-powered-automation-svg">
+  <rect x="6.25" y="11.25" width="40.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="inner-rect"/>
+  <rect x="85.25" y="11.25" width="40.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="inner-rect"/>
+  <rect x="6.25" y="25.25" width="40.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="inner-rect"/>
+  <rect x="85.25" y="25.25" width="40.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="inner-rect"/>
+  <rect x="0.5" y="0.5" width="52" height="49" stroke="white" stroke-opacity="0.5" className="main-box"/>
+  <rect x="79.5" y="0.5" width="52" height="49" stroke="white" stroke-opacity="0.5" className="main-box"/>
+  <rect x="41.5" y="76.5" width="52" height="49" stroke="white" stroke-opacity="0.5" className="main-box"/>
+  <path d="M102.5 63V63.5H103V63H102.5ZM68 63V62.5H67.5V63H68ZM67.6464 76.8536C67.8417 77.0488 68.1583 77.0488 68.3536 76.8536L71.5355 73.6716C71.7308 73.4763 71.7308 73.1597 71.5355 72.9645C71.3403 72.7692 71.0237 72.7692 70.8284 72.9645L68 75.7929L65.1716 72.9645C64.9763 72.7692 64.6597 72.7692 64.4645 72.9645C64.2692 73.1597 64.2692 73.4763 64.4645 73.6716L67.6464 76.8536ZM102.5 50H102V63H102.5H103V50H102.5ZM102.5 63V62.5H68V63V63.5H102.5V63ZM68 63H67.5V76.5H68H68.5V63H68Z" fill="white" fill-opacity="0.5"/>
+  <path d="M25 63.2453V63.7453H24.5V63.2453H25ZM68 63.2453V62.7453H68.5V63.2453H68ZM68.3536 77.3536C68.1583 77.5488 67.8417 77.5488 67.6464 77.3536L64.4645 74.1716C64.2692 73.9763 64.2692 73.6597 64.4645 73.4645C64.6597 73.2692 64.9763 73.2692 65.1716 73.4645L68 76.2929L70.8284 73.4645C71.0237 73.2692 71.3403 73.2692 71.5355 73.4645C71.7308 73.6597 71.7308 73.9763 71.5355 74.1716L68.3536 77.3536ZM25 50H25.5V63.2453H25H24.5V50H25ZM25 63.2453V62.7453H68V63.2453V63.7453H25V63.2453ZM68 63.2453H68.5V77H68H67.5V63.2453H68Z" fill="white" fill-opacity="0.5"/>
+  <circle cx="68" cy="101" r="11.5" stroke="white" stroke-opacity="0.5" className="main-circle"/>
+</svg>
       </div>
       <h3 className="ai-powered-automation-title">AI-POWERED AUTOMATION</h3>
       <p className="ai-powered-automation-description">
-        LEVERAGE INTELLIGENT AI AGENTS TO AUTOMATE COMPLEX DOCUMENT WORKFLOWS ACROSS YOUR ENTIRE ORGANIZATION.
+        LEVERAGE <span style={{ color: '#FFF' }}>INTELLIGENT AI AGENTS</span> TO AUTOMATE COMPLEX DOCUMENT WORKFLOWS ACROSS YOUR ENTIRE ORGANIZATION.
       </p>
     </div>
   );

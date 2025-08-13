@@ -122,7 +122,7 @@ export default function MultiLanguageOCR() {
           </svg>
         </div>
       </div>
-      <h3 className="multi-language-ocr-title">MULTI-LANGUAGE OCR</h3>
+      <h3 className="multi-language-ocr-title">Handwritten Text Recognition</h3>
       <p className="multi-language-ocr-description">
       Extracts both <span style={{ color: '#FFF' }}>printed and handwritten </span>content from forms, notes, and receipts with industry-leading accuracy.      </p>
     </div>

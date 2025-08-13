@@ -44,45 +44,6 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
     margin: 32px 0 16px 0;
   }
 
-  .natural-language-queries-svg {
-    width: 40%;
-    height: 50%;
-    object-fit: cover;
-    stroke: #fff;
-    stroke-width: 1.5;
-    fill: none;
-    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
-    transition: all 0.5s ease;
-  }
-
-  .natural-language-queries-svg path {
-    transition: all 0.5s ease;
-  }
-
-  .natural-language-queries-card:hover .natural-language-queries-svg {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-    transform: scale(1.1);
-  }
-
-  .natural-language-queries-card:hover .natural-language-queries-svg path:nth-child(1) {
-    stroke: #fff;
-    stroke-opacity: 1;
-    stroke-width: 2;
-    animation: search 2s infinite;
-  }
-
-  .natural-language-queries-card:hover .natural-language-queries-svg path:nth-child(2) {
-    stroke: #fff;
-    stroke-opacity: 1;
-    stroke-width: 2;
-    animation: search 2s infinite 0.5s;
-  }
-
-  @keyframes search {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
-
   .natural-language-queries-title {
     font-size: 11px;
     text-transform: uppercase;
@@ -93,8 +54,6 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
     line-height: 1.3;
     transition: all 0.3s ease;
   }
-
-
 
   .natural-language-queries-description {
     font-size: 9px;
@@ -109,6 +68,15 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
   .natural-language-queries-card:hover .natural-language-queries-description {
     color: rgba(255, 255, 255, 0.9);
   }
+
+  .natural-language-queries-svg {
+    transition: all 0.3s ease;
+  }
+
+  .natural-language-queries-card:hover .natural-language-queries-svg .highlight-rect {
+    fill: white;
+    transition: fill 0.3s ease;
+  }
 `;
 
 export default function NaturalLanguageQueries() {
@@ -117,9 +85,15 @@ export default function NaturalLanguageQueries() {
       <style>{NATURAL_LANGUAGE_QUERIES_STYLES}</style>
       <div className="natural-language-queries-number">[07]</div>
       <div className="natural-language-queries-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" className="natural-language-queries-svg">
-          <path d="M40 20C40 20 60 20 60 40C60 60 40 60 40 40C40 20 40 20 40 20Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
-          <path d="M60 60L80 80" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+        <svg width="133" height="94" viewBox="0 0 133 94" fill="none" xmlns="http://www.w3.org/2000/svg" className="natural-language-queries-svg">
+          <rect x="10.25" y="50.25" width="37.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="highlight-rect" />
+          <rect x="10.25" y="33.25" width="37.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" />
+          <rect x="55.25" y="50.25" width="67.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" />
+          <rect x="10.25" y="16.25" width="70.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="highlight-rect" />
+          <rect x="86.25" y="16.25" width="36.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5"  />
+          <rect x="55.25" y="33.25" width="67.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="highlight-rect" />
+          <path d="M0.5 76V1H132.5V76H84.5L67.5 93L50.5 76H0.5Z" stroke="white" stroke-opacity="0.5"/>
+
         </svg>
       </div>
       <h3 className="natural-language-queries-title">NATURAL LANGUAGE QUERIES</h3>
@@ -128,4 +102,4 @@ export default function NaturalLanguageQueries() {
       </p>
     </div>
   );
-} 
+}

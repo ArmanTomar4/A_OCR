@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const RollingCounter = ({ endValue, duration = 2000, isVisible }) => {
+const RollingCounter = ({ endValue, duration = 2500, isVisible }) => {
   const [displayValue, setDisplayValue] = useState(0);
   const frameRef = useRef(null);
   const startTimeRef = useRef(null);

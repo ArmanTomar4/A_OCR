@@ -3,16 +3,18 @@ import React from 'react';
 const RequestAccess = () => {
     const styles = {
         container: {
-            minHeight: '100vh',
+            minHeight: '70vh',
             display: 'flex',
             backgroundColor: '#000',
             position: 'relative',
             width: '100%',
-            padding: '90px 95px 48px 95px',
+            padding: '0px 95px 48px 95px',
             justifyContent: 'center',
             alignItems: 'center'
         },
         innerContainer: {
+            marginTop: '100px',
+
             width: '100%',
             maxWidth: '1200px',
             display: 'flex',
@@ -80,7 +82,9 @@ const RequestAccess = () => {
         },
         rightSection: {
             flex: 1,
-            background: 'linear-gradient(135deg, #0a0015 0%, #1e3a8a 20%, #3730a3 40%, #6366f1 60%, #1e3a8a 80%, #0a0015 100%)',
+            backgroundImage: 'url(./bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

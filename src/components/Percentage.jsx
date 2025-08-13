@@ -71,7 +71,9 @@ const Percentage = () => {
           justify-content: center;
           position: relative;
           overflow: hidden;
-padding-left: 80px;        }
+padding-left: 80px;     
+font-family: 'Source Code Pro';
+   }
 
         .percentage-container .divider {
           position: absolute;
@@ -246,49 +248,52 @@ padding-left: 80px;        }
 
         .percentage-container .scalability-label {
           font-size: 11px;
-          letter-spacing: 3px;
-          color: #666;
+          color: #999;
           text-transform: uppercase;
         }
 
         .percentage-container .number-display {
-          font-size: 55px;
+          font-size: 75px;
           font-weight: 300;
           color: #fff;
           letter-spacing: -3px;
           line-height: 1;
-          padding: 8px 16px;
+          padding: 0px px;
           display: inline-block;
           position: relative;
           z-index: 1;
         }
 
         .percentage-container .description {
-          font-size: 10px;
-          line-height: 1.8;
-          color: #999;
+          font-size: 12px;
+          line-height: normal;
+          color: #fff;
+          margin-top: 10px;
+          font-weight: 400;
           text-transform: uppercase;
-          letter-spacing: 1px;
           max-width: 280px;
         }
 
         .percentage-container .features-list {
           display: flex;
           flex-direction: column;
+          padding-left:20px
         }
 
         .percentage-container .feature-item {
           display: flex;
           align-items: flex-start;
-          font-size: 9px;
+          gap: 5px;
+          font-size: 10px;
           color: #999;
+          font-weight: 400;
           text-transform: uppercase;
-          letter-spacing: 1px;
         }
 
         .percentage-container .checkmark {
           color: #4ade80;
           font-size: 12px;
+
           margin-top: -1px;
         }
         .percentage-container .scalability-svg {

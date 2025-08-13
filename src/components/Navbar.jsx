@@ -6,7 +6,7 @@ function Navbar() {
   const [isOverSolutions, setIsOverSolutions] = useState(false)
   const [isOverPipeline, setIsOverPipeline] = useState(false)
   const [isOverStats, setIsOverStats] = useState(false)
-  const [activePage, setActivePage] = useState('features')
+  const [activePage, setActivePage] = useState('0')
 
   useEffect(() => {
     const handleScroll = () => {

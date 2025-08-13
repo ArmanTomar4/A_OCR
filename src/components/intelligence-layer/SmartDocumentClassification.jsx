@@ -44,32 +44,9 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
     margin: 32px 0 16px 0;
   }
 
-  .smart-document-classification-svg {
-    width: 40%;
-    height: 50%;
-    object-fit: cover;
-    stroke: #fff;
-    stroke-width: 1.5;
-    fill: none;
-    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
-    transition: all 0.5s ease;
-  }
+ 
 
-  .smart-document-classification-svg path {
-    transition: all 0.5s ease;
-  }
 
-  .smart-document-classification-card:hover .smart-document-classification-svg {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
-    transform: scale(1.1);
-  }
-
-  .smart-document-classification-card:hover .smart-document-classification-svg path {
-    stroke: #fff;
-    stroke-opacity: 1;
-    stroke-width: 2;
-    animation: classify 2s infinite;
-  }
 
   @keyframes classify {
     0%, 100% { transform: scale(1); }
@@ -97,7 +74,11 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
     font-weight: 400;
     transition: color 0.3s ease;
   }
-
+.smart-document-classification-card:hover .smart-document-classification-svg .top-rect,
+.smart-document-classification-card:hover .smart-document-classification-svg .bottom-rect {
+  fill: white;
+  transition: fill 0.3s ease;
+}
   .smart-document-classification-card:hover .smart-document-classification-description {
     color: rgba(255, 255, 255, 0.9);
   }
@@ -109,16 +90,23 @@ export default function SmartDocumentClassification() {
       <style>{SMART_DOCUMENT_CLASSIFICATION_STYLES}</style>
       <div className="smart-document-classification-number">[04]</div>
       <div className="smart-document-classification-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" className="smart-document-classification-svg">
-          <path d="M20 20H80V80H20V20Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
-          <path d="M30 30H70V40H30V30Z" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <path d="M30 45H70V55H30V45Z" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <path d="M30 60H50V70H30V60Z" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="118" height="85" viewBox="0 0 118 85" fill="none" className="smart-document-classification-svg">
+          <rect x="0.5" y="0.5" width="117" height="84" stroke="white" />
+          <rect x="1" y="1" width="116" height="12" fill="none" className="top-rect" />
+          <rect x="1" y="72" width="116" height="12" fill="none" className="bottom-rect" />
+          <line x1="1" y1="12.75" x2="118" y2="12.75" stroke="white" stroke-width="0.5" />
+          <line x1="13" y1="24.75" x2="117" y2="24.75" stroke="white" stroke-width="0.5" />
+          <line x1="58.75" y1="72" x2="58.75" y2="25" stroke="white" stroke-width="0.5" />
+          <line x1="12.75" y1="72" x2="12.75" y2="13" stroke="white" stroke-width="0.5" />
+          <line x1="117" y1="37.25" x2="59" y2="37.25" stroke="white" stroke-width="0.5" />
+          <line x1="117" y1="48.25" x2="59" y2="48.25" stroke="white" stroke-width="0.5" />
+          <line x1="117" y1="60.25" x2="59" y2="60.25" stroke="white" stroke-width="0.5" />
+          <line x1="117" y1="72.25" x2="1" y2="72.25" stroke="white" stroke-width="0.5" />
         </svg>
       </div>
-      <h3 className="smart-document-classification-title">SMART DOCUMENT CLASSIFICATION</h3>
+      <h3 className="smart-document-classification-title">Advanced Table Processing</h3>
       <p className="smart-document-classification-description">
-        AUTOMATICALLY DETECTS AND CLASSIFIES INVOICES, TAX CONTRACTS, POSTAL DOCUMENT TYPE RECOGNITION.
+        Structure-aware parsing of <span style={{ color: '#FFF' }}>complex, nested, and borderless tables</span> with export to Excel, CSV, or JSON.
       </p>
     </div>
   );

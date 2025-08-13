@@ -144,7 +144,7 @@ const MiddleSection = () => {
                   exit="hidden"
                   style={{
                       position: 'absolute',
-                      top: '-590px', // Changed from '-575px' (moved up by 15px)
+                      top: '-583px', // Changed from '-575px' (moved up by 15px)
                       left: '134.5%',
                       transform: 'translate(-50%, -50%)',
                       zIndex: '-12',
@@ -206,22 +206,22 @@ const MiddleSection = () => {
                             />
 
                             <motion.g>
-                                <motion.text x="135" y="20" fill="#000000" fontSize="8" fontWeight="200" custom={0} variants={textVariants}>
+                                <motion.text x="140" y="25" fill="#000000" fontSize="10" fontWeight="400" fontFamily="Source Code Pro" custom={0} variants={textVariants}>
                                     01 - INGEST
                                 </motion.text>
-                                <motion.text x="135" y="45" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
+                                <motion.text x="140" y="45" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
                                     Upload files or data from
                                 </motion.text>
-                                <motion.text x="135" y="60" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
+                                <motion.text x="140" y="60" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
                                     emails, cloud storage
                                 </motion.text>
-                                <motion.text x="135" y="75" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
+                                <motion.text x="140" y="75" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
                                     services, support tickets,
                                 </motion.text>
-                                <motion.text x="135" y="90" fill="#000000" fontSize="12" opacity="0.7" custom={4} variants={textVariants}>
+                                <motion.text x="140" y="90" fill="#000000" fontSize="12" opacity="0.7" custom={4} variants={textVariants}>
                                     and just about any data
                                 </motion.text>
-                                <motion.text x="135" y="105" fill="#000000" fontSize="12" opacity="0.7" custom={5} variants={textVariants}>
+                                <motion.text x="140" y="105" fill="#000000" fontSize="12" opacity="0.7" custom={5} variants={textVariants}>
                                     source.
                                 </motion.text>
                             </motion.g>
@@ -491,58 +491,88 @@ const MiddleSection = () => {
                 <AnimatePresence>
                     {hoveredBox === 'box2' && (
                         <motion.svg
+                            xmlns="http://www.w3.org/2000/svg"
                             initial="hidden"
                             animate="visible"
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-460px',
-                                left: '139%',
+                                top: '-490px',
+                                left: '134.5%',
                                 transform: 'translate(-50%, -50%)',
-                                zIndex: '-102',
+                                zIndex: '-12',
                                 pointerEvents: 'none',
                             }}
                             width="500"
                             height="200"
                             viewBox="0 0 500 200"
                         >
-                            <motion.path
-                                d="M20 100 H100 Q120 100 120 80 L120 50"
-                                fill="none"
-                                stroke="#000000"
-                                strokeWidth="1.5"
-                                variants={lineVariants}
-                            />
+                            <defs>
+                                <linearGradient
+                                    id="lineGradient2"
+                                    x1="500"
+                                    y1="0"
+                                    x2="0"
+                                    y2="200"
+                                    gradientUnits="userSpaceOnUse"
+                                >
+                                    <stop stopColor="#000000" />
+                                    <stop offset="1" stopColor="#666666" stopOpacity="0" />
+                                </linearGradient>
+                            </defs>
+                        
+                            <g style={{ transform: 'rotate(-30deg)', transformOrigin: '150px 75px' }}>
+                                <motion.path
+                                    d="M30 75 H110 L141 15"
+                                    fill="none"
+                                    stroke="url(#lineGradient2)"
+                                    strokeWidth="1.5"
+                                    strokeOpacity="0.5"
+                                    variants={lineVariants}
+                                />
+                            </g>
+
                             <motion.circle
-                                cx="120"
-                                cy="50"
+                                cx="112"
+                                cy="23"
                                 r="5"
                                 fill="#000000"
                                 variants={circleVariants}
                             />
+
                             <motion.circle
-                                cx="120"
-                                cy="50"
-                                r="15"
+                                cx="112"
+                                cy="23"
+                                r="20"
                                 fill="none"
                                 stroke="#000000"
                                 strokeWidth="1"
                                 strokeDasharray="2 3"
-                                opacity="0.6"
-                                variants={circleVariants}
+                                variants={{
+                                    hidden: { scale: 0, opacity: 0 },
+                                    visible: {
+                                        scale: 1,
+                                        opacity: 0.6,
+                                        transition: { delay: 0.8, duration: 0.3, ease: "backOut" }
+                                    }
+                                }}
                             />
+
                             <motion.g>
-                                <motion.text x="150" y="45" fill="#000000" fontSize="14" fontWeight="500" custom={0} variants={textVariants}>
+                                <motion.text x="140" y="25" fill="#000000" fontSize="10" fontWeight="400" fontFamily="Source Code Pro" custom={0} variants={textVariants}>
                                     02 - PROCESS
                                 </motion.text>
-                                <motion.text x="150" y="65" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
+                                <motion.text x="140" y="45" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
                                     Analyze and transform
                                 </motion.text>
-                                <motion.text x="150" y="80" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
+                                <motion.text x="140" y="60" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
                                     your data with AI-powered
                                 </motion.text>
-                                <motion.text x="150" y="95" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
+                                <motion.text x="140" y="75" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
                                     intelligence and automation
+                                </motion.text>
+                                <motion.text x="140" y="90" fill="#000000" fontSize="12" opacity="0.7" custom={4} variants={textVariants}>
+                                    for optimal results.
                                 </motion.text>
                             </motion.g>
                         </motion.svg>
@@ -583,7 +613,7 @@ const MiddleSection = () => {
                     <path d="M159.969 29.9196L68.9607 82.4634L48.5622 70.6863L139.571 18.1426L159.969 29.9196Z" stroke="#FBFEFC" strokeWidth="0.567193" />
                 </svg>
 
-                <img style={{ position: 'absolute', top: '-450px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 02 ].svg" alt="" />
+                <img style={{ position: 'absolute', top: '-460px', right: '-25px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 02 ].svg" alt="" />
                 <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-351px', left: "56.3%", transform: 'translate(-50%, -50%) scale(0.98)' }} src="./UNDERSTAND.svg" alt="" />
 
             </motion.div>
@@ -609,61 +639,91 @@ const MiddleSection = () => {
                 onMouseLeave={handleMouseLeave}
             >
                 {/* Animation for Box 3 */}
-                <AnimatePresence>
+                <AnimatePresence>   
                     {hoveredBox === 'box3' && (
                         <motion.svg
+                            xmlns="http://www.w3.org/2000/svg"
                             initial="hidden"
                             animate="visible"
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-390px',
-                                left: '135%',
+                                top: '-418px',
+                                left: '134.5%',
                                 transform: 'translate(-50%, -50%)',
-                                zIndex: '12',
+                                zIndex: '-12',
                                 pointerEvents: 'none',
                             }}
                             width="500"
                             height="200"
                             viewBox="0 0 500 200"
                         >
-                            <motion.path
-                                d="M30 120 L80 90 Q100 80 120 80 L150 80"
-                                fill="none"
-                                stroke="#000000"
-                                strokeWidth="1.5"
-                                variants={lineVariants}
-                            />
+                            <defs>
+                                <linearGradient
+                                    id="lineGradient3"
+                                    x1="500"
+                                    y1="0"
+                                    x2="0"
+                                    y2="200"
+                                    gradientUnits="userSpaceOnUse"
+                                >
+                                    <stop stopColor="#000000" />
+                                    <stop offset="1" stopColor="#666666" stopOpacity="0" />
+                                </linearGradient>
+                            </defs>
+                        
+                            <g style={{ transform: 'rotate(-30deg)', transformOrigin: '150px 75px' }}>
+                                <motion.path
+                                    d="M30 75 H110 L141 15"
+                                    fill="none"
+                                    stroke="url(#lineGradient3)"
+                                    strokeWidth="1.5"
+                                    strokeOpacity="0.5"
+                                    variants={lineVariants}
+                                />
+                            </g>
+
                             <motion.circle
-                                cx="150"
-                                cy="80"
+                                cx="112"
+                                cy="23"
                                 r="5"
                                 fill="#000000"
                                 variants={circleVariants}
                             />
+
                             <motion.circle
-                                cx="150"
-                                cy="80"
-                                r="15"
+                                cx="112"
+                                cy="23"
+                                r="20"
                                 fill="none"
                                 stroke="#000000"
                                 strokeWidth="1"
                                 strokeDasharray="2 3"
-                                opacity="0.6"
-                                variants={circleVariants}
+                                variants={{
+                                    hidden: { scale: 0, opacity: 0 },
+                                    visible: {
+                                        scale: 1,
+                                        opacity: 0.6,
+                                        transition: { delay: 0.8, duration: 0.3, ease: "backOut" }
+                                    }
+                                }}
                             />
+
                             <motion.g>
-                                <motion.text x="180" y="75" fill="#000000" fontSize="14" fontWeight="500" custom={0} variants={textVariants}>
+                                <motion.text x="140" y="25" fill="#000000" fontSize="10" fontWeight="400" fontFamily="Source Code Pro" custom={0} variants={textVariants}>
                                     03 - TRANSFORM
                                 </motion.text>
-                                <motion.text x="180" y="95" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
+                                <motion.text x="140" y="45" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
                                     Convert data into
                                 </motion.text>
-                                <motion.text x="180" y="110" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
-                                    actionable insights
+                                <motion.text x="140" y="60" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
+                                    actionable insights and
                                 </motion.text>
-                                <motion.text x="180" y="125" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
-                                    and visualizations
+                                <motion.text x="140" y="75" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
+                                    visualizations for better
+                                </motion.text>
+                                <motion.text x="140" y="90" fill="#000000" fontSize="12" opacity="0.7" custom={4} variants={textVariants}>
+                                    decision making.
                                 </motion.text>
                             </motion.g>
                         </motion.svg>
@@ -713,7 +773,7 @@ const MiddleSection = () => {
                     </defs>
                 </svg>
 
-                <img style={{ zIndex: '120', position: 'absolute', top: '-382px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 03 ].svg" alt="" />
+                <img style={{ zIndex: '120', position: 'absolute', top: '-388px', right: '-25px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 03 ].svg" alt="" />
                 <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-256px', left: "56.3%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./TAKE ACTION.svg" alt="" />
                 <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-360px', left: "90.3%", transform: 'translate(-50%, -50%) scale(0.9)' }} src="./a_OCR.svg" alt="" />
                 <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-327px', left: '20.3%', transform: 'translate(-50%, -50%) scale(0.98)' }} src="./Optical Character Recognition.svg" alt="" />
@@ -744,58 +804,88 @@ const MiddleSection = () => {
                 <AnimatePresence>
                     {hoveredBox === 'box4' && (
                         <motion.svg
+                            xmlns="http://www.w3.org/2000/svg"
                             initial="hidden"
                             animate="visible"
                             exit="hidden"
                             style={{
                                 position: 'absolute',
-                                top: '-383px', // Changed from '-358px' (moved up by 25px)
-                                left: '133%',
+                                top: '-360px',
+                                left: '134.5%',
                                 transform: 'translate(-50%, -50%)',
-                                zIndex: '12',
+                                zIndex: '-12',
                                 pointerEvents: 'none',
                             }}
                             width="500"
-                            height="250"
-                            viewBox="0 0 500 250"
+                            height="200"
+                            viewBox="0 0 500 200"
                         >
-                            <motion.path
-                                d="M50 180 Q80 160 110 160 L130 160"
-                                fill="none"
-                                stroke="#000000"
-                                strokeWidth="1.5"
-                                variants={lineVariants}
-                            />
+                            <defs>
+                                <linearGradient
+                                    id="lineGradient4"
+                                    x1="500"
+                                    y1="0"
+                                    x2="0"
+                                    y2="200"
+                                    gradientUnits="userSpaceOnUse"
+                                >
+                                    <stop stopColor="#000000" />
+                                    <stop offset="1" stopColor="#666666" stopOpacity="0" />
+                                </linearGradient>
+                            </defs>
+                        
+                            <g style={{ transform: 'rotate(-30deg)', transformOrigin: '150px 75px' }}>
+                                <motion.path
+                                    d="M30 75 H110 L141 15"
+                                    fill="none"
+                                    stroke="url(#lineGradient4)"
+                                    strokeWidth="1.5"
+                                    strokeOpacity="0.5"
+                                    variants={lineVariants}
+                                />
+                            </g>
+
                             <motion.circle
-                                cx="130"
-                                cy="160"
+                                cx="112"
+                                cy="23"
                                 r="5"
                                 fill="#000000"
                                 variants={circleVariants}
                             />
+
                             <motion.circle
-                                cx="130"
-                                cy="160"
-                                r="15"
+                                cx="112"
+                                cy="23"
+                                r="20"
                                 fill="none"
                                 stroke="#000000"
                                 strokeWidth="1"
                                 strokeDasharray="2 3"
-                                opacity="0.6"
-                                variants={circleVariants}
+                                variants={{
+                                    hidden: { scale: 0, opacity: 0 },
+                                    visible: {
+                                        scale: 1,
+                                        opacity: 0.6,
+                                        transition: { delay: 0.8, duration: 0.3, ease: "backOut" }
+                                    }
+                                }}
                             />
+
                             <motion.g>
-                                <motion.text x="160" y="155" fill="#000000" fontSize="14" fontWeight="500" custom={0} variants={textVariants}>
+                                <motion.text x="140" y="25" fill="#000000" fontSize="10" fontWeight="400" fontFamily="Source Code Pro" custom={0} variants={textVariants}>
                                     04 - DELIVER
                                 </motion.text>
-                                <motion.text x="160" y="175" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
+                                <motion.text x="140" y="45" fill="#000000" fontSize="12" opacity="0.7" custom={1} variants={textVariants}>
                                     Export and share results
                                 </motion.text>
-                                <motion.text x="160" y="190" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
+                                <motion.text x="140" y="60" fill="#000000" fontSize="12" opacity="0.7" custom={2} variants={textVariants}>
                                     across your organization
                                 </motion.text>
-                                <motion.text x="160" y="205" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
+                                <motion.text x="140" y="75" fill="#000000" fontSize="12" opacity="0.7" custom={3} variants={textVariants}>
                                     with seamless integration
+                                </motion.text>
+                                <motion.text x="140" y="90" fill="#000000" fontSize="12" opacity="0.7" custom={4} variants={textVariants}>
+                                    and deployment.
                                 </motion.text>
                             </motion.g>
                         </motion.svg>
@@ -1009,7 +1099,7 @@ const MiddleSection = () => {
                     </defs>
                 </svg>
 
-                <img style={{ position: 'absolute', top: '-304px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 04 ].svg" alt="" />
+                <img style={{ position: 'absolute', top: '-328px', right: '-20px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 04 ].svg" alt="" />
                 <img style={{ zIndex: '120', position: 'absolute', top: '-190px', left: '53%', transform: 'translate(-50%, -50%) scale(1)' }} src="./XML.svg" alt="" />
                 <img style={{ zIndex: '120', position: 'absolute', top: '-266px', left: '78%', transform: 'translate(-50%, -50%) scale(1)' }} src="./XLS.svg" alt="" />
                 <img style={{ zIndex: '120', position: 'absolute', top: '-265px', left: '28%', transform: 'translate(-50%, -50%) scale(1)' }} src="./CSV.svg" alt="" />
