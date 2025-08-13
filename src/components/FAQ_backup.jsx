@@ -1066,8 +1066,7 @@ const AnimatedFAQDiagram = () => {
 
                     .nav-back-btn, .nav-forward-btn {
                         background: transparent;
-                        border: 1px solid rgba(255, 255, 255, 0.2);
-                        border-radius: 4px;
+                        border: 1px solid #FFF;
                         padding: 6px;
                         cursor: pointer;
                         display: flex;

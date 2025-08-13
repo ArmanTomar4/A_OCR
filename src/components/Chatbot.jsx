@@ -24,7 +24,7 @@ const Chatbot = () => {
             const question = event.detail;
             setIsVisible(true);
             console.log('Chatbot: Setting visible to true');
-            
+
             // Add the question as a user message
             const newMessage = {
                 id: messages.length + 1,
@@ -32,7 +32,7 @@ const Chatbot = () => {
                 type: 'user'
             };
             setMessages(prev => [...prev, newMessage]);
-            
+
             // Scroll to chatbot after a short delay to ensure it's rendered
             setTimeout(() => {
                 const chatbotElement = document.querySelector('.chatbot-container');
@@ -48,7 +48,7 @@ const Chatbot = () => {
 
         console.log('Chatbot: Adding event listener');
         window.addEventListener('questionClicked', handleQuestionClicked);
-        
+
         return () => {
             window.removeEventListener('questionClicked', handleQuestionClicked);
         };
@@ -64,19 +64,20 @@ const Chatbot = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '70vh',
+            minHeight: '54vh',
             backgroundColor: '#000',
             zIndex: 1000,
             padding: '0px 95px 48px 95px'
         },
         box: {
-            backgroundColor: '#FFF',
+            backgroundColor: '#000',
             borderRadius: '0',
+            border: '1px solid #666',
             width: '100%',
-            height: '18.25rem',
+            height: '15.25rem',
             display: 'flex',
             flexDirection: 'column',
-            padding: '24px',
+            padding: '16px',
             gap: '24px'
         },
         messagesSection: {
@@ -91,7 +92,7 @@ const Chatbot = () => {
         },
         message: {
             fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: '400',
             lineHeight: '1.5',
             wordWrap: 'break-word'
@@ -102,7 +103,7 @@ const Chatbot = () => {
             textAlign: 'left'
         },
         userMessage: {
-            color: '#000',
+            color: '#FFF',
             textTransform: 'uppercase',
             textAlign: 'left'
         },
@@ -115,24 +116,24 @@ const Chatbot = () => {
         input: {
             flex: 1,
             background: 'none',
-            border: '1px solid #000',
+            border: '1px solid #FFF',
             borderRadius: '0',
             borderRight: 'none',
             padding: '12px 16px',
             fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: '400',
             textTransform: 'uppercase',
-            color: '#000',
+            color: '#FFF',
             outline: 'none'
         },
         sendButton: {
             backgroundColor: '#0035DD',
-            border: '1px solid #000',
+            border: '1px solid #FFF',
             borderLeft: 'none',
             borderRadius: '0',
             width: '40px',
-            height: '43px',
+            height: '40px',
             zIndex: '100',
             display: 'flex',
             alignItems: 'center',
@@ -141,7 +142,7 @@ const Chatbot = () => {
             transition: 'background-color 0.2s ease'
         },
         sendButtonDisabled: {
-            backgroundColor: '#ccc',
+            backgroundColor: '#FFF',
             cursor: 'not-allowed'
         }
     };
@@ -177,54 +178,56 @@ const Chatbot = () => {
         <>
             {isVisible && (
                 <div className="chatbot-container" style={styles.container}>
-                <div style={styles.box}>
-                    {/* Messages Section */}
-                    <div style={styles.messagesSection} className="chatbot-messages" ref={messagesContainerRef}>
-                        {messages.map((message) => (
-                            <div
-                                key={message.id}
+                    <div style={styles.box}>
+                        {/* Messages Section */}
+                        <div style={styles.messagesSection} className="chatbot-messages" ref={messagesContainerRef}>
+                            {messages.map((message) => (
+                                <div
+                                    key={message.id}
+                                    style={{
+                                        ...styles.message,
+                                        ...(message.type === 'user' ? styles.userMessage : styles.botMessage)
+                                    }}
+                                >
+                                    {message.text}
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Input Section */}
+                        <div style={styles.inputSection}>
+                            <input
+                                type="text"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                onKeyPress={handleKeyPress}
+                                placeholder="ASK ANY QUESTIONS"
+                                style={styles.input}
+                            />
+                            <button
                                 style={{
-                                    ...styles.message,
-                                    ...(message.type === 'user' ? styles.userMessage : styles.botMessage)
+                                    ...styles.sendButton,
+                                    ...(inputValue.trim() ? {} : styles.sendButtonDisabled)
+                                }}
+                                onClick={handleSendMessage}
+                                disabled={!inputValue.trim()}
+                                onMouseEnter={(e) => {
+                                    if (inputValue.trim()) {
+                                        e.target.style.backgroundColor = '#0028b0';
+                                    }
+                                }}
+                                onMouseLeave={(e) => {
+                                    if (inputValue.trim()) {
+                                        e.target.style.backgroundColor = '#0035DD';
+                                    }
                                 }}
                             >
-                                {message.text}
-                            </div>
-                        ))}
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 0.5C11.2826 0.5 11.9774 1.00078 12.2249 1.74322L13.9829 7.01715L19.2568 8.77512C19.9992 9.0226 20.5 9.7174 20.5 10.5C20.5 11.2826 19.9992 11.9774 19.2568 12.2249L13.9829 13.9829L12.2249 19.2568C11.9774 19.9992 11.2826 20.5 10.5 20.5C9.7174 20.5 9.0226 19.9992 8.77512 19.2568L7.01715 13.9829L1.74322 12.2249C1.00078 11.9774 0.5 11.2826 0.5 10.5C0.5 9.7174 1.00078 9.0226 1.74322 8.77512L7.01715 7.01715L8.77512 1.74322C9.0226 1.00078 9.7174 0.5 10.5 0.5Z" stroke={inputValue.trim() ? "#fff" : "#000"} stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-
-                    {/* Input Section */}
-                    <div style={styles.inputSection}>
-                        <input
-                            type="text"
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                            placeholder="ASK ANY QUESTIONS"
-                            style={styles.input}
-                        />
-                        <button
-                            style={{
-                                ...styles.sendButton,
-                                ...(inputValue.trim() ? {} : styles.sendButtonDisabled)
-                            }}
-                            onClick={handleSendMessage}
-                            disabled={!inputValue.trim()}
-                            onMouseEnter={(e) => {
-                                if (inputValue.trim()) {
-                                    e.target.style.backgroundColor = '#0028b0';
-                                }
-                            }}
-                            onMouseLeave={(e) => {
-                                if (inputValue.trim()) {
-                                    e.target.style.backgroundColor = '#0035DD';
-                                }
-                            }}
-                        >
-                            <img src="/star.svg" alt="star" width="21" height="21" />
-                        </button>
-                    </div>
-                </div>
                 </div>
             )}
 

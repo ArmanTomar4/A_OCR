@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 // Custom hook for typewriter effect with intersection observer
-const useTypewriter = (text, speed = 50, delay = 1000, dependency = null, shouldStart = false) => {
+const useTypewriter = (text, speed = 50, delay = 2000, dependency = null, shouldStart = false) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
@@ -419,7 +419,7 @@ export default function SolutionsByIndustry() {
 
   // Typewriter effect for benefits text - restart when industry changes and only when visible
   const benefitsText = "REDUCE MANUAL DATA ENTRY BY 90%, ACCELERATE CUSTOMER ONBOARDING BY 75%, ENSURE REGULATORY COMPLIANCE, AND MINIMIZE HUMAN ERROR IN FINANCIAL CALCULATIONS.";
-  const typewriterText = useTypewriter(benefitsText, 30, 500, activeIndustry, isBenefitsVisible);
+  const typewriterText = useTypewriter(benefitsText, 15, 100, activeIndustry, isBenefitsVisible);
 
   useEffect(() => {
     const styleSheet = document.createElement("style");
