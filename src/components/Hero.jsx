@@ -12,9 +12,9 @@ function Hero() {
 
   useEffect(() => {
     const allElements = [prefixRef.current, ...Object.values(letterRefs).map(ref => ref.current)]
-    
+
     // Initial setup - all invisible
-    gsap.set(allElements, { 
+    gsap.set(allElements, {
       opacity: 0,
       filter: "brightness(1)",
       textShadow: "0 0 0 rgba(255,255,255,0)"
@@ -30,13 +30,13 @@ function Hero() {
         sequence
           .to(target, {
             opacity: 0,
-            duration: 0.03,
+            duration: 0.09,
             ease: "steps(1)"
           })
           .to(target, {
             opacity: 1,
             filter: `brightness(${intensity})`,
-            duration: 0.03,
+            duration: 0.02,
             ease: "steps(1)"
           })
       }
@@ -57,14 +57,14 @@ function Hero() {
     // Add a_ with delay and more blinks
     mainTimeline.add(() => {
       blinkElement(prefixRef.current, 2, 7) // More blinks for a_
-    }, "+=0.25") // 0.2s delay
+    }, "+=0.15") // Reduced delay for faster timing
 
     // Set final state
     mainTimeline.to(allElements, {
       opacity: 1,
       filter: "brightness(1)",
-      duration: 0.1
-    }, "+=0.25")
+      duration: 0.05
+    }, "+=0.1") // Reduced delay for faster timing
   }, [])
 
   return (
@@ -79,7 +79,7 @@ function Hero() {
         <div className="hero-background"></div>
         <div className="hero-content">
           <h1 className="hero-logo">
-          a_OCR 
+            a_OCR
           </h1>
           <p className="hero-tagline"> <span ref={prefixRef} className="prefix">Any </span>
             <span ref={letterRefs.C}>Data </span>
