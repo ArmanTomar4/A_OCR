@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
@@ -56,14 +57,14 @@ function Hero() {
     // Add a_ with delay and more blinks
     mainTimeline.add(() => {
       blinkElement(prefixRef.current, 2, 7) // More blinks for a_
-    }, "+=0.12") // 0.2s delay
+    }, "+=0.25") // 0.2s delay
 
     // Set final state
     mainTimeline.to(allElements, {
       opacity: 1,
       filter: "brightness(1)",
       duration: 0.1
-    }, "+=0.1")
+    }, "+=0.25")
   }, [])
 
   return (
@@ -78,12 +79,12 @@ function Hero() {
         <div className="hero-background"></div>
         <div className="hero-content">
           <h1 className="hero-logo">
-            <span ref={prefixRef} className="prefix">a_</span>
-            <span ref={letterRefs.C}>O</span>
-            <span ref={letterRefs.O}>C</span>
-            <span ref={letterRefs.R}>R</span>
+          a_OCR 
           </h1>
-          <p className="hero-tagline">Any Data to Intelligence</p>
+          <p className="hero-tagline"> <span ref={prefixRef} className="prefix">Any </span>
+            <span ref={letterRefs.C}>Data </span>
+            <span ref={letterRefs.O}>to </span>
+            <span ref={letterRefs.R}>Intelligence</span></p>
           <div className="hero-button-wrapper">
             <button className="hero-button">
               Request Access
