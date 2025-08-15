@@ -76,7 +76,7 @@ function Hero() {
 
       {/* Hero Section */}
       <div className="hero-section">
-        <div className="hero-background"></div>
+        <div className="hero-background-desktop"></div>
         <video
           className="hero-video-bg"
           autoPlay
@@ -86,6 +86,9 @@ function Hero() {
         >
           <source src="/herobg.mp4" type="video/mp4" />
         </video>
+        <div className="hero-background-mobile">
+          <img src="/herobgmobile.png" alt="hero-background-mobile" />
+        </div>
         <div className="hero-content">
           <h1 className="hero-logo">
             a_OCR
@@ -114,7 +117,9 @@ function Hero() {
           </div>
         </div>
       </div>
-
+      <div className="bottom-info-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 2C7.77614 2 8 2.22386 8 2.5V11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.75979 12.9473 7.63261 13 7.5 13C7.36739 13 7.24021 12.9473 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929V2.5C7 2.22386 7.22386 2 7.5 2Z" fill="white" /></svg>
+      </div>
       {/* Bottom Info */}
       <div className="bottom-info">
         <div className="bottom-section">

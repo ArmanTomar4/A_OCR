@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './Navbar.css'
 
 function Navbar() {
   const navigate = useNavigate()
@@ -9,7 +10,6 @@ function Navbar() {
   const [isOverPipeline, setIsOverPipeline] = useState(false)
   const [isOverStats, setIsOverStats] = useState(false)
   const [activePage, setActivePage] = useState('0')
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,7 +109,6 @@ function Navbar() {
 
   const handleNavClick = (page) => {
     setActivePage(page)
-    setIsMobileMenuOpen(false) // Close mobile menu when nav item is clicked
 
     // Scroll to appropriate section based on page
     switch (page) {
@@ -132,16 +131,10 @@ function Navbar() {
 
   const handleRequestAccess = () => {
     navigate('/request-access')
-    setIsMobileMenuOpen(false) // Close mobile menu when button is clicked
   }
 
   const handleLogoClick = () => {
     navigate('/')
-    setIsMobileMenuOpen(false) // Close mobile menu when logo is clicked
-  }
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   return (
@@ -200,45 +193,10 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Hamburger Button */}
+      {/* Mobile Navigation - Simple horizontal layout */}
       <div className="nav-section right mobile-only">
-        <button className="hamburger-button" onClick={toggleMobileMenu}>
-          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
-        <div className="mobile-menu-content">
-          <ul className="mobile-nav-menu">
-            <li
-              className={`mobile-nav-item ${activePage === 'features' ? 'active' : ''}`}
-              onClick={() => handleNavClick('features')}
-            >
-              Features
-            </li>
-            <li
-              className={`mobile-nav-item ${activePage === 'applications' ? 'active' : ''}`}
-              onClick={() => handleNavClick('applications')}
-            >
-              Applications
-            </li>
-            <li
-              className={`mobile-nav-item ${activePage === 'how-it-works' ? 'active' : ''}`}
-              onClick={() => handleNavClick('how-it-works')}
-            >
-              How it works
-            </li>
-            <li
-              className={`mobile-nav-item ${activePage === 'stats' ? 'active' : ''}`}
-              onClick={() => handleNavClick('stats')}
-            >
-              Stats
-            </li>
-          </ul>
-          <button className="mobile-request-button" onClick={handleRequestAccess}>
+        <div className="nav-button-wrapper">
+          <button className="nav-button mobile-nav-button" onClick={handleRequestAccess}>
             Request Access
             <svg className="button-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
               <rect width="24" height="24" transform="translate(0 0.5)" fill="white" fill-opacity="0.01" />

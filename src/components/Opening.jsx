@@ -297,7 +297,8 @@ export default function Opening() {
   }
 
   return (
-    <div className="opening-container">
+    <>
+        <div className="opening-container">
       <div
         className="hard-grid top-grid"
         ref={gridTopRef}
@@ -347,5 +348,11 @@ export default function Opening() {
         <span>SCROLL DOWN</span>
       </div>
     </div>
+    <div className="opening-container-mobile">
+      <div className="hard-grid top-grid">
+        {rowsTop}
+      </div>
+    </div>
+    </>
   );
 } 

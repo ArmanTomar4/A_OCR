@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import gsap from 'gsap';
 
 // Custom hook for typewriter effect with intersection observer
 const useTypewriter = (text, speed = 50, delay = 2000, dependency = null, shouldStart = false) => {
@@ -74,12 +73,12 @@ body {
 }
 
 .solutions-title {
-color: #000;
-font-size: 2.5rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: var(--Typography-Letter-spacing-8, -0.01rem);
+  color: #000;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: var(--Typography-Letter-spacing-8, -0.01rem);
 }
 
 .solutions-description {
@@ -87,10 +86,10 @@ letter-spacing: var(--Typography-Letter-spacing-8, -0.01rem);
   font-size: 15.5px;
   line-height: 1.4;
   color: #444;
-  max-width: 100&;
+  max-width: 100%;
   flex: 1;
-color: rgba(0, 0, 0, 0.60);
-font-weight: 400;
+  color: rgba(0, 0, 0, 0.60);
+  font-weight: 400;
 }
 
 .solutions-description-highlight {
@@ -102,6 +101,7 @@ font-weight: 400;
   display: flex;
   gap: 90px;
   margin-top: 48px;
+  flex-direction: row-reverse;
 }
 
 .industry-sidebar {
@@ -121,7 +121,6 @@ font-weight: 400;
 
 .industry-item:hover {
   padding-left: 5px;
-
 }
 
 .industry-item.active {
@@ -133,14 +132,15 @@ font-weight: 400;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.4);
 }
-  .industry-item.active .industry-name {
-    color: #000;
-    font-weight: 400;
-  }
+
+.industry-item.active .industry-name {
+  color: #000;
+  font-weight: 400;
+}
 
 .industry-item.active {
-border-bottom: 1px solid #0e3ba5;
-color: #000;
+  border-bottom: 1px solid #0e3ba5;
+  color: #000;
 }
 
 .industry-number {
@@ -157,7 +157,7 @@ color: #000;
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  margin-left: 18px;
+  margin-right: 18px;
 }
 
 .panel-header {
@@ -169,7 +169,7 @@ color: #000;
 
 .document-types-grid {
   display: grid;
-gap: 5px;
+  gap: 5px;
 }
 
 .document-type-item {
@@ -295,6 +295,221 @@ gap: 5px;
     padding: 30px;
   }
 }
+
+  /* Hide mobile selector on larger screens */
+  .mobile-industry-selector {
+    display: none;
+  }
+
+  /* Mobile styles for devices up to 480px */
+@media (max-width: 480px) {
+  .solutions-container {
+    padding: 20px 16px 40px 16px;
+    min-height: auto;
+  }
+
+  .solutions-header {
+    margin-bottom: 40px;
+    display: block;
+    gap: 0;
+  }
+
+  .solutions-left {
+    margin-bottom: 20px;
+  }
+
+  .solutions-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .solutions-title {
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .solutions-description {
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .solutions-content {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .industry-sidebar {
+    width: 100%;
+    order: 2;
+  }
+
+  .industry-item {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .industry-item:hover {
+    padding-left: 0;
+  }
+
+  .industry-name {
+    font-size: 15px;
+  }
+
+  .industry-number {
+    font-size: 10px;
+  }
+
+  .industry-details-panel {
+    order: 1;
+    margin-right: 0;
+    padding: 20px 16px;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .mobile-industry-selector {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+    padding-right: 28px;
+    min-width: 120px;
+  }
+
+  .mobile-industry-selector:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .mobile-industry-selector:active {
+    transform: translateY(0);
+  }
+
+  .mobile-industry-selector option {
+    background: #0e3ba5;
+    color: white;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .panel-header {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .document-types-grid {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .document-type-item {
+    display: block;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .document-type-name {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .document-type-description {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .benefits-section {
+    padding: 16px;
+    gap: 12px;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+
+  .benefits-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    align-self: flex-start;
+  }
+
+  .benefits-arrow {
+    width: 12px;
+    height: 16px;
+  }
+
+  .benefits-arrow svg {
+    width: 12px;
+    height: 16px;
+  }
+
+  .benefits-arrow-span {
+    font-size: 9px;
+  }
+
+  .benefits-text {
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+
+  /* Mobile-specific layout improvements */
+  .solutions-header {
+    text-align: left;
+  }
+
+  .industry-sidebar {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .industry-item {
+    border-radius: 4px;
+    margin-bottom: 4px;
+    padding: 12px 8px;
+    border-bottom: none;
+    background: transparent;
+    transition: background-color 0.2s ease;
+  }
+
+  .industry-item:hover,
+  .industry-item.active {
+    background-color: rgba(14, 59, 165, 0.1);
+    padding-left: 8px;
+  }
+
+  .industry-item.active {
+    border-left: 3px solid #0e3ba5;
+  }
+
+  .industry-item.active .industry-name {
+    color: #0e3ba5;
+    font-weight: 500;
+  }
+}
 `;
 
 const industries = [
@@ -416,6 +631,7 @@ const industryData = {
 export default function SolutionsByIndustry() {
   const [activeIndustry, setActiveIndustry] = useState('Financial Technology');
   const [isBenefitsVisible, setIsBenefitsVisible] = useState(false);
+  const [showMobileSelector, setShowMobileSelector] = useState(false);
   const benefitsRef = useRef(null);
 
   // Refs for title animation
@@ -467,8 +683,8 @@ export default function SolutionsByIndustry() {
         }
       },
       {
-        threshold: 0.3, // Trigger when 30% of the element is visible
-        rootMargin: '0px 0px -50px 0px' // Start slightly before the element comes into view
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -483,87 +699,44 @@ export default function SolutionsByIndustry() {
     };
   }, []);
 
-  // Title animation effect
+  // Title animation effect (simplified for mobile)
   useEffect(() => {
     const allElements = Object.values(titleWordRefs).map(ref => ref.current);
     if (!allElements.every(el => el)) return;
 
-    // Create intersection observer to trigger animation when element comes into view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Start the blinking animation
-          startBlinkAnimation(allElements);
-          observer.unobserve(entry.target); // Only trigger once
+          // Simplified animation for mobile - just fade in
+          allElements.forEach((el, index) => {
+            setTimeout(() => {
+              if (el) {
+                el.style.opacity = '1';
+                el.style.transition = 'opacity 0.5s ease';
+              }
+            }, index * 200);
+          });
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.5 });
 
-    // Observe the first element to trigger the animation
+    // Set initial state
+    allElements.forEach(el => {
+      if (el) el.style.opacity = '0';
+    });
+
     observer.observe(allElements[0]);
 
     return () => observer.disconnect();
   }, []);
 
-  const startBlinkAnimation = (allElements) => {
-    // Initial setup - all invisible
-    gsap.set(allElements, {
-      opacity: 0,
-      filter: "brightness(1)",
-      textShadow: "0 0 0 rgba(0,0,0,0)"
-    });
-
-    // Main timeline
-    const mainTimeline = gsap.timeline();
-
-    // Quick initial blinks for each element
-    const blinkElement = (target, intensity, numBlinks) => {
-      const sequence = gsap.timeline();
-      for (let i = 0; i < numBlinks; i++) {
-        sequence
-          .to(target, {
-            opacity: 0,
-            duration: 0.09,
-            ease: "steps(1)"
-          })
-          .to(target, {
-            opacity: 1,
-            filter: `brightness(${intensity})`,
-            duration: 0.02,
-            ease: "steps(1)"
-          });
-      }
-      return sequence;
-    };
-
-    // All elements start hidden
-    gsap.set(allElements, { opacity: 0 });
-
-    // Create parallel animations for each word at different times
-    mainTimeline.add(() => {
-      // Solutions blinks first
-      blinkElement(titleWordRefs.Solutions.current, 1.7, 4);
-    });
-
-    // "by" with delay
-    mainTimeline.add(() => {
-      blinkElement(titleWordRefs.by.current, 1.5, 5);
-    }, "+=0.15");
-
-    // Industry with more delay
-    mainTimeline.add(() => {
-      blinkElement(titleWordRefs.Industry.current, 1.3, 4);
-    }, "+=0.15");
-
-    // Set final state for all elements
-    mainTimeline.to(allElements, {
-      opacity: 1,
-      filter: "brightness(1)",
-      duration: 0.05
-    }, "+=0.1");
-  };
-
   const currentData = industryData[activeIndustry];
+  const currentIndustryNumber = industries.find(ind => ind.name === activeIndustry)?.number || '01';
+
+  const handleMobileIndustryChange = (event) => {
+    setActiveIndustry(event.target.value);
+  };
 
   return (
     <div className="solutions-container">
@@ -582,20 +755,19 @@ export default function SolutionsByIndustry() {
       </div>
 
       <div className="solutions-content">
-        <div className="industry-sidebar">
-          {industries.map((industry) => (
-            <div
-              key={industry.number}
-              className={`industry-item ${activeIndustry === industry.name ? 'active' : ''}`}
-              onClick={() => setActiveIndustry(industry.name)}
-            >
-              <span className="industry-name">{industry.name}</span>
-              <span className="industry-number">{industry.number}</span>
-            </div>
-          ))}
-        </div>
-
         <div className="industry-details-panel">
+          <select 
+            className="mobile-industry-selector" 
+            value={activeIndustry}
+            onChange={handleMobileIndustryChange}
+            title="Select industry"
+          >
+            {industries.map((industry) => (
+              <option key={industry.number} value={industry.name}>
+                {industry.number} - {industry.name}
+              </option>
+            ))}
+          </select>
           <div className="panel-header">{currentData.header}</div>
 
           <div className="document-types-grid">
@@ -611,7 +783,7 @@ export default function SolutionsByIndustry() {
             <div className="benefits-label">
               <div className="benefits-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="21" viewBox="0 0 15 21" fill="none">
-                  <path d="M1 16.5H0.5V17H1V16.5ZM14.8536 16.8536C15.0488 16.6583 15.0488 16.3417 14.8536 16.1464L11.6716 12.9645C11.4763 12.7692 11.1597 12.7692 10.9645 12.9645C10.7692 13.1597 10.7692 13.4763 10.9645 13.6716L13.7929 16.5L10.9645 19.3284C10.7692 19.5237 10.7692 19.8403 10.9645 20.0355C11.1597 20.2308 11.4763 20.2308 11.6716 20.0355L14.8536 16.8536ZM1 0H0.5V16.5H1H1.5V0H1ZM1 16.5V17H14.5V16.5V16H1V16.5Z" fill="#00713F" fill-opacity="0.870588" />
+                  <path d="M1 16.5H0.5V17H1V16.5ZM14.8536 16.8536C15.0488 16.6583 15.0488 16.3417 14.8536 16.1464L11.6716 12.9645C11.4763 12.7692 11.1597 12.7692 10.9645 12.9645C10.7692 13.1597 10.7692 13.4763 10.9645 13.6716L13.7929 16.5L10.9645 19.3284C10.7692 19.5237 10.7692 19.8403 10.9645 20.0355C11.1597 20.2308 11.4763 20.2308 11.6716 20.0355L14.8536 16.8536ZM1 0H0.5V16.5H1H1.5V0H1ZM1 16.5V17H14.5V16.5V16H1V16.5Z" fill="#00713F" fillOpacity="0.870588" />
                 </svg>
               </div>
               <span className="benefits-arrow-span">KEY BENEFITS</span>
@@ -622,7 +794,20 @@ export default function SolutionsByIndustry() {
             </div>
           </div>
         </div>
+
+        <div className="industry-sidebar">
+          {industries.map((industry) => (
+            <div
+              key={industry.number}
+              className={`industry-item ${activeIndustry === industry.name ? 'active' : ''}`}
+              onClick={() => setActiveIndustry(industry.name)}
+            >
+              <span className="industry-name">{industry.name}</span>
+              <span className="industry-number">{industry.number}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
-} 
+}

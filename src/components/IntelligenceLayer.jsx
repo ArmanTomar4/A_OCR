@@ -47,6 +47,11 @@ const INTELLIGENCE_LAYER_STYLES = `
       grid-template-columns: 1fr;
     }
   }
+  @media (max-width: 480px) {
+    .intelligence-layer-container {
+    display: none !important;
+    }
+  }
 `;
 
 export default function IntelligenceLayer() {
