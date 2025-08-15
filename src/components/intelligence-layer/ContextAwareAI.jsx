@@ -21,10 +21,10 @@ const CONTEXT_AWARE_AI_STYLES = `
   }
 
   .context-aware-ai-number {
+    font-family: "Source Code Pro", monospace;
     font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
-    letter-spacing: 1px;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -93,9 +93,9 @@ const CONTEXT_AWARE_AI_STYLES = `
   }
 
   .context-aware-ai-title {
+    font-family: "Source Code Pro", monospace;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 12px;
     font-weight: 500;
@@ -106,11 +106,11 @@ const CONTEXT_AWARE_AI_STYLES = `
 
 
   .context-aware-ai-description {
+    font-family: "Source Code Pro", monospace;
     font-size: 9px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: 400;
     transition: color 0.3s ease;
   }
@@ -127,31 +127,31 @@ export default function ContextAwareAI() {
       <div className="context-aware-ai-number">[06]</div>
       <div className="context-aware-ai-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" className="context-aware-ai-svg">
-          <circle cx="20" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="40" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="60" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="80" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="20" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="40" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="60" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="80" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="20" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="40" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="60" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="80" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="20" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="40" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="60" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <circle cx="80" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="20" y1="20" x2="40" y2="40" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="40" y1="20" x2="60" y2="40" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="60" y1="20" x2="80" y2="40" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="20" y1="40" x2="40" y2="60" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="40" y1="40" x2="60" y2="60" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="60" y1="40" x2="80" y2="60" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="20" y1="60" x2="40" y2="80" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="40" y1="60" x2="60" y2="80" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
-          <line x1="60" y1="60" x2="80" y2="80" stroke="white" stroke-opacity="0.5" stroke-width="1"/>
+          <circle cx="20" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="40" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="60" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="80" cy="20" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="20" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="40" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="60" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="80" cy="40" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="20" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="40" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="60" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="80" cy="60" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="20" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="40" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="60" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="80" cy="80" r="3" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="20" y1="20" x2="40" y2="40" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="40" y1="20" x2="60" y2="40" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="60" y1="20" x2="80" y2="40" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="20" y1="40" x2="40" y2="60" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="40" y1="40" x2="60" y2="60" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="60" y1="40" x2="80" y2="60" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="20" y1="60" x2="40" y2="80" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="40" y1="60" x2="60" y2="80" stroke="white" stroke-opacity="0.5" stroke-width="1" />
+          <line x1="60" y1="60" x2="80" y2="80" stroke="white" stroke-opacity="0.5" stroke-width="1" />
         </svg>
       </div>
       <h3 className="context-aware-ai-title">CONTEXT-AWARE AI</h3>

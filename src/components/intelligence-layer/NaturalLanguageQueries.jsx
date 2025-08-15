@@ -21,10 +21,10 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
   }
 
   .natural-language-queries-number {
+    font-family: "Source Code Pro", monospace;
     font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
-    letter-spacing: 1px;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -45,9 +45,9 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
   }
 
   .natural-language-queries-title {
+    font-family: "Source Code Pro", monospace;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 12px;
     font-weight: 500;
@@ -56,11 +56,11 @@ const NATURAL_LANGUAGE_QUERIES_STYLES = `
   }
 
   .natural-language-queries-description {
+    font-family: "Source Code Pro", monospace;
     font-size: 9px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: 400;
     transition: color 0.3s ease;
   }
@@ -90,9 +90,9 @@ export default function NaturalLanguageQueries() {
           <rect x="10.25" y="33.25" width="37.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" />
           <rect x="55.25" y="50.25" width="67.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" />
           <rect x="10.25" y="16.25" width="70.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="highlight-rect" />
-          <rect x="86.25" y="16.25" width="36.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5"  />
+          <rect x="86.25" y="16.25" width="36.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" />
           <rect x="55.25" y="33.25" width="67.5" height="9.5" stroke="white" stroke-opacity="0.5" stroke-width="0.5" className="highlight-rect" />
-          <path d="M0.5 76V1H132.5V76H84.5L67.5 93L50.5 76H0.5Z" stroke="white" stroke-opacity="0.5"/>
+          <path d="M0.5 76V1H132.5V76H84.5L67.5 93L50.5 76H0.5Z" stroke="white" stroke-opacity="0.5" />
 
         </svg>
       </div>

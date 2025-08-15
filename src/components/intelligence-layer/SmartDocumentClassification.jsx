@@ -11,6 +11,7 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    
     transition: all 0.3s ease;
     overflow: hidden;
   }
@@ -21,10 +22,10 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
   }
 
   .smart-document-classification-number {
+    font-family: "Source Code Pro", monospace;
     font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
-    letter-spacing: 1px;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -54,9 +55,9 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
   }
 
   .smart-document-classification-title {
+    font-family: "Source Code Pro", monospace;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 12px;
     font-weight: 500;
@@ -66,11 +67,11 @@ const SMART_DOCUMENT_CLASSIFICATION_STYLES = `
 
 
   .smart-document-classification-description {
+    font-family: "Source Code Pro", monospace;
     font-size: 9px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: 400;
     transition: color 0.3s ease;
   }
@@ -90,7 +91,7 @@ export default function SmartDocumentClassification() {
       <style>{SMART_DOCUMENT_CLASSIFICATION_STYLES}</style>
       <div className="smart-document-classification-number">[04]</div>
       <div className="smart-document-classification-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="118" height="85" viewBox="0 0 118 85" fill="none" className="smart-document-classification-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="118" height="85" viewBox="0 0 118 85" fill="none" className="smart-document-classification-svg">
           <rect x="0.5" y="0.5" width="117" height="84" stroke="white" />
           <rect x="1" y="1" width="116" height="12" fill="none" className="top-rect" />
           <rect x="1" y="72" width="116" height="12" fill="none" className="bottom-rect" />

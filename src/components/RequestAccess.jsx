@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RequestAccess = () => {
     const styles = {
@@ -126,7 +127,7 @@ const RequestAccess = () => {
             alignItems: 'center',
             justifyContent: 'center'
         },
-       
+
         layer3: {
             position: 'absolute',
             bottom: '5%',
@@ -138,7 +139,7 @@ const RequestAccess = () => {
         layer4: {
             position: 'absolute',
             top: '50%',
-            left: '57%',  
+            left: '57%',
             transform: 'translate(-50%, -50%)',
             zIndex: 100,
             animation: 'float 5s ease-in-out infinite 0.8s',
@@ -191,6 +192,12 @@ const RequestAccess = () => {
         }
     `;
 
+    const navigate = useNavigate();
+
+    const handleRequestAccess = () => {
+        navigate('/request-access');
+    };
+
     return (
         <>
             <style>{styleSheet}</style>
@@ -211,6 +218,7 @@ const RequestAccess = () => {
                                 onMouseLeave={(e) => {
                                     e.target.style.transform = 'translateY(0)';
                                 }}
+                                onClick={handleRequestAccess}
                             >
                                 <span>Request Access</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
@@ -238,15 +246,15 @@ const RequestAccess = () => {
                     <div style={styles.rightSection}>
                         <div style={styles.abstractGraphics}>
 
-                              {/* Top Layer - toplayer.svg with positioned blur effect */}
-                              <div style={styles.layer}>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
+                            {/* Top Layer - toplayer.svg with positioned blur effect */}
+                            <div style={styles.layer}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                                     <defs>
                                         <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
                                             <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
                                         </filter>
                                     </defs>
-                                    <rect x="0" y="0" width="100%" height="100%"  filter="url(#blurFilter)" />
+                                    <rect x="0" y="0" width="100%" height="100%" filter="url(#blurFilter)" />
                                     {/* Main diamond shape from Group 5.svg */}
                                     <g transform="translate(50, 50)">
                                         <foreignObject x="-89.2393" y="-89.7012" width="595.763" height="370.885">
@@ -277,10 +285,10 @@ const RequestAccess = () => {
                                     </g>
 
                                 </svg>
-                              </div>
+                            </div>
 
 
-                              {/* Layer 4 - New top layer with Group 5.svg content */}
+                            {/* Layer 4 - New top layer with Group 5.svg content */}
                             <div style={styles.layer4}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                                     <defs>
@@ -288,7 +296,7 @@ const RequestAccess = () => {
                                             <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
                                         </filter>
                                     </defs>
-                                    <rect x="0" y="0" width="100%" height="100%"  filter="url(#blurFilter)" />
+                                    <rect x="0" y="0" width="100%" height="100%" filter="url(#blurFilter)" />
                                     {/* Main diamond shape from Group 5.svg */}
                                     <g transform="translate(50, 50)">
                                         <foreignObject x="-89.2393" y="-89.7012" width="595.763" height="370.885">
@@ -371,13 +379,13 @@ const RequestAccess = () => {
                             </div>
                             {/* Layer 1 (middle) with blur and additional SVGs */}
                             <div style={styles.layer1}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                                     <defs>
                                         <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
                                             <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
                                         </filter>
                                     </defs>
-                                    <rect x="0" y="0" width="100%" height="100%"  filter="url(#blurFilter)" />
+                                    <rect x="0" y="0" width="100%" height="100%" filter="url(#blurFilter)" />
                                     {/* Main diamond shape from Group 5.svg */}
                                     <g transform="translate(50, 50)">
                                         <foreignObject x="-89.2393" y="-89.7012" width="595.763" height="370.885">
@@ -389,31 +397,31 @@ const RequestAccess = () => {
                                     </g>
 
                                     {/* Small geometric elements from toplayer.svg positioned correctly */}
-                                   {/* Small circle elements from Group 4.svg positioned correctly */}
-<g transform="translate(50, 50)">
-    <g transform="translate(85, 105)">
-        <path d="M24.8467 1.07129C31.6576 1.07129 37.8079 2.48868 42.2432 4.76465C46.6953 7.04936 49.3328 10.1475 49.333 13.4775C49.333 16.8076 46.6953 19.9057 42.2432 22.1904C37.8079 24.4664 31.6576 25.8838 24.8467 25.8838C18.0358 25.8838 11.8854 24.4664 7.4502 22.1904C2.9981 19.9057 0.360352 16.8076 0.360352 13.4775C0.360524 10.1475 2.99808 7.04935 7.4502 4.76465C11.8854 2.48868 18.0358 1.07129 24.8467 1.07129Z" fill="none" fillOpacity="0.7" stroke="white" strokeOpacity="0.7" strokeWidth="0.652961" />
-    </g>
-    <g transform="translate(85, 90)">
-        <path d="M19.0312 0.285156C24.0177 0.285156 28.5204 1.32298 31.7676 2.98926C35.0274 4.66205 36.959 6.92997 36.959 9.36816C36.9589 11.8063 35.0273 14.0743 31.7676 15.7471C28.5204 17.4133 24.0177 18.4512 19.0312 18.4512C14.0448 18.4511 9.54207 17.4134 6.29492 15.7471C3.0353 14.0743 1.10453 11.8063 1.10449 9.36816C1.10449 6.93004 3.0353 4.66204 6.29492 2.98926C9.54207 1.32296 14.0448 0.285199 19.0312 0.285156Z" fill="white" fillOpacity="0.9" stroke="white" strokeOpacity="0.4" strokeWidth="0.478061" />
-    </g>
-    <g transform="translate(170, 140)">
-        <path d="M25.6426 0.572266C32.4535 0.572266 38.6038 1.98966 43.0391 4.26562C47.4912 6.55033 50.1287 9.64847 50.1289 12.9785C50.1289 16.3086 47.4912 19.4066 43.0391 21.6914C38.6038 23.9674 32.4535 25.3848 25.6426 25.3848C18.8317 25.3848 12.6813 23.9674 8.24609 21.6914C3.794 19.4066 1.15625 16.3086 1.15625 12.9785C1.15642 9.64848 3.79398 6.55033 8.24609 4.26562C12.6813 1.98966 18.8317 0.572271 25.6426 0.572266Z" stroke="white" strokeOpacity="0.9" strokeWidth="0.652961" />
-    </g>
-    <g transform="translate(310, 94)">
-        <path d="M19.0312 0.285156C24.0177 0.285156 28.5204 1.32298 31.7676 2.98926C35.0274 4.66205 36.959 6.92997 36.959 9.36816C36.9589 11.8063 35.0273 14.0743 31.7676 15.7471C28.5204 17.4133 24.0177 18.4512 19.0312 18.4512C14.0448 18.4511 9.54207 17.4134 6.29492 15.7471C3.0353 14.0743 1.10453 11.8063 1.10449 9.36816C1.10449 6.93004 3.0353 4.66204 6.29492 2.98926C9.54207 1.32296 14.0448 0.285199 19.0312 0.285156Z" fill="white" fillOpacity="0.9" stroke="white" strokeOpacity="0.9" strokeWidth="0.478061" />
-    </g>
-    <g transform="translate(220, 114)">
-        <path d="M19.0312 0.285156C24.0177 0.285156 28.5204 1.32298 31.7676 2.98926C35.0274 4.66205 36.959 6.92997 36.959 9.36816C36.9589 11.8063 35.0273 14.0743 31.7676 15.7471C28.5204 17.4133 24.0177 18.4512 19.0312 18.4512C14.0448 18.4511 9.54207 17.4134 6.29492 15.7471C3.0353 14.0743 1.10453 11.8063 1.10449 9.36816C1.10449 6.93004 3.0353 4.66204 6.29492 2.98926C9.54207 1.32296 14.0448 0.285199 19.0312 0.285156Z" fill="white" fillOpacity="0.9" stroke="white" strokeOpacity="0.9" strokeWidth="0.478061" />
-    </g>
-    <g transform="translate(270,87)">
-        <path d="M24.8467 1.07129C31.6576 1.07129 37.8079 2.48868 42.2432 4.76465C46.6953 7.04936 49.3328 10.1475 49.333 13.4775C49.333 16.8076 46.6953 19.9057 42.2432 22.1904C37.8079 24.4664 31.6576 25.8838 24.8467 25.8838C18.0358 25.8838 11.8854 24.4664 7.4502 22.1904C2.9981 19.9057 0.360352 16.8076 0.360352 13.4775C0.360524 10.1475 2.99808 7.04935 7.4502 4.76465C11.8854 2.48868 18.0358 1.07129 24.8467 1.07129Z" stroke="white" strokeOpacity="0.9" strokeWidth="0.652961" />
-    </g>
-</g>
+                                    {/* Small circle elements from Group 4.svg positioned correctly */}
+                                    <g transform="translate(50, 50)">
+                                        <g transform="translate(85, 105)">
+                                            <path d="M24.8467 1.07129C31.6576 1.07129 37.8079 2.48868 42.2432 4.76465C46.6953 7.04936 49.3328 10.1475 49.333 13.4775C49.333 16.8076 46.6953 19.9057 42.2432 22.1904C37.8079 24.4664 31.6576 25.8838 24.8467 25.8838C18.0358 25.8838 11.8854 24.4664 7.4502 22.1904C2.9981 19.9057 0.360352 16.8076 0.360352 13.4775C0.360524 10.1475 2.99808 7.04935 7.4502 4.76465C11.8854 2.48868 18.0358 1.07129 24.8467 1.07129Z" fill="none" fillOpacity="0.7" stroke="white" strokeOpacity="0.7" strokeWidth="0.652961" />
+                                        </g>
+                                        <g transform="translate(85, 90)">
+                                            <path d="M19.0312 0.285156C24.0177 0.285156 28.5204 1.32298 31.7676 2.98926C35.0274 4.66205 36.959 6.92997 36.959 9.36816C36.9589 11.8063 35.0273 14.0743 31.7676 15.7471C28.5204 17.4133 24.0177 18.4512 19.0312 18.4512C14.0448 18.4511 9.54207 17.4134 6.29492 15.7471C3.0353 14.0743 1.10453 11.8063 1.10449 9.36816C1.10449 6.93004 3.0353 4.66204 6.29492 2.98926C9.54207 1.32296 14.0448 0.285199 19.0312 0.285156Z" fill="white" fillOpacity="0.9" stroke="white" strokeOpacity="0.4" strokeWidth="0.478061" />
+                                        </g>
+                                        <g transform="translate(170, 140)">
+                                            <path d="M25.6426 0.572266C32.4535 0.572266 38.6038 1.98966 43.0391 4.26562C47.4912 6.55033 50.1287 9.64847 50.1289 12.9785C50.1289 16.3086 47.4912 19.4066 43.0391 21.6914C38.6038 23.9674 32.4535 25.3848 25.6426 25.3848C18.8317 25.3848 12.6813 23.9674 8.24609 21.6914C3.794 19.4066 1.15625 16.3086 1.15625 12.9785C1.15642 9.64848 3.79398 6.55033 8.24609 4.26562C12.6813 1.98966 18.8317 0.572271 25.6426 0.572266Z" stroke="white" strokeOpacity="0.9" strokeWidth="0.652961" />
+                                        </g>
+                                        <g transform="translate(310, 94)">
+                                            <path d="M19.0312 0.285156C24.0177 0.285156 28.5204 1.32298 31.7676 2.98926C35.0274 4.66205 36.959 6.92997 36.959 9.36816C36.9589 11.8063 35.0273 14.0743 31.7676 15.7471C28.5204 17.4133 24.0177 18.4512 19.0312 18.4512C14.0448 18.4511 9.54207 17.4134 6.29492 15.7471C3.0353 14.0743 1.10453 11.8063 1.10449 9.36816C1.10449 6.93004 3.0353 4.66204 6.29492 2.98926C9.54207 1.32296 14.0448 0.285199 19.0312 0.285156Z" fill="white" fillOpacity="0.9" stroke="white" strokeOpacity="0.9" strokeWidth="0.478061" />
+                                        </g>
+                                        <g transform="translate(220, 114)">
+                                            <path d="M19.0312 0.285156C24.0177 0.285156 28.5204 1.32298 31.7676 2.98926C35.0274 4.66205 36.959 6.92997 36.959 9.36816C36.9589 11.8063 35.0273 14.0743 31.7676 15.7471C28.5204 17.4133 24.0177 18.4512 19.0312 18.4512C14.0448 18.4511 9.54207 17.4134 6.29492 15.7471C3.0353 14.0743 1.10453 11.8063 1.10449 9.36816C1.10449 6.93004 3.0353 4.66204 6.29492 2.98926C9.54207 1.32296 14.0448 0.285199 19.0312 0.285156Z" fill="white" fillOpacity="0.9" stroke="white" strokeOpacity="0.9" strokeWidth="0.478061" />
+                                        </g>
+                                        <g transform="translate(270,87)">
+                                            <path d="M24.8467 1.07129C31.6576 1.07129 37.8079 2.48868 42.2432 4.76465C46.6953 7.04936 49.3328 10.1475 49.333 13.4775C49.333 16.8076 46.6953 19.9057 42.2432 22.1904C37.8079 24.4664 31.6576 25.8838 24.8467 25.8838C18.0358 25.8838 11.8854 24.4664 7.4502 22.1904C2.9981 19.9057 0.360352 16.8076 0.360352 13.4775C0.360524 10.1475 2.99808 7.04935 7.4502 4.76465C11.8854 2.48868 18.0358 1.07129 24.8467 1.07129Z" stroke="white" strokeOpacity="0.9" strokeWidth="0.652961" />
+                                        </g>
+                                    </g>
                                 </svg>
                             </div>
 
-                      
+
                             {/* Layer 3 - Bottom cubic element (no blur, in front) */}
                             <div style={{ ...styles.layer3, animation: 'floatBottom 9s ease-in-out infinite 1.5s' }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="166" height="168" viewBox="0 0 166 168" fill="none" style={{ filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))' }}>

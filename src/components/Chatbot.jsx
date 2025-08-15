@@ -44,7 +44,7 @@ const Chatbot = () => {
                 setMessages(prev => prev.map(msg =>
                     msg.id === messageId ? { ...msg, text: text } : msg
                 ));
-                
+
                 // Final scroll after message is complete
                 setTimeout(scrollToBottom, 100);
             }
@@ -134,10 +134,10 @@ const Chatbot = () => {
                     text: '',
                     type: 'bot'
                 });
-                
+
                 // Scroll to bottom when typing starts
                 setTimeout(scrollToBottom, 100);
-                
+
                 typewriterEffect(answer, botMessage.id);
             }, 2000);
 
@@ -186,10 +186,10 @@ const Chatbot = () => {
             };
             setMessages(prev => [...prev, botMessage]);
 
-                        try {
+            try {
                 // Call the chatbot API
                 const apiResponse = await callChatbotAPI(userMessage.text);
-                
+
                 // Show typing indicator and start typewriter effect
                 setIsTyping(true);
                 setTypingMessage({
@@ -197,10 +197,10 @@ const Chatbot = () => {
                     text: '',
                     type: 'bot'
                 });
-                
+
                 // Scroll to bottom when typing starts
                 setTimeout(scrollToBottom, 100);
-                
+
                 typewriterEffect(apiResponse, botMessage.id);
             } catch (error) {
                 console.error('Error getting response:', error);
@@ -248,13 +248,13 @@ const Chatbot = () => {
             type: 'bot'
         });
 
-                try {
+        try {
             // Call the chatbot API
             const apiResponse = await callChatbotAPI(question);
-            
+
             // Scroll to bottom when typing starts
             setTimeout(scrollToBottom, 100);
-            
+
             // Start typewriter effect with API response
             typewriterEffect(apiResponse, botMessage.id);
         } catch (error) {
@@ -301,15 +301,23 @@ const Chatbot = () => {
                             />
                             <button
                                 className="chatbot-send-button"
+                                style={{
+                                    padding: '5px',
+                                }}
                                 onClick={handleSendMessage}
                                 disabled={!inputValue.trim() || isLoading}
                             >
                                 {isLoading ? (
                                     <div className="loading-spinner"></div>
                                 ) : (
-                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.5 0.5C11.2826 0.5 11.9774 1.00078 12.2249 1.74322L13.9829 7.01715L19.2568 8.77512C19.9992 9.0226 20.5 9.7174 20.5 10.5C20.5 11.2826 19.9992 11.9774 19.2568 12.2249L13.9829 13.9829L12.2249 19.2568C11.9774 19.9992 11.2826 20.5 10.5 20.5C9.7174 20.5 9.0226 19.9992 8.77512 19.2568L7.01715 7.01715L8.77512 1.74322C9.0226 1.00078 9.7174 0.5 10.5 0.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                                    <svg width="208" height="208" viewBox="0 0 208 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M72.8125 133.429L80.7165 134.377L76.6064 37L72.8125 133.429Z" fill={inputValue.trim() ? "white" : "black"} />
+                                        <path d="M81.3488 133.112H72.8125L47.8359 172L81.3488 133.112Z" fill={inputValue.trim() ? "white" : "black"} />
+                                        <path d="M74.709 136.906L80.3998 129.951L196.114 147.023L74.709 136.906Z" fill={inputValue.trim() ? "white" : "black"} />
+                                        <path d="M80.4004 129.951L76.9227 136.274L8 165.677L80.4004 129.951Z" fill={inputValue.trim() ? "white" : "black"} fill-opacity="0.3" />
+                                        <path d="M80.4016 129.951L200.542 75.5713L76.9238 136.274L80.4016 129.951Z" fill={inputValue.trim() ? "white" : "black"} />
                                     </svg>
+
                                 )}
                             </button>
                         </div>

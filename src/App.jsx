@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
@@ -7,6 +8,7 @@ import IntelligenceLayer from './components/IntelligenceLayer.jsx'
 import SolutionsByIndustry from './components/SolutionsByIndustry.jsx'
 import WhyChooseAOCR from './components/WhyChooseAOCR.jsx'
 import RequestAccess from './components/RequestAccess.jsx'
+import RequestAccessForm from './components/RequestAccessForm.jsx'
 import Footer from './components/Footer.jsx'
 import Pipeline from './components/Pipeline.jsx'
 import AnimatedFAQDiagram from './components/FAQ_backup.jsx'
@@ -105,19 +107,26 @@ function App() {
 
   try {
     return (
-      <>
-        <Navbar />
-        <Hero />
-        <Opening />
-        <IntelligenceLayer />
-        <SolutionsByIndustry />
-        <Pipeline />
-        <WhyChooseAOCR />
-        <AnimatedFAQDiagram />
-        <Chatbot />
-        <RequestAccess />
-        <Footer />
-      </>
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Hero />
+              <Opening />
+              <IntelligenceLayer />
+              <SolutionsByIndustry />
+              <Pipeline />
+              <WhyChooseAOCR />
+              <AnimatedFAQDiagram />
+              <Chatbot />
+              <RequestAccess />
+              <Footer />
+            </>
+          } />
+          <Route path="/request-access" element={<RequestAccessForm />} />
+        </Routes>
+      </Router>
     )
   } catch (error) {
     console.error('App error:', error);

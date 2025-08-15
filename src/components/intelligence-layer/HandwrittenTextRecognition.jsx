@@ -16,10 +16,10 @@ const SMART_DOC_CLASSIFICATION_STYLES = `
   }
 
   .smart-doc-classification-number {
+    font-family: "Source Code Pro", monospace;
     font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
-    letter-spacing: 1px;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -31,7 +31,6 @@ const SMART_DOC_CLASSIFICATION_STYLES = `
   }
 
   .smart-doc-classification-icon-container {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,9 +51,9 @@ const SMART_DOC_CLASSIFICATION_STYLES = `
   }
 
   .smart-doc-classification-title {
+    font-family: "Source Code Pro", monospace;
     font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 12px;
     font-weight: 500;
@@ -65,11 +64,11 @@ const SMART_DOC_CLASSIFICATION_STYLES = `
 
 
   .smart-doc-classification-description {
+    font-family: "Source Code Pro", monospace;
     font-size: 9px;
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.9px;
     font-weight: 200;
     transition: color 0.3s ease;
   }

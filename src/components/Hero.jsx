@@ -77,6 +77,15 @@ function Hero() {
       {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-background"></div>
+        <video
+          className="hero-video-bg"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/herobg.mp4" type="video/mp4" />
+        </video>
         <div className="hero-content">
           <h1 className="hero-logo">
             a_OCR

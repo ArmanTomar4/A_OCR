@@ -21,10 +21,10 @@ const ADVANCED_TABLE_PROCESSING_STYLES = `
   }
 
   .advanced-table-processing-number {
+    font-family: "Source Code Pro", monospace;
     font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
-    letter-spacing: 1px;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -56,9 +56,9 @@ const ADVANCED_TABLE_PROCESSING_STYLES = `
 }
 
   .advanced-table-processing-title {
+    font-family: "Source Code Pro", monospace;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 12px;
     font-weight: 500;
@@ -66,12 +66,12 @@ const ADVANCED_TABLE_PROCESSING_STYLES = `
     transition: all 0.3s ease;
   }
 
-  .advanced-table-processing-description {
+    .advanced-table-processing-description {
+    font-family: "Source Code Pro", monospace;
     font-size: 9px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: 400;
     transition: color 0.3s ease;
   }

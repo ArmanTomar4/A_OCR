@@ -74,6 +74,9 @@ const AnimatedFAQDiagram = () => {
         rightConnectors: []
     });
 
+    // Track which question is currently active
+    const [activeQuestion, setActiveQuestion] = useState(null);
+
     // Navigation state management
     const [navigationHistory, setNavigationHistory] = useState([{ type: 'faq', label: 'FAQ' }]);
     const [currentNavIndex, setCurrentNavIndex] = useState(0);
@@ -392,6 +395,7 @@ const AnimatedFAQDiagram = () => {
 
     // Handle question clicks - send to your external Chatbot.jsx
     const handleQuestionClick = useCallback((question) => {
+        setActiveQuestion(question);
         console.log('FAQ: Question clicked:', question);
 
         // Find the corresponding answer for this question
@@ -907,19 +911,30 @@ const AnimatedFAQDiagram = () => {
                                                 className={`info-box ${boxId.includes('left') ? 'left-side' : 'right-side'}`}
                                                 style={{
                                                     position: 'absolute',
-                                                    left: `${box.position.x}px`,
+                                                    left: (boxId === 'our-products' || boxId === 'sales' || boxId === 'pricing') ? `${box.position.x - 26}px` : `${box.position.x}px`,
                                                     top: `${box.position.y}px`,
-                                                    cursor: 'pointer'
+                                                    cursor: 'pointer',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'space-between',
+                                                    gap: '8px',
+                                                    padding: '0.55rem 1rem'
                                                 }}
                                                 variants={boxVariants}
                                                 initial="hidden"
                                                 animate="visible"
                                                 exit="exit"
                                                 onClick={() => handleBoxClick(boxId)}
-                                                whileHover={{ scale: 1.05 }}
-                                                whileTap={{ scale: 0.95 }}
+                                                whileHover={{ borderLeft: '4px solid white', transition: { duration: 0.15 } }}
+                                                whileTap={{
+                                                    borderLeft: '4px solid white',
+                                                }}
                                             >
-                                                {box.label}
+                                                <span>{box.label}</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 24 25" fill="none">
+                                                    <rect width="24" height="24" transform="translate(0 0.5)" fill="white" fill-opacity="0" />
+                                                    <path fillRule="evenodd" clipRule="evenodd" d="M5.83393 18.6665C5.5215 18.3541 5.5215 17.8475 5.83393 17.5352L16.4683 6.90078H9.59961C9.15779 6.90078 8.79961 6.54261 8.79961 6.10078C8.79961 5.65896 9.15779 5.30078 9.59961 5.30078H18.3996C18.6118 5.30078 18.8153 5.38507 18.9654 5.5351C19.1153 5.68513 19.1996 5.88861 19.1996 6.10078V14.9008C19.1996 15.3426 18.8414 15.7008 18.3996 15.7008C17.9579 15.7008 17.5996 15.3426 17.5996 14.9008V8.03216L6.96529 18.6665C6.65288 18.9789 6.14635 18.9789 5.83393 18.6665Z" fill="#fff" />
+                                                </svg>
                                             </motion.div>
                                         );
                                     })
@@ -1043,8 +1058,13 @@ const AnimatedFAQDiagram = () => {
                                                             borderRadius: '0',
                                                             backgroundColor: '#000',
                                                             border: '0.5px solid white',
+                                                            borderLeft: '0.5px solid white',
                                                             cursor: 'pointer',
-                                                            zIndex: 6
+                                                            zIndex: 6,
+                                                            ...(activeQuestion === question && {
+                                                                border: '0.5px solid white',
+                                                                borderLeft: '4px solid white'
+                                                            })
                                                         }}
                                                         initial={{ scale: 0, opacity: 0, x: -50 }}
                                                         animate={{ scale: 1, opacity: 1, x: 0 }}
@@ -1053,10 +1073,11 @@ const AnimatedFAQDiagram = () => {
                                                             type: "spring",
                                                             stiffness: 300,
                                                             damping: 30,
-                                                            duration: 0.4
+                                                            duration: 0.4,
+                                                            cursor: 'pointer'
                                                         }}
-                                                        whileHover={{ scale: 1.01 }}
-                                                        whileTap={{ scale: 0.98 }}
+                                                        whileHover={{ borderLeft: '4px solid white', transition: { duration: 0.15 } }}
+                                                        whileTap={{ borderLeft: '4px solid white' }}
                                                         onClick={() => handleQuestionClick(question)}
                                                     >
                                                         <div style={{
@@ -1070,6 +1091,7 @@ const AnimatedFAQDiagram = () => {
                                                         }}>
                                                             {question}
                                                         </div>
+
                                                     </motion.div>
                                                 )}
                                             </AnimatePresence>
@@ -1135,9 +1157,14 @@ const AnimatedFAQDiagram = () => {
                                                             padding: '12px 16px',
                                                             borderRadius: '0',
                                                             backgroundColor: '#000',
-                                                            border: '1px solid white',
+                                                            border: '0.5px solid white',
+                                                            borderLeft: '0.5px solid white',
                                                             cursor: 'pointer',
-                                                            zIndex: 6
+                                                            zIndex: 6,
+                                                            ...(activeQuestion === question && {
+                                                                border: '1px solid white',
+                                                                borderLeft: '4px solid white'
+                                                            })
                                                         }}
                                                         initial={{ scale: 0, opacity: 0, x: 50 }}
                                                         animate={{ scale: 1, opacity: 1, x: 0 }}
@@ -1149,7 +1176,7 @@ const AnimatedFAQDiagram = () => {
                                                             duration: 0.4
                                                         }}
                                                         whileHover={{ scale: 1.02 }}
-                                                        whileTap={{ scale: 0.98 }}
+                                                        whileTap={{ borderLeft: '4px solid white', transition: { duration: 0.15 } }}
                                                         onClick={() => handleQuestionClick(question)}
                                                     >
                                                         <div style={{
@@ -1163,6 +1190,7 @@ const AnimatedFAQDiagram = () => {
                                                         }}>
                                                             {question}
                                                         </div>
+
                                                     </motion.div>
                                                 )}
                                             </AnimatePresence>

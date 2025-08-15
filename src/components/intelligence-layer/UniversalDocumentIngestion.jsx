@@ -21,10 +21,10 @@ const UNIVERSAL_DOCUMENT_INGESTION_STYLES = `
   }
 
   .universal-document-ingestion-number {
+    font-family: "Source Code Pro", monospace;
     font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
-    letter-spacing: 1px;
     position: absolute;
     top: 16px;
     left: 16px;
@@ -85,9 +85,9 @@ const UNIVERSAL_DOCUMENT_INGESTION_STYLES = `
 
 
   .universal-document-ingestion-title {
+    font-family: "Source Code Pro", monospace;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 12px;
     font-weight: 500;
@@ -96,11 +96,11 @@ const UNIVERSAL_DOCUMENT_INGESTION_STYLES = `
   }
 
   .universal-document-ingestion-description {
+    font-family: "Source Code Pro", monospace;
     font-size: 9px;
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: 200;
     transition: color 0.3s ease;
   }

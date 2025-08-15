@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import gsap from 'gsap';
 
 // Custom hook for typewriter effect with intersection observer
 const useTypewriter = (text, speed = 50, delay = 2000, dependency = null, shouldStart = false) => {
@@ -51,7 +52,7 @@ body {
 .solutions-container {
   min-height: 100vh;
   background-color: #FFF;
-  padding: 90px 95px 48px 95px;
+  padding: 90px 95px 60px 95px;
 }
 
 .solutions-header {
@@ -417,8 +418,32 @@ export default function SolutionsByIndustry() {
   const [isBenefitsVisible, setIsBenefitsVisible] = useState(false);
   const benefitsRef = useRef(null);
 
+  // Refs for title animation
+  const titleWordRefs = {
+    Solutions: useRef(null),
+    by: useRef(null),
+    Industry: useRef(null)
+  };
+
   // Typewriter effect for benefits text - restart when industry changes and only when visible
-  const benefitsText = "REDUCE MANUAL DATA ENTRY BY 90%, ACCELERATE CUSTOMER ONBOARDING BY 75%, ENSURE REGULATORY COMPLIANCE, AND MINIMIZE HUMAN ERROR IN FINANCIAL CALCULATIONS.";
+  const getBenefitsText = (industry) => {
+    switch (industry) {
+      case 'Financial Technology':
+        return "REDUCE MANUAL DATA ENTRY BY 90%, ACCELERATE CUSTOMER ONBOARDING BY 75%, ENSURE REGULATORY COMPLIANCE, AND MINIMIZE HUMAN ERROR IN FINANCIAL CALCULATIONS.";
+      case 'Healthcare & Medical':
+        return "IMPROVE PATIENT CARE EFFICIENCY BY 80%, REDUCE MEDICAL ERRORS BY 95%, ACCELERATE CLAIMS PROCESSING BY 70%, AND ENHANCE REGULATORY COMPLIANCE IN HEALTHCARE DOCUMENTATION.";
+      case 'Legal Services':
+        return "ACCELERATE CONTRACT REVIEW BY 85%, REDUCE LEGAL RESEARCH TIME BY 75%, IMPROVE DOCUMENT ACCURACY BY 90%, AND STREAMLINE COMPLIANCE MONITORING PROCESSES.";
+      case 'Government & Public Sector':
+        return "IMPROVE CITIZEN SERVICE DELIVERY BY 80%, REDUCE PROCESSING TIME BY 70%, ENHANCE DATA SECURITY AND COMPLIANCE, AND STREAMLINE GOVERNMENT OPERATIONS EFFICIENCY.";
+      case 'Logistics & Supply Chain':
+        return "OPTIMIZE SUPPLY CHAIN VISIBILITY BY 85%, REDUCE DOCUMENT PROCESSING TIME BY 75%, IMPROVE INVENTORY ACCURACY BY 90%, AND ACCELERATE CUSTOMS CLEARANCE PROCESSES.";
+      default:
+        return "REDUCE MANUAL DATA ENTRY BY 90%, ACCELERATE PROCESSING BY 75%, ENSURE COMPLIANCE, AND MINIMIZE HUMAN ERROR.";
+    }
+  };
+
+  const benefitsText = getBenefitsText(activeIndustry);
   const typewriterText = useTypewriter(benefitsText, 15, 100, activeIndustry, isBenefitsVisible);
 
   useEffect(() => {
@@ -458,6 +483,86 @@ export default function SolutionsByIndustry() {
     };
   }, []);
 
+  // Title animation effect
+  useEffect(() => {
+    const allElements = Object.values(titleWordRefs).map(ref => ref.current);
+    if (!allElements.every(el => el)) return;
+
+    // Create intersection observer to trigger animation when element comes into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Start the blinking animation
+          startBlinkAnimation(allElements);
+          observer.unobserve(entry.target); // Only trigger once
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Observe the first element to trigger the animation
+    observer.observe(allElements[0]);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const startBlinkAnimation = (allElements) => {
+    // Initial setup - all invisible
+    gsap.set(allElements, {
+      opacity: 0,
+      filter: "brightness(1)",
+      textShadow: "0 0 0 rgba(0,0,0,0)"
+    });
+
+    // Main timeline
+    const mainTimeline = gsap.timeline();
+
+    // Quick initial blinks for each element
+    const blinkElement = (target, intensity, numBlinks) => {
+      const sequence = gsap.timeline();
+      for (let i = 0; i < numBlinks; i++) {
+        sequence
+          .to(target, {
+            opacity: 0,
+            duration: 0.09,
+            ease: "steps(1)"
+          })
+          .to(target, {
+            opacity: 1,
+            filter: `brightness(${intensity})`,
+            duration: 0.02,
+            ease: "steps(1)"
+          });
+      }
+      return sequence;
+    };
+
+    // All elements start hidden
+    gsap.set(allElements, { opacity: 0 });
+
+    // Create parallel animations for each word at different times
+    mainTimeline.add(() => {
+      // Solutions blinks first
+      blinkElement(titleWordRefs.Solutions.current, 1.7, 4);
+    });
+
+    // "by" with delay
+    mainTimeline.add(() => {
+      blinkElement(titleWordRefs.by.current, 1.5, 5);
+    }, "+=0.15");
+
+    // Industry with more delay
+    mainTimeline.add(() => {
+      blinkElement(titleWordRefs.Industry.current, 1.3, 4);
+    }, "+=0.15");
+
+    // Set final state for all elements
+    mainTimeline.to(allElements, {
+      opacity: 1,
+      filter: "brightness(1)",
+      duration: 0.05
+    }, "+=0.1");
+  };
+
   const currentData = industryData[activeIndustry];
 
   return (
@@ -466,7 +571,7 @@ export default function SolutionsByIndustry() {
         <div className="solutions-left">
           <div className="solutions-label">[APPLICATIONS]</div>
           <h1 className="solutions-title">
-            Solutions by<br />Industry
+            <span ref={titleWordRefs.Solutions}>Solutions</span> <span ref={titleWordRefs.by}>by </span><br /> <span ref={titleWordRefs.Industry}>Industry</span>
           </h1>
         </div>
         <p className="solutions-description">

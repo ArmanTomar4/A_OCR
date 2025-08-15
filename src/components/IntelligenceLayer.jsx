@@ -65,7 +65,7 @@ export default function IntelligenceLayer() {
         <ContextAwareAI />
         <NaturalLanguageQueries />
         <AIPoweredAutomation />
-        
+
 
       </div>
     </div>
