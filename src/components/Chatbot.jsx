@@ -150,6 +150,12 @@ const Chatbot = () => {
                         block: 'center',
                         inline: 'center'
                     });
+
+                    // Add a subtle highlight effect
+                    chatbotElement.style.boxShadow = '0 0 20px rgba(0, 255, 0, 0.3)';
+                    setTimeout(() => {
+                        chatbotElement.style.boxShadow = '';
+                    }, 2000);
                 }
             }, 300);
         };

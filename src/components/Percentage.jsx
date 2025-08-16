@@ -59,6 +59,7 @@ const Percentage = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 40px;
           position: relative;
           overflow: hidden;
           
@@ -258,7 +259,7 @@ font-family: 'Source Code Pro';
           color: #fff;
           letter-spacing: -3px;
           line-height: 1;
-          padding: 0px px;
+          padding: 0px;
           display: inline-block;
           position: relative;
           z-index: 1;
@@ -280,7 +281,30 @@ font-family: 'Source Code Pro';
           padding-left:20px
         }
 
-        .percentage-container .feature-item {
+        @media (max-width: 480px) {
+          .percentage-container .features-list {
+            display: none !important;
+          }
+          .percentage-container .right-section1{
+            padding: 0px !important;
+            display: block !important;
+          }
+          .percentage-container .left-section1{
+            padding: 0px !important;
+            display: block !important;
+            width: 100% !important;
+            justify-content: center !important;
+          }
+          .percentage-container .scalability-highlight{
+            padding: 0px !important;
+            padding: 40px !important;
+            width: fit-content !important;
+            margin-left: 0 !important;
+            text-align: left !important;
+          }
+        }
+
+        .percentage-container .percentage-container .feature-item {
           display: flex;
           align-items: flex-start;
           gap: 5px;
@@ -290,17 +314,18 @@ font-family: 'Source Code Pro';
           text-transform: uppercase;
         }
 
-        .percentage-container .checkmark {
-          color: #4ade80;
-          font-size: 12px;
 
-          margin-top: -1px;
-        }
         .percentage-container .scalability-svg {
           position: absolute;
-          top: 35px;
-          left: -40px;
+          top: 100px;
+          left: -80px;
           z-index: 1;
+        }
+
+        @media (max-width: 480px) {
+          .percentage-container .scalability-svg {
+            top: 64px;
+          }
         }
         @keyframes fadeIn {
           from {
@@ -345,7 +370,7 @@ font-family: 'Source Code Pro';
 
         .percentage-container .percentage-row:nth-child(3) .percentage-text {
           color: #444;
-        }
+        }        
       `}</style>
 
       <div ref={sectionRef} className="percentage-container">
@@ -374,7 +399,7 @@ font-family: 'Source Code Pro';
         <div className="divider" />
 
         <div className="right-section1">
-          <div className={isVisible ? 'animate-in' : ''}>
+          <div >
             <div className="scalability-highlight">
               <div className="scalability-label">Unmatched Accuracy</div>
               <div className="scalability-svg"><svg xmlns="http://www.w3.org/2000/svg" width="583" height="88" viewBox="0 0 583 88" fill="none">
@@ -386,7 +411,7 @@ font-family: 'Source Code Pro';
                   </linearGradient>
                 </defs>
               </svg></div>
-              <div className={`number-display ${isVisible ? 'animate-count' : ''}`}>99%+</div>
+              <div className="number-display">99%+</div>
               <div className="description">
                 Industry-leading precision that <br />
                 outperforms traditional OCR <br />
@@ -396,19 +421,19 @@ font-family: 'Source Code Pro';
 
             <div className="features-list">
               <div className="feature-item">
-                <span className="checkmark">✓</span>
+                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Advanced AI-powered text recognition</span>
               </div>
               <div className="feature-item">
-                <span className="checkmark">✓</span>
+                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Handles low-quality and skewed documents</span>
               </div>
               <div className="feature-item">
-                <span className="checkmark">✓</span>
+                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Multi-language support with high precision</span>
               </div>
               <div className="feature-item">
-                <span className="checkmark">✓</span>
+                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Continuous model improvements</span>
               </div>
             </div>

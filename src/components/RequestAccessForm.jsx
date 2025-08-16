@@ -335,6 +335,7 @@ const REQUEST_ACCESS_FORM_STYLES = `
   @media (max-width: 768px) {
     .request-access-form-content {
       padding: 18px;
+      padding-top: 70px;
     }
     
     .request-access-form-title {
@@ -342,8 +343,7 @@ const REQUEST_ACCESS_FORM_STYLES = `
     }
     
     .graphic-section {
-      height: 270px;
-    }
+display: none !important;    }
   }
 `;
 

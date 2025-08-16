@@ -294,6 +294,14 @@ body {
   .industry-details-panel {
     padding: 30px;
   }
+  
+  .industry-sidebar {
+    display: none !important;
+  }
+  
+  .panel-header {
+    display: none !important;
+  }
 }
 
   /* Hide mobile selector on larger screens */
@@ -374,12 +382,9 @@ body {
 
   .mobile-industry-selector {
     display: block;
-    position: absolute;
-    top: 16px;
-    right: 16px;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
+    border-radius: 0;
     padding: 6px 12px;
     font-size: 10px;
     color: white;
@@ -393,8 +398,10 @@ body {
     background-repeat: no-repeat;
     background-position: right 8px center;
     background-size: 12px;
-    padding-right: 28px;
-    min-width: 120px;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    min-width: 80px;
+    width: 160px;
   }
 
   .mobile-industry-selector:hover {
@@ -457,7 +464,7 @@ body {
 
   .benefits-arrow {
     width: 12px;
-    height: 16px;
+    height: 10px;
   }
 
   .benefits-arrow svg {
@@ -466,7 +473,8 @@ body {
   }
 
   .benefits-arrow-span {
-    font-size: 9px;
+    padding-top: 12px;
+    font-size: 12px;
   }
 
   .benefits-text {

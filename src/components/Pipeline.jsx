@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import MiddleSection from './MiddleSection'
+import './Pipeline.css'
 
 const Pipeline = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const isMobile = screenWidth <= 480;
 
     // Refs for title animation
     const titleWordRefs = {
@@ -112,111 +114,63 @@ const Pipeline = () => {
             duration: 0.05
         }, "+=0.1");
     };
-    const styles = {
-        pipelineContainer: {
-            backgroundColor: '#ffffff',
-            height: '120vh',
-            width: '100vw',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'relative',
-            overflow: 'hidden',
-
-        },
-        heading: {
-            margin: '50px 0 0 0',
-            position: 'absolute',
-            top: '0',
-            left: '97px',
-            color: '#000',
-            /* font-family: "Alliance No.2"; */
-            fontSize: '2.2rem',
-            fontStyle: 'normal',
-            fontWeight: '400',
-            lineHeight: 'normal',
-            borderBottom: '1px solid #000',
-            paddingBottom: '10px',
-            width: '90%',
-        },
-        mainSection: {
-            display: 'flex',
-            width: '100%',
-            height: '100%',
-            padding: '90px 85px 48px 85px'
-        },
-        leftSection: {
-            width: '25%',
-            minHeight: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'unset',
-            padding: '0',
-            alignItems: 'flex-start'
-        },
-        middleSection: {
-            width: '50%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            padding: '20px'
-        },
-        rightSection: {
-            width: '25%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '20px',
-            justifyContent: 'flex-end',
-            paddingBottom: '104px'
-        },
-        fadedTiltImage: {
-            width: '25%',
-            height: screenWidth >= 1366 ? '80%' : '64%',
-            position: 'absolute',
-            left: '8px',
-            top: '25px',
-        },
-
-        descriptionText: {
-            color: '#000',
-            fontSize: '1.125rem',
-            fontStyle: 'normal',
-            fontWeight: '400',
-            lineHeight: '1.625rem',
-            letterSpacing: '-0.0025rem'
-        },
-        copyrightText: {
-            color: '#000',
-            textAlign: 'right',
-            fontSize: '0.75rem',
-            fontStyle: 'normal',
-            fontWeight: '300',
-            lineHeight: 'normal',
-            letterSpacing: '-0.00275rem',
-        }
-    }
 
     return (
-        <div className='pipeline-container' style={styles.pipelineContainer}>
-            <div className='heading' style={styles.heading}>
+        <div className='pipeline-container'>
+            <div className='pipeline-heading'>
                 <p><span ref={titleWordRefs.Intelligent}>Intelligent</span> <span ref={titleWordRefs.OCR}>OCR</span> <span ref={titleWordRefs.Pipeline}>Pipeline</span> <span ref={titleWordRefs.in}>in</span> <span ref={titleWordRefs.Action}>Action</span></p>
             </div>
-            <div className='main-section' style={styles.mainSection}>
-                <div className='left-section' style={styles.leftSection}>
+            <div className='pipeline-main-section'>
+                <div className='pipeline-left-section'>
                     <img
                         src="/faded_tilt.svg"
                         alt="Faded tilted lines background"
-                        style={styles.fadedTiltImage}
+                        className='pipeline-faded-tilt-image'
                     />
-
                 </div>
                 <MiddleSection />
-                <div className='right-section' style={styles.rightSection}>
+                <div className='pipeline-right-section'>
+                </div>
+            </div>
+            <div className='main-section-mobile'>
+                <div className="svg-mobile">
+                    <img src="./pipeline.png" alt="" />
+                </div>
 
+                {/* Four Pipeline Stage Cards */}
+                <div className="pipeline-cards">
+                    <div className="pipeline-card card-01">
+                        <div className="card-number">01</div>
+                        <div className="card-content">
+                            <h3 className="card-title">INGEST</h3>
+                            <p className="card-description">Upload files or data from emails, cloud storage services, support tickets, and just about any data source.</p>
+                        </div>
+                    </div>
 
+                    <div className="pipeline-card card-02">
+                        <div className="card-number">02</div>
+                        <div className="card-content">
+                            <h3 className="card-title">UNDERSTAND</h3>
+                            <p className="card-description">Extract data accurately with our advanced AI extractors that don't rely on predefined templates.</p>
+                            
+                        </div>
+                    </div>
+
+                    <div className="pipeline-card card-03">
+                        <div className="card-number">03</div>
+                        <div className="card-content">
+                            <h3 className="card-title">TAKE ACTION</h3>
+                            <p className="card-description">Leverage decision engines to flag, review, validate files, or enhance your extracted/missing data.</p>
+                        </div>
+                    </div>
+
+                    <div className="pipeline-card card-04">
+                        <div className="card-number">04</div>
+                        <div className="card-content">
+                            <h3 className="card-title">EXPORT</h3>
+                            <p className="card-description">Push structured data into your CRM, WMS, database directly - or export as XLS, CSV, XML etc.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div >

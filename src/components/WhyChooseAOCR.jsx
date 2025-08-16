@@ -45,6 +45,16 @@ body {
   line-height: 1.1;
 }
 
+@media (max-width: 480px) {
+  .stats-header-section {
+    background-color: #000 !important;
+  }
+  
+  .stats-main-title {
+    font-size: 32px !important;
+  }
+}
+
 .stats-content-wrapper {
   display: flex;
   gap: 0;
@@ -224,10 +234,12 @@ export default function WhyChooseAOCR() {
         <h1 className="stats-main-title"><span ref={titleWordRefs.Why}>Why</span> <span ref={titleWordRefs.Choose}>Choose</span> <span ref={titleWordRefs.a_OCR}>a_OCR</span></h1>
       </div>
 
-      <Percentage />
-      <Timer />
-      <MassiveScalability />
-      <Dots />
+      <div className="stats-grid">
+        <Percentage />
+        <Timer />
+        <MassiveScalability />
+        <Dots />
+      </div>
     </div>
   );
 } 

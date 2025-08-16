@@ -12,7 +12,29 @@ const HEADER_CARD_STYLES = `
     transition: all 0.3s ease;
   }
 
+  /* Mobile-specific styles */
+  @media only screen and (max-width: 768px) {
+    .intelligence-header-card {
+      background-color: transparent;
+      padding: 16px;
+      height: auto;
+      border: none;
+    }
 
+    .intelligence-header-label {
+      margin-bottom: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    .intelligence-header-title {
+      margin-bottom: 12px !important;
+      line-height: 1.05;
+    }
+
+    .intelligence-header-description {
+      line-height: 1.3;
+    }
+  }
 
   .intelligence-header-label {
     font-size: 10px;
@@ -47,8 +69,6 @@ const HEADER_CARD_STYLES = `
     font-weight: 400;
     transition: color 0.3s ease;
   }
-
-
 `;
 
 export default function HeaderCard() {

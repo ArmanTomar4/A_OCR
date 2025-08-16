@@ -85,7 +85,7 @@ export default function AdvancedTableProcessing() {
   return (
     <div className="advanced-table-processing-card">
       <style>{ADVANCED_TABLE_PROCESSING_STYLES}</style>
-      <div className="advanced-table-processing-number">[05]</div>
+      <div className="advanced-table-processing-number">[02]</div>
       <div className="advanced-table-processing-icon">
         बहु-भाषा
       </div>

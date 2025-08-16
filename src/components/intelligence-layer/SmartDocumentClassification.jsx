@@ -89,7 +89,7 @@ export default function SmartDocumentClassification() {
   return (
     <div className="smart-document-classification-card">
       <style>{SMART_DOCUMENT_CLASSIFICATION_STYLES}</style>
-      <div className="smart-document-classification-number">[04]</div>
+      <div className="smart-document-classification-number">[05]</div>
       <div className="smart-document-classification-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="118" height="85" viewBox="0 0 118 85" fill="none" className="smart-document-classification-svg">
           <rect x="0.5" y="0.5" width="117" height="84" stroke="white" />

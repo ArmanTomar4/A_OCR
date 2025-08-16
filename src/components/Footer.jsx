@@ -31,8 +31,6 @@ const Footer = () => {
           position: relative;
         }
 
-
-
         .quote-attribution {
           font-size: 10px;
           color: #999;
@@ -41,48 +39,75 @@ const Footer = () => {
         }
 
         .apparatus-section {
-        position: absolute;
-        bottom: 0;
           text-align: center;
           width: 100%;
-          height: 100px;
+          height: auto;
           display: flex;
           justify-content: center;
+          align-items: center;
+          margin-top: auto;
         }
 
         .apparatus-logo {
           width: 100%;
+          max-width: 640px;
           height: auto;
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
           padding-left: 20px;
           padding-right: 20px;
         }
 
-        @media (max-width: 768px) {
-          .quote-text {
-            font-size: 24px;
-          }
-          
-          .apparatus-logo {
-            width: 300px;
-          }
-          
-          .quote-marks {
-            font-size: 80px;
-          }
-        }
-
         @media (max-width: 480px) {
+          .footer-container {
+            height: 100vh;
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+          }
+
+          .quote-section {
+            width: 80%;
+            height: 100%;
+            margin: 0;
+            margin-bottom: 0;
+            text-align: left;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+          }
+
           .quote-text {
-            font-size: 20px;
+            font-size: 28px;
+            line-height: 1.35;
+            margin-bottom: 20px;
           }
-          
+
+          .apparatus-section {
+            width: 20%;
+            height: 100%;
+            margin: 0;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+          }
+
           .apparatus-logo {
-            width: 250px;
-          }
-          
-          .quote-marks {
-            font-size: 60px;
+            position: absolute;
+            right: 25%;
+            top: 50%;
+            transform: translate(50%, -50%) rotate(-90deg);
+            transform-origin: center;
+            height: 100%;
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            opacity: 0.9;
           }
         }
       `}</style>
@@ -90,9 +115,10 @@ const Footer = () => {
       <div className="footer-container">
         <div className="quote-section">
           <div className="quote-text">
-            " The goal is to turn data into information, and information into insight "</div>
+            " The goal is to turn data into information, and information into insight "
+          </div>
           <div className="quote-attribution">
-            CARLY FIORINA, FORMER CEO OF HP
+            CARLY FIORINA,<br /> FORMER CEO OF HP
           </div>
         </div>
         
@@ -104,4 +130,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

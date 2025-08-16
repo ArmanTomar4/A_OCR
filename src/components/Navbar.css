@@ -572,9 +572,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: fixed;
+    top: 0;
+    left: 5px;
+    right: 5px;
     width: auto;
-    position: relative;
+    margin-top: 5px;
   }
   
   .logo {

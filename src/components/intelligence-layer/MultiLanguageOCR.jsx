@@ -108,7 +108,7 @@ export default function MultiLanguageOCR() {
   return (
     <div className="multi-language-ocr-card">
       <style>{MULTI_LANGUAGE_OCR_STYLES}</style>
-      <div className="multi-language-ocr-number">[02]</div>
+      <div className="multi-language-ocr-number">[03]</div>
       <div className="multi-language-ocr-icon">
         <div className="multi-language-ocr-svg-container">
           <svg xmlns="http://www.w3.org/2000/svg" width="117" height="32" viewBox="0 0 117 32" fill="none" className="multi-language-ocr-svg">

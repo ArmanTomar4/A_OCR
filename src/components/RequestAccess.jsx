@@ -1,196 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './RequestAccess.css';
 
 const RequestAccess = () => {
-    const styles = {
-        container: {
-            minHeight: '70vh',
-            display: 'flex',
-            backgroundColor: '#000',
-            position: 'relative',
-            width: '100%',
-            padding: '0px 95px 48px 95px',
-            justifyContent: 'center',
-            alignItems: 'center'
-        },
-        innerContainer: {
-            marginTop: '100px',
-
-            width: '100%',
-            maxWidth: '1200px',
-            display: 'flex',
-            backgroundColor: '#000',
-            position: 'relative',
-            overflow: 'hidden',
-            border: '1px solid #333',
-            minHeight: '70vh',
-            height: '100%'
-        },
-        leftSection: {
-            flex: 1,
-            backgroundColor: '#000',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            padding: '80px 60px',
-            position: 'relative'
-        },
-        textContent: {
-            maxWidth: '500px'
-        },
-        mainHeading: {
-            fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-            fontSize: '50px',
-            fontWeight: '700',
-            color: '#fff',
-            margin: '0 0 24px 0',
-            lineHeight: '1.1'
-        },
-        subHeading: {
-            fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-            fontSize: '32px',
-            fontWeight: '400',
-            color: 'grey',
-            margin: '0 0 24px 0',
-            lineHeight: '1.2',
-            opacity: '0.9'
-        },
-        requestButton: {
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            backgroundColor: '#fff',
-            color: '#000',
-            border: 'none',
-            padding: '12px 20px',
-            fontFamily: '"Alliance No.2", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-            fontSize: '14px',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-        },
-        divider: {
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            bottom: 0,
-            height: '100%',
-            width: '88px',
-            zIndex: 10,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-        rightSection: {
-            flex: 1,
-            backgroundImage: 'url(./bg.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'relative',
-            overflow: 'hidden'
-        },
-        abstractGraphics: {
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            perspective: '1000px'
-        },
-        layer: {
-            position: 'absolute',
-            top: '40%',
-            left: '57%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 104,
-            animation: 'float 6s ease-in-out infinite',
-            width: '600px',
-            height: '400px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-        layer1: {
-            position: 'absolute',
-            top: '58%',
-            left: '57%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 99,
-            animation: 'float 8s ease-in-out infinite 0.5s',
-            width: '600px',
-            height: '400px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        },
-
-        layer3: {
-            position: 'absolute',
-            bottom: '5%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 5,
-            animation: 'float 9s ease-in-out infinite 1.5s'
-        },
-        layer4: {
-            position: 'absolute',
-            top: '50%',
-            left: '57%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 100,
-            animation: 'float 5s ease-in-out infinite 0.8s',
-            width: '600px',
-            height: '400px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden'
-        }
-    };
-
-    const styleSheet = `
-        @keyframes float {
-            0%, 100% {
-                transform: translate(-50%, -50%) translateY(0px);
-            }
-            50% {
-                transform: translate(-50%, -50%) translateY(-20px);
-            }
-        }
-        
-        @keyframes floatBottom {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0px);
-            }
-            50% {
-                transform: translateX(-50%) translateY(-15px);
-            }
-        }
-        
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-        }
-    `;
 
     const navigate = useNavigate();
 
@@ -200,24 +12,17 @@ const RequestAccess = () => {
 
     return (
         <>
-            <style>{styleSheet}</style>
-            <div style={styles.container}>
-                <div style={styles.innerContainer}>
+            <div className="request-access-container">
+                <div className="request-access-inner-container">
                     {/* Left Section - Dark with Text */}
-                    <div style={styles.leftSection}>
-                        <div style={styles.textContent}>
-                            <h1 style={styles.mainHeading}>Are you ready?</h1>
-                            <p style={styles.subHeading}>
+                    <div className="request-access-left-section">
+                        <div className="request-access-text-content">
+                            <h1 className="request-access-main-heading">Are you ready?</h1>
+                            <p className="request-access-sub-heading">
                                 Help revolutionize technology and accelerate software's future.
                             </p>
                             <button
-                                style={styles.requestButton}
-                                onMouseEnter={(e) => {
-                                    e.target.style.transform = 'translateY(-2px)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.transform = 'translateY(0)';
-                                }}
+                                className="request-access-button"
                                 onClick={handleRequestAccess}
                             >
                                 <span>Request Access</span>
@@ -229,7 +34,7 @@ const RequestAccess = () => {
                         </div>
 
                         {/* Divider SVG */}
-                        <div style={styles.divider}>
+                        <div className="request-access-divider">
                             <svg xmlns="http://www.w3.org/2000/svg" width="88" height="552" viewBox="0 0 88 552" fill="none">
                                 <path d="M177.414 545.414L-45.5859 768.415L-47 767L176 544L177.414 545.414ZM177.414 532.414L-45.5859 755.415L-47 754L176 531L177.414 532.414ZM177.414 519.414L-45.5859 742.415L-47 741L176 518L177.414 519.414ZM177.414 506.414L-45.5859 729.415L-47 728L176 505L177.414 506.414ZM177.414 493.414L-45.5859 716.415L-47 715L176 492L177.414 493.414ZM177.414 480.414L-45.5859 703.415L-47 702L176 479L177.414 480.414ZM177.414 467.414L-45.5859 690.415L-47 689L176 466L177.414 467.414ZM177.414 454.414L-45.5859 677.415L-47 676L176 453L177.414 454.414ZM177.414 441.414L-45.5859 664.415L-47 663L176 440L177.414 441.414ZM177.414 428.414L-45.5859 651.415L-47 650L176 427L177.414 428.414ZM177.414 415.414L-45.5859 638.415L-47 637L176 414L177.414 415.414ZM177.414 402.414L-45.5859 625.415L-47 624L176 401L177.414 402.414ZM177.414 389.414L-45.5859 612.415L-47 611L176 388L177.414 389.414ZM177.414 376.414L-45.5859 599.415L-47 598L176 375L177.414 376.414ZM177.414 363.414L-45.5859 586.415L-47 585L176 362L177.414 363.414ZM177.414 350.414L-45.5859 573.415L-47 572L176 349L177.414 350.414ZM177.414 337.414L-45.5859 560.415L-47 559L176 336L177.414 337.414ZM177.414 324.414L-45.5859 547.415L-47 546L176 323L177.414 324.414ZM177.414 311.414L-45.5859 534.415L-47 533L176 310L177.414 311.414ZM177.414 298.414L-45.5859 521.415L-47 520L176 297L177.414 298.414ZM177.414 285.414L-45.5859 508.415L-47 507L176 284L177.414 285.414ZM177.414 272.414L-45.5859 495.415L-47 494L176 271L177.414 272.414ZM177.414 259.414L-45.5859 482.415L-47 481L176 258L177.414 259.414ZM177.414 246.414L-45.5859 469.415L-47 468L176 245L177.414 246.414ZM177.414 233.414L-45.5859 456.415L-47 455L176 232L177.414 233.414ZM177.414 220.414L-45.5859 443.415L-47 442L176 219L177.414 220.414ZM177.414 207.414L-45.5859 430.415L-47 429L176 206L177.414 207.414ZM177.414 194.414L-45.5859 417.415L-47 416L176 193L177.414 194.414ZM177.414 181.414L-45.5859 404.415L-47 403L176 180L177.414 181.414ZM177.414 168.414L-45.5859 391.415L-47 390L176 167L177.414 168.414ZM177.414 155.414L-45.5859 378.415L-47 377L176 154L177.414 155.414ZM177.414 142.414L-45.5859 365.415L-47 364L176 141L177.414 142.414ZM177.414 129.414L-45.5859 352.415L-47 351L176 128L177.414 129.414ZM177.414 116.414L-45.5859 339.415L-47 338L176 115L177.414 116.414ZM177.414 103.414L-45.5859 326.415L-47 325L176 102L177.414 103.414ZM177.414 90.4141L-45.5859 313.415L-47 312L176 89L177.414 90.4141ZM177.414 77.4141L-45.5859 300.415L-47 299L176 76L177.414 77.4141ZM177.414 64.4141L-45.5859 287.415L-47 286L176 63L177.414 64.4141ZM177.414 51.4141L-45.5859 274.415L-47 273L176 50L177.414 51.4141ZM177.414 38.4141L-45.5859 261.415L-47 260L176 37L177.414 38.4141ZM177.414 25.4141L-45.5859 248.415L-47 247L176 24L177.414 25.4141ZM177.414 12.4141L-45.5859 235.415L-47 234L176 11L177.414 12.4141ZM177.414 -0.585937L-45.5859 222.415L-47 221L176 -2L177.414 -0.585937ZM177.414 -13.5859L-45.5859 209.415L-47 208L176 -15L177.414 -13.5859ZM177.414 -26.5859L-45.5859 196.415L-47 195L176 -28L177.414 -26.5859ZM177.414 -39.5859L-45.5859 183.415L-47 182L176 -41L177.414 -39.5859ZM177.414 -52.5859L-45.5859 170.415L-47 169L176 -54L177.414 -52.5859ZM177.414 -65.5859L-45.5859 157.415L-47 156L176 -67L177.414 -65.5859ZM177.414 -78.5859L-45.5859 144.415L-47 143L176 -80L177.414 -78.5859ZM177.414 -91.5859L-45.5859 131.415L-47 130L176 -93L177.414 -91.5859ZM177.414 -104.586L-45.5859 118.415L-47 117L176 -106L177.414 -104.586ZM177.414 -117.586L-45.5859 105.415L-47 104L176 -119L177.414 -117.586ZM177.414 -130.586L-45.5859 92.415L-47 91L176 -132L177.414 -130.586ZM177.414 -143.586L-45.5859 79.415L-47 78L176 -145L177.414 -143.586ZM177.414 -156.586L-45.5859 66.415L-47 65L176 -158L177.414 -156.586ZM177.414 -169.586L-45.5859 53.415L-47 52L176 -171L177.414 -169.586ZM177.414 -182.586L-45.5859 40.415L-47 39L176 -184L177.414 -182.586ZM177.414 -195.586L-45.5859 27.415L-47 26L176 -197L177.414 -195.586ZM177.414 -208.586L-45.5859 14.415L-47 13L176 -210L177.414 -208.586Z" fill="url(#paint0_linear_1100_788)" fillOpacity="0.4" />
                                 <defs>
@@ -243,11 +48,11 @@ const RequestAccess = () => {
                     </div>
 
                     {/* Right Section - Gradient with Abstract Graphics */}
-                    <div style={styles.rightSection}>
-                        <div style={styles.abstractGraphics}>
+                    <div className="request-access-right-section">
+                        <div className="request-access-abstract-graphics">
 
                             {/* Top Layer - toplayer.svg with positioned blur effect */}
-                            <div style={styles.layer}>
+                            <div className="request-access-layer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                                     <defs>
                                         <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
@@ -289,7 +94,7 @@ const RequestAccess = () => {
 
 
                             {/* Layer 4 - New top layer with Group 5.svg content */}
-                            <div style={styles.layer4}>
+                            <div className="request-access-layer4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                                     <defs>
                                         <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
@@ -378,7 +183,7 @@ const RequestAccess = () => {
                                 </svg>
                             </div>
                             {/* Layer 1 (middle) with blur and additional SVGs */}
-                            <div style={styles.layer1}>
+                            <div className="request-access-layer1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
                                     <defs>
                                         <filter id="blurFilter" x="0" y="0" width="100%" height="100%">
@@ -423,7 +228,7 @@ const RequestAccess = () => {
 
 
                             {/* Layer 3 - Bottom cubic element (no blur, in front) */}
-                            <div style={{ ...styles.layer3, animation: 'floatBottom 9s ease-in-out infinite 1.5s' }}>
+                            <div className="request-access-layer3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="166" height="168" viewBox="0 0 166 168" fill="none" style={{ filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))' }}>
                                     <path d="M164.91 95.448L82.955 57.7188L1 95.448L82.955 133.177L164.91 95.448Z" fill="#FDFDFE" stroke="white" strokeWidth="0.499725" />
                                     <path d="M164.91 129.428L82.955 91.6992L1 129.428L82.955 167.158L164.91 129.428Z" stroke="white" strokeWidth="0.499725" />

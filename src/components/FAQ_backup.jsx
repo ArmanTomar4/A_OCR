@@ -1204,7 +1204,11 @@ const AnimatedFAQDiagram = () => {
                 </div>
 
                 <style>{`
-
+@media (max-width: 480px){
+.animated-faq-container{
+display: none !important;
+}
+}
                     .nav-breadcrumb {
                         display: flex;
                         align-items: center;

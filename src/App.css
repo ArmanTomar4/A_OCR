@@ -19,6 +19,13 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   min-width: 100vw;
 }
@@ -62,9 +69,7 @@ display: none;
   .hero-background-desktop {
     display: none !important;
   }
-  .hero-video-bg {
-    display: none !important;
-  }
+ 
   .hero-button-wrapper{
     display: none !important;
   }
@@ -73,17 +78,14 @@ display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -2;
+    margin: 0;
+    padding: 0;
   }
-  .hero-content {
-    display: none !important;
-  }
-  .hero-tagline {
-    display: none !important;
-  }
+
 .bottom-info {
   display: none !important;
 }
@@ -286,11 +288,11 @@ display: none;
 
 @media (max-width: 768px) {
   .hero-logo {
-    font-size: 80px;
+    font-size: 50px;
   }
   
   .hero-tagline {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -524,6 +526,98 @@ display: none;
   gap: 24px;
 }
 
+/* Mobile styles for chatbot */
+@media (max-width: 768px) {
+  .chatbot-container {
+    padding: 0px 0px 48px 0px;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 40vh;
+  }
+  
+  .chatbot-box {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .chatbot-messages {
+    height: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-container {
+    padding: 0px 0px 24px 0px;
+    width: 100vw;
+    margin: 0;
+    min-height: 35vh;
+  }
+  
+  .chatbot-box {
+    width: 100vw;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    height: 45vh;
+    min-height: 250px;
+    padding: 12px;
+  }
+  
+  .chatbot-messages {
+    height: 180px;
+    max-height: 180px;
+  }
+  
+  .chatbot-input-section {
+    gap: 8px;
+  }
+  
+  .chatbot-input {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  
+  .chatbot-send-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .chatbot-message {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
+/* Landscape orientation support for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .chatbot-box {
+    height: 60vh;
+    min-height: 250px;
+  }
+  
+  .chatbot-messages {
+    height: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .chatbot-box {
+    height: 40vh;
+    min-height: 100px;
+  }
+  
+  .chatbot-messages {
+    height: 120px;
+    max-height: 120px;
+  }
+}
+
 .chatbot-messages {
   flex: 1;
   display: flex;
@@ -652,4 +746,98 @@ display: none;
 
 .chatbot-messages::-webkit-scrollbar-thumb:hover {
   background: #3151b0;
+}
+
+
+@media (max-width: 480px) {
+  .percentage-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .stats-page-container{
+    padding: 0px !important;
+  }
+
+  .percentage-container .divider {
+    display: none;
+  }
+
+  .percentage-container .left-section1,
+  .percentage-container .right-section1 {
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .percentage-container .right-section1 {
+    padding-left: 20px; /* Override inline style */
+  }
+
+  .percentage-container .description {
+    max-width: 100%;
+  }
+
+  .percentage-container .percentage-wrapper {
+    width: 300px;
+    height: 225px;
+    transform: scale(0.8);
+  }
+
+  .percentage-container .percentage-text {
+    font-size: 80px;
+  }
+
+  .percentage-container .bar-box {
+    width: 120px;
+    margin-right: 20px;
+  }
+
+  .percentage-container .percentage-row {
+    margin: -20px 0;
+  }
+
+  .percentage-container .percentage-bg-black {
+    left: 150px; /* Adjusted for new layout */
+    width: 140px;
+  }
+
+  .percentage-container .bar-box.bar-gray {
+    margin-right: 45px;
+  }
+
+  .lightning-container {
+    flex-direction: column;
+  }
+
+  .lightning-container .divider {
+    display: none;
+  }
+
+  .timer-container {
+    transform: scale(0.8);
+  }
+
+  .scalability-container {
+    flex-direction: column;
+  }
+
+  .scalability-container .divider {
+    display: none;
+  }
+
+  .deployment-container {
+    flex-direction: column;
+  }
+
+  .deployment-container .divider {
+    display: none;
+  }
+
+  .dots-container {
+    flex-direction: column-reverse;
+  }
+
+  .dots-container .divider {
+    display: none;
+  }
 }

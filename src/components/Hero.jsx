@@ -1,8 +1,10 @@
 
 import React, { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 
 function Hero() {
+  const navigate = useNavigate()
   const prefixRef = useRef(null)  // a_ as one unit
   const letterRefs = {
     O: useRef(null),
@@ -86,9 +88,7 @@ function Hero() {
         >
           <source src="/herobg.mp4" type="video/mp4" />
         </video>
-        <div className="hero-background-mobile">
-          <img src="/herobgmobile.png" alt="hero-background-mobile" />
-        </div>
+
         <div className="hero-content">
           <h1 className="hero-logo">
             a_OCR
@@ -98,7 +98,7 @@ function Hero() {
             <span ref={letterRefs.O}>to </span>
             <span ref={letterRefs.R}>Intelligence</span></p>
           <div className="hero-button-wrapper">
-            <button className="hero-button">
+            <button className="hero-button" onClick={() => navigate('/request-access')}>
               Request Access
               <svg className="button-arrow" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 25" fill="none">
                 <rect width="32" height="28" transform="translate(0 0.5)" fill="white" fill-opacity="0.01" />

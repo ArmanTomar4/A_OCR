@@ -160,9 +160,15 @@ const LightningSpeedTimer = () => {
         .accuracy-highlight {
           display: flex;
           flex-direction: column;
-          padding: 20px;
+          margin-top: 30px;
+          padding-left: 100px;
           gap: 10px;
           border-radius: 4px;
+        }
+        @media (max-width: 480px) {
+          .accuracy-highlight {
+            padding-left: 20px;
+          }
         }
 
         .accuracy-label {
@@ -209,7 +215,29 @@ const LightningSpeedTimer = () => {
         .features-list {
           display: flex;
           flex-direction: column;
-          padding-left:20px;
+          margin-top: 10px;
+          padding-left:100px;
+        }
+
+        @media (max-width: 480px) {
+          .features-list {
+            display: none !important;
+          }
+          
+          .accuracy-percentage {
+            white-space: nowrap;
+            font-size: 45px;
+          }
+          .lightning-container {
+            padding: 0px !important;
+          }
+          .left-section {
+            padding: 0px !important;
+          }
+          .right-section {
+            padding-left: 20px !important;
+          }
+            
         }
 
         .feature-item1 {
@@ -231,10 +259,16 @@ const LightningSpeedTimer = () => {
 
         .accuracy-svg {
 position: absolute;
-top: 130px;
-left: -00px;
+    top: 110px;
+    left: 40px;
 z-index: 1;
         }
+@media (max-width: 480px) {
+  .accuracy-svg{
+    top: 110px;
+    left: 0px;
+  }
+}
 
         @keyframes fadeIn {
           from {

@@ -13,7 +13,7 @@ import Footer from './components/Footer.jsx'
 import Pipeline from './components/Pipeline.jsx'
 import AnimatedFAQDiagram from './components/FAQ_backup.jsx'
 import Chatbot from './components/Chatbot.jsx'
-
+import FAQ from './components/FAQ.jsx'
 /**
  * Main App Component
  * Clean blank screen ready for development
@@ -119,6 +119,7 @@ function App() {
               <Pipeline />
               <WhyChooseAOCR />
               <AnimatedFAQDiagram />
+              {window.innerWidth < 768 && <FAQ />}
               <Chatbot />
               <RequestAccess />
               <Footer />

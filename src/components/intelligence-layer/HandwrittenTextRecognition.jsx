@@ -82,7 +82,7 @@ export default function HandwrittenTextRecognition() {
   return (
     <div className="smart-doc-classification-card">
       <style>{SMART_DOC_CLASSIFICATION_STYLES}</style>
-      <div className="smart-doc-classification-number">[03]</div>
+      <div className="smart-doc-classification-number">[04]</div>
 
       <div className="smart-doc-classification-icon-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120" fill="none">
