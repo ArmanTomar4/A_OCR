@@ -10,8 +10,8 @@ const RollingCounter = ({ isVisible }) => {
 
     setIsAnimating(true);
     let animationFrame = 0;
-    const totalFrames = 60; // ~320ms at ~60fps
-    const randomPhaseFrames = 20; // Shorter random phase for snappier feel
+    const totalFrames = 60; // Slower overall animation (~2x duration)
+    const randomPhaseFrames = 60; // Slightly longer random phase for smoother lead-in
 
     const animate = () => {
       if (animationFrame < randomPhaseFrames) {
@@ -51,7 +51,7 @@ const MassiveScalability = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(false);
-            setTimeout(() => setIsVisible(true), 50);
+            setTimeout(() => setIsVisible(true), 0);
           } else {
             setIsVisible(false);
           }
@@ -119,7 +119,7 @@ const MassiveScalability = () => {
            text-align: center;
            padding: 30px 0;
            width: 100%;
-           max-width: 280px;
+           max-width: 380px;
          }
 
          .ms-animate-elements .ms-number-display-large {

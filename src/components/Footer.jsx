@@ -17,6 +17,10 @@ const Footer = () => {
         }
 
         .quote-section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           text-align: center;
           margin-bottom: 80px;
           max-width: 800px;
@@ -40,17 +44,17 @@ const Footer = () => {
 
         .apparatus-section {
           text-align: center;
-          width: 100%;
+          width: 100% !important;
           height: auto;
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-top: auto;
+          position: absolute;
+          bottom: 0;
         }
 
         .apparatus-logo {
           width: 100%;
-          max-width: 640px;
           height: auto;
           filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
           padding-left: 20px;
