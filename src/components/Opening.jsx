@@ -21,11 +21,11 @@ const isAdjacent = (idx1, idx2, gridData) => {
   }
   const pos1 = gridData[idx1];
   const pos2 = gridData[idx2];
-  
+
   // Check if patterns are neighbors (horizontally or vertically)
   const colDiff = Math.abs(pos1.col - pos2.col);
   const rowDiff = Math.abs(pos1.row - pos2.row);
-  
+
   return (colDiff <= 1 && rowDiff === 0) || (colDiff === 0 && rowDiff <= 1);
 };
 
@@ -298,61 +298,61 @@ export default function Opening() {
 
   return (
     <>
-        <div className="opening-container">
-      <div
-        className="hard-grid top-grid"
-        ref={gridTopRef}
-        onMouseMove={handleMouseMoveTop}
-        onMouseLeave={handleMouseLeaveTop}
-        style={{ userSelect: 'none' }}
-      >
-        {rowsTop}
-      </div>
+      <div className="opening-container">
+        <div
+          className="hard-grid top-grid"
+          ref={gridTopRef}
+          onMouseMove={handleMouseMoveTop}
+          onMouseLeave={handleMouseLeaveTop}
+          style={{ userSelect: 'none' }}
+        >
+          {rowsTop}
+        </div>
 
-      <div className="text-section" ref={textSectionRef}>
-        <h1 className="main-text">
-          <div className="reveal-line">
-            <span className="gsap-word opening-text-grey">The</span>{' '}
-            <span className="gsap-word opening-text-grey">foundation</span>{' '}
-            <span className="gsap-word opening-text-grey">of</span>{' '}
-            <span className="gsap-word opening-text-grey">AI</span>{' '}
-            <span className="gsap-word opening-text-grey">automation—</span>
-          </div>
-          <div className="reveal-line">
-            <span className="gsap-word opening-text-grey">transforming</span>{' '}
-            <span className="gsap-word highlight-text">unstructured</span>{' '}
-            <span className="gsap-word highlight-text">documents</span>{' '}
-            <span className="gsap-word highlight-text">into</span>{' '}
-            <span className="gsap-word highlight-text">machine-actionable</span>{' '}
-            <span className="gsap-word highlight-text">data</span>{' '}
-            <span className="gsap-word">across</span>
-          </div>
-          <div className="reveal-line">
-            <span className="gsap-word">your</span>{' '}
-            <span className="gsap-word">enterprise.</span>
-          </div>
-        </h1>
-      </div>
+        <div className="text-section" ref={textSectionRef}>
+          <h1 className="main-text">
+            <div className="reveal-line">
+              <span className="gsap-word opening-text-grey">The</span>{' '}
+              <span className="gsap-word opening-text-grey">foundation</span>{' '}
+              <span className="gsap-word opening-text-grey">of</span>{' '}
+              <span className="gsap-word opening-text-grey">AI</span>{' '}
+              <span className="gsap-word opening-text-grey">automation—</span>
+            </div>
+            <div className="reveal-line">
+              <span className="gsap-word opening-text-grey">transforming</span>{' '}
+              <span className="gsap-word highlight-text">unstructured</span>{' '}
+              <span className="gsap-word highlight-text">documents</span>{' '}
+              <span className="gsap-word highlight-text">into</span>{' '}
+              <span className="gsap-word highlight-text">machine-actionable</span>{' '}
+              <span className="gsap-word highlight-text">data</span>{' '}
+              <span className="gsap-word">across</span>
+            </div>
+            <div className="reveal-line">
+              <span className="gsap-word">your</span>{' '}
+              <span className="gsap-word">enterprise.</span>
+            </div>
+          </h1>
+        </div>
 
-      <div
-        className="hard-grid bottom-grid"
-        ref={gridBottomRef}
-        onMouseMove={handleMouseMoveBottom}
-        onMouseLeave={handleMouseLeaveBottom}
-        style={{ userSelect: 'none' }}
-      >
-        {rowsBottom}
-      </div>
+        <div
+          className="hard-grid bottom-grid"
+          ref={gridBottomRef}
+          onMouseMove={handleMouseMoveBottom}
+          onMouseLeave={handleMouseLeaveBottom}
+          style={{ userSelect: 'none' }}
+        >
+          {rowsBottom}
+        </div>
 
-      <div className="scroll-indicator">
-        <span>SCROLL DOWN</span>
+        <div className="scroll-indicator">
+          <span>SCROLL DOWN</span>
+        </div>
       </div>
-    </div>
-    <div className="opening-container-mobile">
-      <div className="hard-grid top-grid">
-        {rowsTop}
+      <div className="opening-container-mobile">
+        <div className="hard-grid top-grid">
+          {rowsTop}
+        </div>
       </div>
-    </div>
     </>
   );
 } 

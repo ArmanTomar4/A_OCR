@@ -462,8 +462,9 @@ display: none;
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 45px;
+  /* position: absolute;
+  bottom: 45px; */
+  margin-bottom: 45px;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;           /* Stack text and arrow vertically */
@@ -475,7 +476,6 @@ display: none;
   letter-spacing: -0.044px;        /* Figma spec: -0.044px */
   text-transform: uppercase;
   color: #000000;                  /* Figma spec: #000000 */
-  z-index: 10;
   margin-left: 6%;
 }
 
