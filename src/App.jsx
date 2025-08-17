@@ -11,6 +11,7 @@ import RequestAccess from './components/RequestAccess.jsx'
 import RequestAccessForm from './components/RequestAccessForm.jsx'
 import Footer from './components/Footer.jsx'
 import Pipeline from './components/Pipeline.jsx'
+import Pipelinep from './components/pipelinep.jsx'
 import AnimatedFAQDiagram from './components/FAQ_backup.jsx'
 import Chatbot from './components/Chatbot.jsx'
 import FAQ from './components/FAQ.jsx'
@@ -117,6 +118,7 @@ function App() {
               <IntelligenceLayer />
               <SolutionsByIndustry />
               <Pipeline />
+              <Pipelinep />
               <WhyChooseAOCR />
               <AnimatedFAQDiagram />
               {window.innerWidth < 768 && <FAQ />}

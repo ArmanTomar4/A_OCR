@@ -255,24 +255,7 @@ display: none;
 .bottom-section:not(:first-child) {
   border-top: 1px solid #a8a8a8;
 }
-.scroll-indicator {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
 
-.scroll-arrow {
-  width: 12px;                     /* Smaller size to match Figma proportions */
-  height: 12px;                    /* Smaller size to match Figma proportions */
-  filter: brightness(0);           /* Makes the SVG black */
-}
-
-.scroll-text {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #a8a8a8;
-}
 
 .info-label {
   font-size: 10px;
@@ -459,30 +442,30 @@ display: none;
   color: #4169e1;  /* This blue color matches Figma perfectly */
   font-weight: 400;  /* Adding underline to match Figma */
 }
-
 .scroll-indicator {
-  /* position: absolute;
-  bottom: 45px; */
-  margin-bottom: 45px;
+  position: absolute;
+  bottom: 13%;  /* Adjusted position to align with vector line gap */
+  left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-direction: column;           /* Stack text and arrow vertically */
+  flex-direction: column;
   align-items: center;
-  gap: 8px;                        /* Smaller gap to match Figma */
-  font-size: 10px;                 /* Figma spec: 14px */
-  font-family: "Alliance No.2";  /* Updated to use Alliance No.2 */
-  font-weight: 200;                /* Figma spec: 600 (semi-bold) */
-  letter-spacing: -0.044px;        /* Figma spec: -0.044px */
+  gap: 8px;
+  font-size: 10px;
+  font-family: "Alliance No.2";
+  font-weight: 200;
+  letter-spacing: -0.044px;
   text-transform: uppercase;
-  color: #000000;                  /* Figma spec: #000000 */
-  margin-left: 6%;
+  color: #000000;
+  z-index: 1;  /* Lower z-index to ensure proper layering */
+  pointer-events: none;  /* Prevent interference with vector interactions */
 }
 
 .scroll-line {
   width: 1px;
   height: 20px;
-  background-color: #000000;  /* Changed to dark black */
-  position: relative;
+  background-color: #000000;
+  margin-top: 4px;
 }
 
 @media (max-width: 768px) {

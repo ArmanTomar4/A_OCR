@@ -740,7 +740,7 @@ const MiddleSection = () => {
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
                     <foreignObject x="-20.1344" y="-20.0387" width="645.428" height="390.187">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(10.46px)',
+                            backdropFilter: 'blur(1.46px)',
                             clipPath: 'url(#bgblur_0_571_3398_clip_path)',
                             height: '100%',
                             width: '100%'

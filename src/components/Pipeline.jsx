@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import MiddleSection from './MiddleSection'
-import './Pipeline.css'
+import './Pipelinep.css'
 
 const Pipeline = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
