@@ -255,7 +255,6 @@ display: none;
 .bottom-section:not(:first-child) {
   border-top: 1px solid #a8a8a8;
 }
-
 .scroll-indicator {
   display: flex;
   align-items: center;
