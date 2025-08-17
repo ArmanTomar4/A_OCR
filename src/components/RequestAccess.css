@@ -379,7 +379,7 @@
 /* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .request-access-right-section {
-    background-image: url(./bg@2x.png);
+    background-image: url(./bg.png);
   }
 }
 

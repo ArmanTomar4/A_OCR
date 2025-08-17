@@ -108,7 +108,7 @@ const Footer = () => {
             top: 50%;
             transform: translate(50%, -50%) rotate(-90deg);
             transform-origin: center;
-            height: 100%;
+            height: 6%;
             width: auto;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
             opacity: 0.9;

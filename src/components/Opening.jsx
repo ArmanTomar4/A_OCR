@@ -312,7 +312,7 @@ export default function Opening() {
       <div className="text-section" ref={textSectionRef}>
         <h1 className="main-text">
           <div className="reveal-line">
-            <span className="gsap-word opening-text-grey">the</span>{' '}
+            <span className="gsap-word opening-text-grey">The</span>{' '}
             <span className="gsap-word opening-text-grey">foundation</span>{' '}
             <span className="gsap-word opening-text-grey">of</span>{' '}
             <span className="gsap-word opening-text-grey">AI</span>{' '}
