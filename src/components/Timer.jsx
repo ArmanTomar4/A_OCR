@@ -318,7 +318,7 @@ z-index: 1;
 
             <div className="timer-display">
               <div className="timer-value">{formatTime(time)}</div>
-              <div className="timer-unit">SEC.</div>
+              <div className="timer-unit">SEC</div>
             </div>
           </div>
         </div>

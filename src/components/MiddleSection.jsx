@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const MiddleSection = () => {
@@ -239,14 +239,7 @@ const MiddleSection = () => {
                     opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
-                    <foreignObject x="-37.3095" y="-37.0394" width="679.778" height="424.298">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(18.91px)',
-                            clipPath: 'url(#bgblur_0_571_3407_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                    
                     <path data-figma-bg-blur-radius="37.8129" d="M302.251 349.28L604.372 174.919L302.908 0.9375L0.787109 175.298L302.251 349.28Z" fill="#141414" fillOpacity="0.2" stroke="#FBFEFC" strokeWidth="0.283597" />
                     <defs>
                         <clipPath id="bgblur_0_571_3407_clip_path" transform="translate(37.3095 37.0394)">
@@ -263,14 +256,7 @@ const MiddleSection = () => {
                     opacity: 1,
                     transition: 'opacity 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="203" viewBox="0 0 605 203" fill="none">
-                    <foreignObject x="-37.1674" y="-37.473" width="679.494" height="277.927">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(18.91px)',
-                            clipPath: 'url(#bgblur_0_571_3406_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                   
                     <g data-figma-bg-blur-radius="37.8129">
                         <path d="M604.372 27.0855L302.251 202.478L0.787109 27.4668V27.0855V0.967226L302.251 175.979L604.372 0.585938V27.0855Z" fill="#141414" fillOpacity="0.2" />
                         <path d="M302.251 175.788V175.979M302.251 202.478L604.372 27.0855V0.585938L302.251 175.979M302.251 202.478V175.979M302.251 202.478L0.787109 27.4668V27.0855V0.967226L302.251 175.979" stroke="#FBFEFC" strokeWidth="0.283597" />
@@ -292,26 +278,12 @@ const MiddleSection = () => {
                     opacity: 1,
                     transition: 'all 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="172" height="128" viewBox="0 0 172 128" fill="none">
-                    <foreignObject x="-37.0023" y="12.0504" width="245.613" height="153.692">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(18.91px)',
-                            clipPath: 'url(#bgblur_0_571_3411_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                    
                     <g data-figma-bg-blur-radius="37.8129">
                         <path d="M170.536 78.6394L85.7121 127.628L1.07227 78.7459V78.6394V50.4229L85.7121 99.305L170.536 50.3164V78.6394Z" fill="#141414" fillOpacity="0.2" />
                         <path d="M85.7121 120.173V99.305M85.7121 127.628L170.536 78.6394V50.3164L85.7121 99.305M85.7121 127.628V99.305M85.7121 127.628L1.07227 78.7459V78.6394V50.4229L85.7121 99.305" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
                     </g>
-                    <foreignObject x="-37.2626" y="-36.848" width="246.134" height="174.325">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(18.91px)',
-                            clipPath: 'url(#bgblur_1_571_3411_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                   
                     <path data-figma-bg-blur-radius="37.8129" d="M85.7121 99.3609L170.536 50.2599L85.8965 1.26562L1.07227 50.3666L85.7121 99.3609Z" fill="#141414" fillOpacity="0.2" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
                     <defs>
                         <clipPath id="bgblur_0_571_3411_clip_path" transform="translate(37.0023 -12.0504)">
@@ -331,26 +303,12 @@ const MiddleSection = () => {
                     opacity: 1,
                     transition: 'all 0.3s ease-in-out'
                 }} xmlns="http://www.w3.org/2000/svg" width="172" height="128" viewBox="0 0 172 128" fill="none">
-                    <foreignObject x="-37.0023" y="12.0504" width="245.613" height="153.692">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(18.91px)',
-                            clipPath: 'url(#bgblur_0_571_3411_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                    
                     <g data-figma-bg-blur-radius="37.8129">
                         <path d="M170.536 78.6394L85.7121 127.628L1.07227 78.7459V78.6394V50.4229L85.7121 99.305L170.536 50.3164V78.6394Z" fill="#141414" fillOpacity="0.2" />
                         <path d="M85.7121 120.173V99.305M85.7121 127.628L170.536 78.6394V50.3164L85.7121 99.305M85.7121 127.628V99.305M85.7121 127.628L1.07227 78.7459V78.6394V50.4229L85.7121 99.305" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
                     </g>
-                    <foreignObject x="-37.2626" y="-36.848" width="246.134" height="174.325">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(18.91px)',
-                            clipPath: 'url(#bgblur_1_571_3411_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                   
                     <path data-figma-bg-blur-radius="37.8129" d="M85.7121 99.3609L170.536 50.2599L85.8965 1.26562L1.07227 50.3666L85.7121 99.3609Z" fill="#141414" fillOpacity="0.2" stroke="black" strokeOpacity="0.5" strokeWidth="0.523037" />
                     <defs>
                         <clipPath id="bgblur_0_571_3411_clip_path" transform="translate(37.0023 -12.0504)">
@@ -588,20 +546,15 @@ const MiddleSection = () => {
                     transition: 'opacity 0.3s ease-in-out',
 
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
-                    <foreignObject x="-20.1344" y="-20.0387" width="645.428" height="390.187">
-                        <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(10.46px)',
-                            clipPath: 'url(#bgblur_0_571_3398_clip_path)',
-                            height: '100%',
-                            width: '100%'
-                        }}></div>
-                    </foreignObject>
+                   
                     <path data-figma-bg-blur-radius="20.9215" d="M302.251 349.226L604.372 174.865L302.908 0.882812L0.787109 175.244L302.251 349.226Z" fill="black" fillOpacity="0.1" />
                     <defs>
                         <clipPath id="bgblur_0_571_3398_clip_path" transform="translate(20.1344 20.0387)">
                             <path d="M302.251 349.226L604.372 174.865L302.908 0.882812L0.787109 175.244L302.251 349.226Z" />
                         </clipPath>
                     </defs>
+               
+
                 </svg>
 
                 <svg style={{ position: 'absolute', top: '-450px', left: '58%', transform: 'translate(-50%, -50%) scale(0.81)' }} xmlns="http://www.w3.org/2000/svg" width="327" height="189" viewBox="0 0 327 189" fill="none">
@@ -613,8 +566,8 @@ const MiddleSection = () => {
                     <path d="M159.969 29.9196L68.9607 82.4634L48.5622 70.6863L139.571 18.1426L159.969 29.9196Z" stroke="#FBFEFC" strokeWidth="0.567193" />
                 </svg>
 
-                <img style={{ position: 'absolute', top: '-460px', right: '-25px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 02 ].svg" alt="" />
-                <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-351px', left: "56.3%", transform: 'translate(-50%, -50%) scale(0.98)' }} src="./UNDERSTAND.svg" alt="" />
+                {/* <img style={{ position: 'absolute', top: '-460px', right: '-25px', transform: 'translate(-50%, -50%) scale(1)' }} src="./[ 02 ].svg" alt="" /> */}
+                {/* <img style={{ width: 'auto', zIndex: '120', position: 'absolute', top: '-351px', left: "56.3%", transform: 'translate(-50%, -50%) scale(0.98)' }} src="./UNDERSTAND.svg" alt="" /> */}
 
             </motion.div>
 
@@ -740,7 +693,7 @@ const MiddleSection = () => {
                 }} xmlns="http://www.w3.org/2000/svg" width="605" height="350" viewBox="0 0 605 350" fill="none">
                     <foreignObject x="-20.1344" y="-20.0387" width="645.428" height="390.187">
                         <div xmlns="http://www.w3.org/1999/xhtml" style={{
-                            backdropFilter: 'blur(1.46px)',
+                            backdropFilter: 'blur(10.46px)',
                             clipPath: 'url(#bgblur_0_571_3398_clip_path)',
                             height: '100%',
                             width: '100%'
