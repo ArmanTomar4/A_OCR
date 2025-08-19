@@ -259,7 +259,7 @@ const LightningSpeedTimer = () => {
 
         .accuracy-svg {
 position: absolute;
-    top: 110px;
+    top: 120px;
     left: 40px;
 z-index: 1;
         }

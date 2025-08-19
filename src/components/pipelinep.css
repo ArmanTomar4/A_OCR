@@ -56,70 +56,73 @@
 
   .pipeline-faded-tilt-image {
     width: 25%;
-    height: 80%;
+    height: 100%;
     position: absolute;
     left: -25px;
     top: 119px;
   }
   .pipeline-middle-section {
-    width: 75%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column; /* Enable column layout */
-   
     padding: 20px;
+justify-content: center;
+/* align-items: center; */
     position: relative;
 }
 
 .top-svg {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     /* margin-bottom: 40px; */
-    position: absolute;
-    top: 1%; 
+    position: relative;
+    top: 500px; 
+    left: 10px;
     z-index: 5;
 }
 
 .sec-svg{
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
-    /* justify-content: center; */
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 40px;
-    position: absolute;
-    top: 20%; 
-    left: 15%;
-    z-index: 3;
-}
+    position: relative;
+    top: 200px; 
+    left: 100px;
+    z-index: 3;}
 .third-svg{
 
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     position: relative;
-    /* top: 22%;  */
+    top: -120px; 
+    left: 75px;
+
     z-index: 2;
     transform: none;
 
 }
 
-.bottom-svg{
-    width: 100%;
+.fourth-svg{
+    width:  100%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 0;
     position: relative;
-    /* top: 28%;  */
+    top: -470px; 
     z-index: 1;
+
 }   
 
   .pipeline-description-text {

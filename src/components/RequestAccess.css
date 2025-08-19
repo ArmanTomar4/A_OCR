@@ -20,7 +20,7 @@
   position: relative;
   overflow: hidden;
   border: 1px solid #333;
-  min-height: 70vh;
+  min-height: 552px;
   height: 100%;
 }
 
@@ -141,7 +141,7 @@
 
 .request-access-layer3 {
   position: absolute;
-  bottom: 5%;
+margin-top: 280px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
