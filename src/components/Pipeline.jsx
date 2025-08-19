@@ -581,8 +581,11 @@ const Pipeline = () => {
                             {/*abhijeet ye uppr [02] ka path h pr dikh nhi rha*/}
                         </svg>
 
+
+
+
                         <AnimatePresence>
-                            {hoveredBox === 'box2' && (
+                            {hoveredBox === 'box2'&& (
                                 <div style={{
                                     position: 'absolute',
                                     transform: "translate(91%, -37%)",
