@@ -206,8 +206,9 @@ font-family: 'Source Code Pro';
         /* Black background behind 99% */
         .percentage-container .percentage-bg-black {
           position: absolute;
-          left: 210px;
-          width: 180px;
+              top: -3px;
+    left: 152px;
+    width: 255px;
           height: 100px;
           background: #000;
           z-index: 1;
