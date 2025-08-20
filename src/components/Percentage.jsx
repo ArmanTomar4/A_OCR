@@ -276,14 +276,14 @@ font-family: 'Source Code Pro';
           max-width: 280px;
         }
 
-        .percentage-container .features-list {
+        .percentage-container .p-features-list {
           display: flex;
           flex-direction: column;
           padding-left:20px
         }
 
         @media (max-width: 480px) {
-          .percentage-container .features-list {
+          .percentage-container .p-features-list {
             display: none !important;
           }
           .percentage-container .right-section1{
@@ -305,7 +305,7 @@ font-family: 'Source Code Pro';
           }
         }
 
-        .percentage-container .percentage-container .feature-item {
+        .percentage-container .p-feature-item {
           display: flex;
           align-items: flex-start;
           gap: 5px;
@@ -318,14 +318,15 @@ font-family: 'Source Code Pro';
 
         .percentage-container .scalability-svg {
           position: absolute;
-          top: 100px;
+          top: 110px;
           left: -80px;
           z-index: 1;
         }
 
         @media (max-width: 480px) {
           .percentage-container .scalability-svg {
-            top: 64px;
+            top: 59px;
+            left: 0px;
           }
         }
         @keyframes fadeIn {
@@ -420,21 +421,21 @@ font-family: 'Source Code Pro';
               </div>
             </div>
 
-            <div className="features-list">
-              <div className="feature-item">
-                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
+            <div className="p-features-list">
+              <div className="p-feature-item">
+                <span className="p-checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Advanced AI-powered text recognition</span>
               </div>
-              <div className="feature-item">
-                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
+              <div className="p-feature-item">
+                <span className="p-checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Handles low-quality and skewed documents</span>
               </div>
-              <div className="feature-item">
-                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
+              <div className="p-feature-item">
+                <span className="p-checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Multi-language support with high precision</span>
               </div>
-              <div className="feature-item">
-                <span className="checkmark" style={{ color: '#4ade80' }}>✓</span>
+              <div className="p-feature-item">
+                <span className="p-checkmark" style={{ color: '#4ade80' }}>✓</span>
                 <span>Continuous model improvements</span>
               </div>
             </div>

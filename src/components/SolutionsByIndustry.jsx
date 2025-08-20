@@ -82,7 +82,7 @@ body {
 }
 
 .solutions-description {
-  margin: 50px 0 0 0px;
+  margin: 50px 0 0 10px;
   font-size: 15.5px;
   line-height: 1.4;
   color: #444;
