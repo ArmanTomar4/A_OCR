@@ -146,7 +146,7 @@ const Chatbot = () => {
                 const chatbotElement = document.querySelector('.chatbot-container');
                 if (chatbotElement) {
                     import('../utils/smoothScroll.js').then(({ smoothScrollTo }) => {
-                        smoothScrollTo(chatbotElement, 800);
+                        smoothScrollTo(chatbotElement, { duration: 800, align: 'center' });
                     });
                 }
             }, 300);

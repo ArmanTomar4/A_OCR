@@ -79,7 +79,7 @@ function App() {
               <Navbar />
               <Hero />
               <Opening />
-              {/* <OpeningO /> */}
+              <OpeningO />
               <IntelligenceLayer />
               <SolutionsByIndustry />
               <Pipeline />

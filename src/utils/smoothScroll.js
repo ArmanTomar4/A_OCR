@@ -32,18 +32,31 @@ export function initializeLenisScroll() {
 /**
  * Enhanced smooth scroll using Lenis for ultra-smooth animation
  */
-export function smoothScrollTo(target, duration = 800) {
+export function smoothScrollTo(target, options = {}) {
+  const { duration = 800, align = 'start' } = options;
+
   if (!lenis) {
     initializeLenisScroll();
   }
 
   const targetElement = typeof target === "string" ? document.querySelector(target) : target;
-  const targetPosition = typeof target === "number" ? target : targetElement?.getBoundingClientRect().top + window.scrollY;
+  
+  if (typeof target === 'number') {
+    lenis.scrollTo(target, { duration: duration / 1000, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    return;
+  }
 
-  if (targetPosition !== undefined) {
-    lenis.scrollTo(targetPosition, {
+  if (targetElement) {
+    let offset = 0;
+    if (align === 'center') {
+      offset = -(window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+    }
+    // 'start' alignment has an offset of 0, which is the default for lenis.scrollTo
+
+    lenis.scrollTo(targetElement, {
+      offset,
       duration: duration / 1000, // Lenis uses seconds
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
   }
 }
