@@ -4,7 +4,6 @@ import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Opening from './components/Opening.jsx'
-import OpeningO from './components/OpeningO.jsx'
 import IntelligenceLayer from './components/IntelligenceLayer.jsx'
 import SolutionsByIndustry from './components/SolutionsByIndustry.jsx'
 import WhyChooseAOCR from './components/WhyChooseAOCR.jsx'
@@ -79,7 +78,6 @@ function App() {
               <Navbar />
               <Hero />
               <Opening />
-              <OpeningO />
               <IntelligenceLayer />
               <SolutionsByIndustry />
               <Pipeline />
