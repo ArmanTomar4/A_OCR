@@ -401,7 +401,7 @@ export default function PinnedWordRevealPage() {
               key={i}
               className={`word${
                 // simple example: tint a few words if you like (optional)
-                [" foundation ", "automation—", "unstructured", "documents", "machine-actionable", "data"].includes(
+                [" foundation ", "automation—", "unstructured", "documents", "machine-actionable", "data","into"].includes(
                   w.replace(/[^\w-—]/g, "")
                 )
                   ? " highlight-openingO"

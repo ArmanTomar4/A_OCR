@@ -271,6 +271,12 @@ display: none;
   text-transform: uppercase;
   color: #ffffff;
 }
+.hero-video-bg::-webkit-media-controls {
+  display: none !important;
+}
+.hero-video-bg::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
 
 @media (max-width: 768px) {
   .hero-logo {
